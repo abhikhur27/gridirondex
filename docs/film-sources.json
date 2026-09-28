@@ -1,0 +1,885 @@
+{
+  "checkedOn": "2026-09-28",
+  "method": "Public YouTube publisher player metadata; segment timestamps come from publisher chapters when available, otherwise the dedicated breakdown introduction.",
+  "videos": [
+    {
+      "id": "NJJKbs-eOKw",
+      "title": "Xs & Os: Mesh",
+      "channel": "The QB School",
+      "durationSeconds": 3463,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=NJJKbs-eOKw"
+    },
+    {
+      "id": "_qjUnnfibDQ",
+      "title": "Football 101: Smash Concept",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 192,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=_qjUnnfibDQ"
+    },
+    {
+      "id": "UPF6Fm0xD2Y",
+      "title": "Anatomy of a Play: WR Split Zone Flood Concept",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 147,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=UPF6Fm0xD2Y"
+    },
+    {
+      "id": "XBHIVeYpj5c",
+      "title": "Xs & Os: Drive",
+      "channel": "The QB School",
+      "durationSeconds": 853,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=XBHIVeYpj5c"
+    },
+    {
+      "id": "n55z_KypxlE",
+      "title": "Xs & Os: 95 Y Cross",
+      "channel": "The QB School",
+      "durationSeconds": 2962,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=n55z_KypxlE"
+    },
+    {
+      "id": "3emDC2CKOZE",
+      "title": "Tom Brady and the Patriots: Scheme and Execution for Four Verticals",
+      "channel": "The QB School",
+      "durationSeconds": 305,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=3emDC2CKOZE"
+    },
+    {
+      "id": "r_DOW_rIq9s",
+      "title": "Xs & Os: Dagger",
+      "channel": "The QB School",
+      "durationSeconds": 925,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=r_DOW_rIq9s"
+    },
+    {
+      "id": "iCIaPvVNEDo",
+      "title": "Washington football's 'scissor concept' analyzed on Suger Packet Shuffle",
+      "channel": "Pac-12",
+      "durationSeconds": 195,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=iCIaPvVNEDo"
+    },
+    {
+      "id": "fZzsR_7xbpc",
+      "title": "How To Run The Play Action Boot Pass",
+      "channel": "American Football Academy",
+      "durationSeconds": 669,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=fZzsR_7xbpc"
+    },
+    {
+      "id": "2exkTbFboDw",
+      "title": "Every Passing Route Explained in 19 Minutes",
+      "channel": "Fourth and Film",
+      "durationSeconds": 1152,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=2exkTbFboDw"
+    },
+    {
+      "id": "jxGnX8B8j3g",
+      "title": "NFL 101: The Route Tree",
+      "channel": "NFL",
+      "durationSeconds": 170,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=jxGnX8B8j3g"
+    },
+    {
+      "id": "gBHQZOulvIY",
+      "title": "Every Receiver ROUTE in American Football explained in 5 minutes",
+      "channel": "Everything Explained",
+      "durationSeconds": 263,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=gBHQZOulvIY"
+    },
+    {
+      "id": "jS3U_fGpkGg",
+      "title": "Football 101: Inside Zone",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 295,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=jS3U_fGpkGg"
+    },
+    {
+      "id": "RL8kn63AnuE",
+      "title": "Football 101: Outside Zone",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 308,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=RL8kn63AnuE"
+    },
+    {
+      "id": "HezArTWs_3M",
+      "title": "Football 101: Power",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 237,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=HezArTWs_3M"
+    },
+    {
+      "id": "yAUqGQmYhX8",
+      "title": "Football 101: Trap",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 199,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=yAUqGQmYhX8"
+    },
+    {
+      "id": "mZZ0SE5wwR0",
+      "title": "Football 101: Counter",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 239,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=mZZ0SE5wwR0"
+    },
+    {
+      "id": "Vc6A2q3NGXI",
+      "title": "Football 101: Duo",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 263,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=Vc6A2q3NGXI"
+    },
+    {
+      "id": "El_c0KljacM",
+      "title": "Xs & Os: Seven-Man Slide Pass Protection",
+      "channel": "The QB School",
+      "durationSeconds": 1508,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=El_c0KljacM"
+    },
+    {
+      "id": "CeWRO9XkD6E",
+      "title": "How do NFL Quarterbacks Understand Pass Protection?",
+      "channel": "The QB School",
+      "durationSeconds": 2419,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=CeWRO9XkD6E"
+    },
+    {
+      "id": "_WXKHRTSMm4",
+      "title": "NFL 101: The Play-Action Pass",
+      "channel": "NFL",
+      "durationSeconds": 103,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=_WXKHRTSMm4"
+    },
+    {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings EXPLAINED | PFF Film School",
+      "channel": "Pro Football Focus",
+      "durationSeconds": 1301,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=VD5iNMca9y8"
+    },
+    {
+      "id": "HrRcd36HuCI",
+      "title": "What are the Positions in American Football? | NFL Explained",
+      "channel": "NFL",
+      "durationSeconds": 90,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=HrRcd36HuCI"
+    },
+    {
+      "id": "WehkMpcV3-c",
+      "title": "How Do Quarterback Reads Really Work?",
+      "channel": "The QB School",
+      "durationSeconds": 901,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=WehkMpcV3-c"
+    },
+    {
+      "id": "jofkg9Q6ZYg",
+      "title": "What is a Hot Route and Sight Adjust?",
+      "channel": "The QB School",
+      "durationSeconds": 1298,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=jofkg9Q6ZYg"
+    },
+    {
+      "id": "itG3h01DwJQ",
+      "title": "What is Cover Zero? – It’s Big-Play Time",
+      "channel": "The QB School",
+      "durationSeconds": 300,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=itG3h01DwJQ"
+    },
+    {
+      "id": "ywFXMI1X-Ys",
+      "title": "Defensive Coverages Explained: Cover 1, 2, 3, and 4 | Understanding Football with Joel Klatt",
+      "channel": "The Joel Klatt Show: A College Football Podcast",
+      "durationSeconds": 1794,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=ywFXMI1X-Ys"
+    },
+    {
+      "id": "TToQn1rC1GI",
+      "title": "Football 101: Cover 6",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 192,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=TToQn1rC1GI"
+    },
+    {
+      "id": "Qsjp0n3gi3s",
+      "title": "Rob Ryan explains NFL Defensive Fronts | The Film Room",
+      "channel": "Gridiron",
+      "durationSeconds": 252,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=Qsjp0n3gi3s"
+    },
+    {
+      "id": "WrrjcI1DZVo",
+      "title": "Football 101: Bear Front",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 180,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=WrrjcI1DZVo"
+    },
+    {
+      "id": "uNHJIwlkPMk",
+      "title": "Installing the Rams' 5-1 \"Penny\" Front & Coverage | Fangio System Primer",
+      "channel": "MatchQuarters by Cody Alexander",
+      "durationSeconds": 2420,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=uNHJIwlkPMk"
+    },
+    {
+      "id": "ynj3jMUi_Yk",
+      "title": "Football 101: Defensive Line Alignment & Explaining Gaps",
+      "channel": "Alex Kozora",
+      "durationSeconds": 727,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=ynj3jMUi_Yk"
+    },
+    {
+      "id": "I1Q6htr5o-c",
+      "title": "Patrick Surtain Breaks Down the SECRET To Shutting Down Wide Receivers | Check the Tape",
+      "channel": "NFL",
+      "durationSeconds": 868,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=I1Q6htr5o-c"
+    },
+    {
+      "id": "eeQ7R9qN310",
+      "title": "Minkah Fitzpatrick Breaks Down How to Play Mobile QBs, Adjusting to Motion & More | NFL Film Session",
+      "channel": "NFL",
+      "durationSeconds": 813,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=eeQ7R9qN310"
+    },
+    {
+      "id": "eibqDMAkOrc",
+      "title": "The \"Weak Rotation\": Spagnuolo's Favorite Disguise Explained",
+      "channel": "MatchQuarters by Cody Alexander",
+      "durationSeconds": 498,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=eibqDMAkOrc"
+    },
+    {
+      "id": "1Sd3VmAm3Xo",
+      "title": "Explaining One-Gap vs. Two-Gap Defensive Fronts",
+      "channel": "Inside Carolina",
+      "durationSeconds": 602,
+      "embeddable": true,
+      "url": "https://www.youtube.com/watch?v=1Sd3VmAm3Xo"
+    }
+  ],
+  "segments": {
+    "mesh": {
+      "id": "NJJKbs-eOKw",
+      "title": "Xs & Os: Mesh",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "smash": {
+      "id": "_qjUnnfibDQ",
+      "title": "Football 101: Smash Concept",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "flood": {
+      "id": "UPF6Fm0xD2Y",
+      "title": "WR Split Zone Flood Concept · 49ers film",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "hi-lo": {
+      "id": "XBHIVeYpj5c",
+      "title": "Drive: a high-low passing concept",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "drive": {
+      "id": "XBHIVeYpj5c",
+      "title": "Xs & Os: Drive",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "y-cross": {
+      "id": "n55z_KypxlE",
+      "title": "Xs & Os: Y Cross",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "four-verticals": {
+      "id": "3emDC2CKOZE",
+      "title": "Tom Brady: Four Verticals",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "dagger": {
+      "id": "r_DOW_rIq9s",
+      "title": "Xs & Os: Dagger",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "scissors": {
+      "id": "iCIaPvVNEDo",
+      "title": "Scissors on Washington game film",
+      "channel": "Pac-12 Networks · Rick Neuheisel",
+      "start": 0
+    },
+    "boot": {
+      "id": "fZzsR_7xbpc",
+      "title": "Play-action boot pass",
+      "channel": "American Football Academy",
+      "start": 0
+    },
+    "flat": {
+      "id": "2exkTbFboDw",
+      "title": "Flat route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 20,
+      "end": 131,
+      "note": "Publisher chapter: Flat.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "slant": {
+      "id": "2exkTbFboDw",
+      "title": "Slant route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 131,
+      "end": 220,
+      "note": "Publisher chapter: Slant.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "comeback": {
+      "id": "2exkTbFboDw",
+      "title": "Comeback route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 220,
+      "end": 332,
+      "note": "Publisher chapter: Comeback.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "curl": {
+      "id": "2exkTbFboDw",
+      "title": "Curl route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 332,
+      "end": 405,
+      "note": "Publisher chapter: Curl.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "out": {
+      "id": "2exkTbFboDw",
+      "title": "Out route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 467,
+      "end": 555,
+      "note": "Publisher chapter: Out.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "dig": {
+      "id": "2exkTbFboDw",
+      "title": "Dig route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 555,
+      "end": 611,
+      "note": "Publisher chapter: Dig.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "corner": {
+      "id": "2exkTbFboDw",
+      "title": "Corner route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 730,
+      "end": 789,
+      "note": "Publisher chapter: Corner.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "post": {
+      "id": "2exkTbFboDw",
+      "title": "Post route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 789,
+      "end": 871,
+      "note": "Publisher chapter: Post.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "go": {
+      "id": "2exkTbFboDw",
+      "title": "Go route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 871,
+      "end": 957,
+      "note": "Publisher chapter: Go.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "option": {
+      "id": "2exkTbFboDw",
+      "title": "Option route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 1067,
+      "end": 1096,
+      "note": "Publisher chapter: Option.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "wheel": {
+      "id": "2exkTbFboDw",
+      "title": "Wheel route · NFL route breakdown",
+      "channel": "Fourth and Film",
+      "start": 957,
+      "end": 982,
+      "note": "Publisher chapter: Wheel.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "angle": {
+      "id": "gBHQZOulvIY",
+      "title": "Angle / Texas route",
+      "channel": "Everything Explained",
+      "start": 113,
+      "end": 122,
+      "note": "Publisher chapter: Angle route.",
+      "companion": {
+        "id": "jxGnX8B8j3g",
+        "title": "NFL 101: The Route Tree",
+        "channel": "NFL · Solomon Wilcots",
+        "start": 0
+      }
+    },
+    "mesh-crossers": {
+      "id": "NJJKbs-eOKw",
+      "title": "Xs & Os: Mesh",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "inside-zone": {
+      "id": "jS3U_fGpkGg",
+      "title": "Football 101: Inside Zone",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "outside-zone": {
+      "id": "RL8kn63AnuE",
+      "title": "Football 101: Outside Zone",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "power": {
+      "id": "HezArTWs_3M",
+      "title": "Football 101: Power",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "trap": {
+      "id": "yAUqGQmYhX8",
+      "title": "Football 101: Trap",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "counter": {
+      "id": "mZZ0SE5wwR0",
+      "title": "Football 101: Counter",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "duo": {
+      "id": "Vc6A2q3NGXI",
+      "title": "Football 101: Duo",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "slide": {
+      "id": "El_c0KljacM",
+      "title": "Seven-Man Slide Pass Protection",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "man-protection": {
+      "id": "CeWRO9XkD6E",
+      "title": "Understanding NFL pass protection",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "chip": {
+      "id": "CeWRO9XkD6E",
+      "title": "NFL pass protection and help responsibilities",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0,
+      "note": "Related film: pass-protection overview."
+    },
+    "play-action": {
+      "id": "_WXKHRTSMm4",
+      "title": "NFL 101: The Play-Action Pass",
+      "channel": "NFL · Solomon Wilcots",
+      "start": 0
+    },
+    "personnel-11": {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings",
+      "channel": "Pro Football Focus",
+      "start": 0
+    },
+    "personnel-12": {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings",
+      "channel": "Pro Football Focus",
+      "start": 0
+    },
+    "personnel-21": {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings",
+      "channel": "Pro Football Focus",
+      "start": 0
+    },
+    "personnel-22": {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings",
+      "channel": "Pro Football Focus",
+      "start": 0
+    },
+    "personnel-00": {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings",
+      "channel": "Pro Football Focus",
+      "start": 0
+    },
+    "personnel-10": {
+      "id": "VD5iNMca9y8",
+      "title": "Offensive Personnel Groupings",
+      "channel": "Pro Football Focus",
+      "start": 0
+    },
+    "quarterback": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "running-back": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "fullback": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "tight-end": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "x-receiver": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "z-receiver": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "slot": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "safety-count": {
+      "id": "WehkMpcV3-c",
+      "title": "How quarterback reads work",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "hot-read": {
+      "id": "jofkg9Q6ZYg",
+      "title": "Hot routes and sight adjustments",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "leverage": {
+      "id": "WehkMpcV3-c",
+      "title": "How quarterback reads work",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "apex": {
+      "id": "WehkMpcV3-c",
+      "title": "How quarterback reads work",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "conflict-linebacker": {
+      "id": "WehkMpcV3-c",
+      "title": "How quarterback reads work",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "press-check": {
+      "id": "WehkMpcV3-c",
+      "title": "How quarterback reads work",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "zero-beater": {
+      "id": "itG3h01DwJQ",
+      "title": "Recognizing and attacking Cover Zero",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "box-count": {
+      "id": "WehkMpcV3-c",
+      "title": "How quarterback reads work",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "cover-0": {
+      "id": "itG3h01DwJQ",
+      "title": "What is Cover Zero?",
+      "channel": "The QB School · JT O’Sullivan",
+      "start": 0
+    },
+    "cover-1": {
+      "id": "ywFXMI1X-Ys",
+      "title": "Cover 1 · Defensive Coverages Explained",
+      "channel": "FOX Sports · Joel Klatt",
+      "start": 71,
+      "end": 430,
+      "note": "Publisher chapter: Cover 1."
+    },
+    "cover-2": {
+      "id": "ywFXMI1X-Ys",
+      "title": "Cover 2 · Defensive Coverages Explained",
+      "channel": "FOX Sports · Joel Klatt",
+      "start": 431,
+      "end": 925,
+      "note": "Publisher chapter: Cover 2."
+    },
+    "cover-3": {
+      "id": "ywFXMI1X-Ys",
+      "title": "Cover 3 · Defensive Coverages Explained",
+      "channel": "FOX Sports · Joel Klatt",
+      "start": 926,
+      "end": 1260,
+      "note": "Publisher chapter: Cover 3."
+    },
+    "cover-4": {
+      "id": "ywFXMI1X-Ys",
+      "title": "Cover 4 · Defensive Coverages Explained",
+      "channel": "FOX Sports · Joel Klatt",
+      "start": 1261,
+      "end": 1771,
+      "note": "Publisher chapter: Cover 4."
+    },
+    "cover-6": {
+      "id": "TToQn1rC1GI",
+      "title": "Football 101: Cover 6",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "4-3": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts with Rob Ryan",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "3-4": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts with Rob Ryan",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "bear": {
+      "id": "WrrjcI1DZVo",
+      "title": "Football 101: Bear Front",
+      "channel": "Weekly Spiral",
+      "start": 0
+    },
+    "penny": {
+      "id": "uNHJIwlkPMk",
+      "title": "Installing the Rams’ 5–1 Penny Front",
+      "channel": "MatchQuarters · Cody Alexander",
+      "start": 0
+    },
+    "dollar": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts with Rob Ryan",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "techniques": {
+      "id": "ynj3jMUi_Yk",
+      "title": "Defensive line alignments and gaps",
+      "channel": "Alex Kozora · Steelers Depot",
+      "start": 0
+    },
+    "nose": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts and responsibilities",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "edge": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts and responsibilities",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "mike": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts and responsibilities",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "will": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts and responsibilities",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "sam": {
+      "id": "Qsjp0n3gi3s",
+      "title": "NFL defensive fronts and responsibilities",
+      "channel": "Gridiron · Rob Ryan",
+      "start": 0
+    },
+    "cornerback": {
+      "id": "I1Q6htr5o-c",
+      "title": "Patrick Surtain: covering receivers",
+      "channel": "NFL · Check the Tape",
+      "start": 0
+    },
+    "free-safety": {
+      "id": "eeQ7R9qN310",
+      "title": "Minkah Fitzpatrick: reading and adjusting",
+      "channel": "NFL Film Session",
+      "start": 0
+    },
+    "strong-safety": {
+      "id": "eeQ7R9qN310",
+      "title": "Safety responsibilities with Minkah Fitzpatrick",
+      "channel": "NFL Film Session",
+      "start": 0
+    },
+    "nickel": {
+      "id": "HrRcd36HuCI",
+      "title": "Football positions explained",
+      "channel": "NFL",
+      "start": 0
+    },
+    "creeping-safety": {
+      "id": "eibqDMAkOrc",
+      "title": "Safety rotation and disguise",
+      "channel": "MatchQuarters · Cody Alexander",
+      "start": 65,
+      "end": 120,
+      "note": "Publisher chapter: five-man safety blitz from weak rotation."
+    },
+    "motion-adjustment": {
+      "id": "eeQ7R9qN310",
+      "title": "Minkah Fitzpatrick: adjusting to motion",
+      "channel": "NFL Film Session",
+      "start": 0
+    },
+    "coverage-roll": {
+      "id": "uNHJIwlkPMk",
+      "title": "Weak rotation Cover 3 and spinning safeties",
+      "channel": "MatchQuarters · Cody Alexander",
+      "start": 1500,
+      "end": 2180,
+      "note": "Publisher chapter: weak rotation Cover 3 and spinning safeties."
+    },
+    "one-gap": {
+      "id": "1Sd3VmAm3Xo",
+      "title": "One-gap vs. two-gap defensive fronts",
+      "channel": "Inside Carolina",
+      "start": 0
+    },
+    "two-gap": {
+      "id": "1Sd3VmAm3Xo",
+      "title": "One-gap vs. two-gap defensive fronts",
+      "channel": "Inside Carolina",
+      "start": 0
+    }
+  }
+}

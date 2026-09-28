@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.firebase/
+firebase-debug.log*
+*.tsbuildinfo
+.env*
+!.env.example
+output/
+.playwright-cli/
