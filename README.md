@@ -1,6 +1,6 @@
 # GridironDex
 
-See the play. Understand the game. An interactive football field guide built with React, TypeScript and Vite.
+See the play. Understand the game. A paper-and-ink football field guide built with React, TypeScript and Vite. Newsreader headings, warm field paper and solid blue/goldenrod routes frame the learning experience.
 
 **Live:** https://gridirondex.web.app
 
@@ -29,13 +29,13 @@ The deploy command builds `dist/` and deploys only the `gridirondex` Hosting sit
 ## What is included
 
 - 80 searchable lessons across 11 offensive and defensive topics, covering football formations, routes, and coverages.
-- SVG routes and blocking paths with curved breaks, moving players, a play clock, pause/replay, scrubbing and playback speed.
+- SVG routes and blocking paths with curved breaks, moving players, pause/replay, scrubbing and playback speed. Select a player or route to redraw its assignment; hover or keyboard focus highlights it while dimming unrelated elements.
 - Cover 0, 1, 2, 3, 4 and 6 alignment and territory comparisons; 11 players per side.
 - Pan, zoom, fullscreen, optional labels, and keyboard-accessible player assignments.
 - Film dialogs using privacy-enhanced YouTube embeds, with direct-watch fallbacks, published chapter segments for routes and Cover 1–4, and companion official NFL route film.
 - Coaching explanations, defender reads, tactical responses and linked sources for every lesson.
 - Local saved plays and display preferences, shareable concept/coverage URLs, a field guide and film index.
-- Responsive desktop/mobile layout, trapped dialog focus, Escape dismissal, visible keyboard focus and reduced-motion support.
+- A focused editorial layout with a searchable library drawer, floating playback controls and paper film dialogs. Responsive desktop/mobile layout, trapped dialog focus, Escape dismissal, visible keyboard focus and reduced-motion support.
 
 ## Content conventions
 
