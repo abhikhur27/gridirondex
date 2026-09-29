@@ -8,6 +8,8 @@ The redesign preserves the 80 lessons and replaces the visual system with Newsre
 
 The updated browser check passed with zero application runtime errors: correct assignment highlighting and dimming on hover, eased selection tracing, repeated keyboard route replay, full-play animation and pause/reset, coverage comparison, pan/zoom/fullscreen, bookmark persistence, searchable browsing, source expansion, coverage/route film chapters, official companion film, mobile destinations and reduced motion. Controls remain within the viewport at 320, 375, 414, 768 and 1280 pixels. All four required mobile/tablet screenshots, desktop, drawer and film views were visually reviewed. Source metadata and timestamps are unchanged.
 
+Hosting now serves the root page and HTML with `Cache-Control: no-cache` so visits revalidate the page after deployments. Hashed assets retain immutable caching. An existing session with the prior one-hour HTML cache needs its first reload to pick up this policy.
+
 
 ## Original content and deployment checks
 
