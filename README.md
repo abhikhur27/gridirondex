@@ -1,64 +1,40 @@
 # GridironDex
 
-See the play. Understand the game. A paper-and-ink football field guide built with React, TypeScript and Vite. Newsreader headings, warm field paper and solid blue/goldenrod routes frame the learning experience.
+A minimal football toy: choose offense or defense, trace a pattern, and watch it on film.
 
-**Live:** https://gridirondex.web.app
+[Live app](https://gridirondex.web.app) · [Repository](https://github.com/abhikhur27/gridirondex)
 
-**Repository:** https://github.com/abhikhur27/gridirondex
+## Develop
 
-## Run locally
-
-Node.js 24 or newer is used for the content validation script.
+Node.js 24+.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-## Build and deploy
+## Validate and deploy
 
 ```sh
 npm run check
 npm run build
-npm run preview
-npm run deploy
+firebase deploy --only hosting
 ```
 
-The deploy command builds `dist/` and deploys only the `gridirondex` Hosting site in the authenticated Firebase project `brickbrickholdingsllc`. Install the Firebase CLI with `npm install -g firebase-tools` and authenticate with `firebase login` if deploying from another machine. Firebase configuration targets this dedicated site explicitly.
+`npm run deploy` also builds and deploys. Hosting targets the dedicated `gridirondex` site in `brickbrickholdingsllc`. HTML revalidates on visits; fingerprinted assets use immutable caching.
 
-## What is included
+## Interface
 
-- 80 searchable lessons across 11 offensive and defensive topics, covering football formations, routes, and coverages.
-- SVG routes and blocking paths with curved breaks, moving players, pause/replay, scrubbing and playback speed. Select a player or route to redraw its assignment; hover or keyboard focus highlights it while dimming unrelated elements.
-- Cover 0, 1, 2, 3, 4 and 6 alignment and territory comparisons; 11 players per side.
-- Pan, zoom, fullscreen, optional labels, and keyboard-accessible player assignments.
-- Film dialogs using privacy-enhanced YouTube embeds, with direct-watch fallbacks, published chapter segments for routes and Cover 1–4, and companion official NFL route film.
-- Coaching explanations, defender reads, tactical responses and linked sources for every lesson.
-- Local saved plays and display preferences, shareable concept/coverage URLs, a field guide and film index.
-- A focused editorial layout with a searchable library drawer, floating playback controls and paper film dialogs. Responsive desktop/mobile layout, trapped dialog focus, Escape dismissal, visible keyboard focus and reduced-motion support.
+- Two borderless home blocks with eleven O/X alignment markers each.
+- 80 visual concepts across 11 offensive and defensive categories.
+- Muted vector routes that turn blue/red and draw on hover, keyboard focus or selection.
+- Compact film popups containing only a YouTube embed and a one- or two-sentence coaching takeaway.
+- Syne block typography, off-white paper texture, tactile states, mobile layouts, keyboard navigation and reduced-motion support.
 
-## Content conventions
+The previous dashboard, long explanation panels, library drawer, bookmarks, full-play clock and field controls were removed from the interface as part of the complete rebuild. Coaching sources and researched metadata remain in `src/data` and `docs/film-sources.json`.
 
-These diagrams are teaching examples, not an NFL team's playbook or a physics simulation. Defensive paths demonstrate spot-drop or man responsibilities; the selectable shell does not model every match rule. Personnel describes player types, not formation. Route numbering and position letters vary among coaching systems. The play clock is illustrative, not measured game-film timing.
+## Content
 
-Video identities, availability and embed permission were checked against the publishers' public player metadata on September 28, 2026. Published chapters supply exact starts/ends where available; a dedicated concept breakdown without chapters starts from its introduction at 0:00. Related overview films are identified in their captions. Publishers can later restrict or remove embeds; the same segment is always linked on YouTube. Source pages may challenge automated requests.
+Diagrams are teaching examples. Coverage and personnel rules vary by team. Video identities and embed permission were checked on September 28, 2026; publishers can change availability. Published chapters provide exact segments where available. Dedicated unchaptered breakdowns start at their introduction; related overview sources remain identified in the dataset.
 
-No backend, accounts, API keys or billing services are required. Bookmarks are stored in this browser's local storage and are not synchronized between devices.
-
-## Project structure
-
-```text
-src/App.tsx                 Application navigation and lesson views
-src/components/Field.tsx    SVG field and animation
-src/components/FilmModal.tsx Accessible film dialog
-src/data/concepts.ts        Lessons and taxonomy
-src/data/diagrams.ts        Route geometry, players and zones
-src/data/sources.ts         Sources and verified film segments
-src/hooks.ts               Playback and local preferences
-src/tokens.css              Shared design tokens
-scripts/check-content.ts   Content and diagram integrity checks
-docs/                      Design and validation records
-firebase.json              Production Hosting configuration
-```
-
-
+The app uses React, TypeScript, Vite, Tailwind, Lucide and Framer Motion. No backend or API keys are required. All commits go directly to `main`.

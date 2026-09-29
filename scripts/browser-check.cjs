@@ -1,137 +1,90 @@
-async page => {
-  const errors=[]
-  page.on('pageerror',error=>errors.push(error.message))
-  const check=(condition,message)=>{if(!condition)throw new Error(message)}
-  const closeDialog=async name=>{await page.getByRole('button',{name,exact:true}).click();await page.getByRole('dialog').waitFor({state:'hidden'})}
-  let phase='Assignment hover and selection'
-  try {
-  await page.setViewportSize({width:1440,height:1000})
-  await page.emulateMedia({reducedMotion:'no-preference'})
-  await page.goto('http://127.0.0.1:5173/#play=mesh&coverage=Cover%201')
-  await page.getByRole('button',{name:'Run play',exact:true}).waitFor()
-  await page.evaluate(()=>document.fonts.ready)
-  check(await page.evaluate(()=>getComputedStyle(document.body).backgroundColor)==='rgb(249, 248, 246)','Paper canvas')
-  check(await page.locator('.sidebar').count()===0,'No persistent sidebar')
-  check(await page.locator('.player-halo').count()===0,'No glowing markers')
-  await page.getByRole('checkbox',{name:'Labels',exact:true}).check()
-  await page.getByRole('checkbox',{name:'Defense',exact:true}).check()
-  check(await page.locator('.player').count()===22,'All 22 players')
-  const slot=page.getByRole('button',{name:'H: Slot · inside receiver',exact:true})
-  await slot.hover()
-  await page.waitForFunction(()=>Number(document.querySelector('.player[aria-label^="X:"]').style.opacity)<.3)
-  check(await page.locator('.assignment-tooltip').isVisible(),'Hover shows assignment')
-  check(await page.locator('.assignment-route.focused').getAttribute('data-player')==='H','Hover focuses the correct route')
-  await slot.click()
-  await page.waitForFunction(()=>Number(document.querySelector('.route-selection')?.getAttribute('stroke-dasharray')?.split(' ')[0])>.99)
-  check(await page.locator('.route-selection').count()===1,'Selection traces one assignment')
-  await page.getByRole('button',{name:'Close assignment',exact:true}).click()
-  phase='Keyboard assignment replay'
-  const route=page.getByRole('button',{name:'Y route: SHALLOW CROSS',exact:true})
-  await route.focus()
-  await page.keyboard.press('Enter')
-  check(await route.getAttribute('aria-pressed')==='true','Keyboard selects a route')
-  const selectedPath=page.locator('.route-selection')
-  await page.waitForFunction(()=>Number(document.querySelector('.route-selection').getAttribute('stroke-dasharray').split(' ')[0])>.99)
-  await page.keyboard.press('Enter')
-  await page.waitForFunction(()=>Number(document.querySelector('.route-selection').getAttribute('stroke-dasharray').split(' ')[0])<.9)
-  check(await selectedPath.count()===1,'Repeat selection redraws the line')
-  await page.getByRole('button',{name:'Close assignment',exact:true}).click()
-  phase='Playback'
-  await page.getByRole('button',{name:'Run play',exact:true}).click()
-  await page.waitForFunction(()=>Number(document.querySelector('input[aria-label="Play timeline"]').value)>.08)
-  await page.getByRole('button',{name:'Pause play',exact:true}).click()
-  const paused=await page.getByRole('slider',{name:'Play timeline'}).inputValue()
-  await page.waitForTimeout(150)
-  check(paused===await page.getByRole('slider',{name:'Play timeline'}).inputValue(),'Pause holds')
-  await page.getByRole('button',{name:'Reset play',exact:true}).click()
-  check(await page.getByRole('slider',{name:'Play timeline'}).inputValue()==='0','Playback resets')
-  await page.getByRole('combobox',{name:'Defensive coverage'}).selectOption('Cover 3')
-  phase='Coverage and field controls'
-  check(await page.locator('.coverage-zone').count()===7,'Cover 3 comparison')
-  await page.getByRole('checkbox',{name:'Defense',exact:true}).uncheck()
-  check(await page.locator('.player.defensive').count()===0,'Hide defense')
-  await page.getByRole('checkbox',{name:'Defense',exact:true}).check()
-  await page.getByRole('button',{name:'Zoom in',exact:true}).click()
-  check((await page.locator('.zoom-controls').textContent()).includes('110%'),'Zoom')
-  await page.getByRole('button',{name:'Reset field view',exact:true}).click()
-  const field=page.locator('.football-field')
-  await field.scrollIntoViewIfNeeded()
-  const box=await field.boundingBox()
-  const original=await page.locator('.field-drawing').getAttribute('transform')
-  await page.mouse.move(box.x+5,box.y+5);await page.mouse.down();await page.mouse.move(box.x+45,box.y+40,{steps:5});await page.mouse.up()
-  await page.waitForFunction(before=>document.querySelector('.field-drawing').getAttribute('transform')!==before,original,{timeout:5000})
-  check(await page.locator('.field-drawing').getAttribute('transform')!==original,'Pan')
-  await page.getByRole('button',{name:'Reset field view',exact:true}).click()
-  await page.getByRole('button',{name:'Full screen field',exact:true}).click()
-  await page.waitForFunction(()=>!!document.fullscreenElement)
-  await page.evaluate(()=>document.exitFullscreen())
-  const save=page.getByRole('button',{name:'Save to my playbook',exact:true})
-  phase='Bookmarks and library'
-  if(await save.count())await save.click()
-  await page.reload()
-  check(await page.getByRole('button',{name:'Remove from my playbook',exact:true}).count()===1,'Saved lesson persists')
-  await page.getByRole('button',{name:/My playbook/}).click()
-  check(await page.getByRole('heading',{name:'Your playbook.'}).count()===1,'Saved view')
-  await page.getByRole('button',{name:'Field guide',exact:true}).click()
-  await page.getByRole('textbox',{name:'Search concepts'}).fill('four verticals')
-  check(await page.locator('.library-card').count()===1,'Library search')
-  await page.locator('.library-card-main').click()
-  await page.getByRole('button',{name:'Coaching sources 2',exact:true}).click()
-  check(await page.locator('.source-list a').count()===2,'Sources')
-  await page.getByRole('button',{name:'On film',exact:true}).click()
-  check((await page.locator('iframe').getAttribute('src')).includes('3emDC2CKOZE'),'Matching film')
-  await closeDialog('Close film')
-  await page.getByRole('button',{name:'Browse plays',exact:true}).click()
-  phase='Drawer and film chapters'
-  await page.getByRole('textbox',{name:'Search concepts'}).fill('cover 2')
-  await page.getByRole('button',{name:/^Defense/}).click()
-  await page.getByRole('textbox',{name:'Search concepts'}).fill('cover 2')
-  await page.getByRole('button',{name:'Cover 2',exact:true}).click()
-  await page.getByRole('dialog').waitFor({state:'hidden'})
-  check((await page.locator('h1').textContent()).includes('Cover 2'),'Drawer chooses defense')
-  await page.getByRole('button',{name:'On film',exact:true}).click()
-  check((await page.locator('iframe').getAttribute('src')).includes('start=431'),'Coverage film chapter')
-  await closeDialog('Close film')
-  await page.keyboard.press('/')
-  check(await page.getByRole('dialog').isVisible(),'Slash opens library')
-  await page.getByRole('button',{name:/^Offense/}).click()
-  await page.getByRole('textbox',{name:'Search concepts'}).fill('slant')
-  await page.getByRole('button',{name:'2 · Slant',exact:true}).click()
-  await page.getByRole('dialog').waitFor({state:'hidden'})
-  await page.getByRole('button',{name:'On film',exact:true}).click()
-  check((await page.locator('iframe').getAttribute('src')).includes('start=131'),'Route film chapter')
-  await page.getByRole('button',{name:'Official NFL overview',exact:true}).click()
-  check((await page.locator('iframe').getAttribute('src')).includes('jxGnX8B8j3g'),'Companion film')
-  await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden'})
-  await page.getByRole('button',{name:'GridironDex home',exact:true}).click()
-  for(const width of [320,375,414,768,1280]){
-    phase=`Responsive ${width}px`
-    await page.setViewportSize({width,height:900})
-    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))
-    check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`No horizontal overflow at ${width}px`)
-    const overflowing=await page.locator('main button, main input, main select').evaluateAll(elements=>elements.filter(el=>{const b=el.getBoundingClientRect();return b.width>0&&(b.left<0||b.right>innerWidth)}).map(el=>el.getAttribute('aria-label')??el.textContent))
-    check(overflowing.length===0,`Controls stay visible at ${width}px: ${overflowing.join(', ')}`)
-    await page.screenshot({path:`output/playwright/paper-${width}.png`,fullPage:true,animations:'disabled'})
-  }
-  await page.setViewportSize({width:375,height:812})
-  phase='Mobile destinations and reduced motion'
-  await page.getByRole('button',{name:'Open concept library',exact:true}).click()
-  await page.getByRole('dialog').waitFor()
-  await page.screenshot({path:'output/playwright/paper-drawer.png',fullPage:true,animations:'disabled'})
-  await page.locator('.drawer-destinations').getByRole('button',{name:/My playbook/}).click()
-  await page.getByRole('dialog').waitFor({state:'hidden'})
-  check(await page.getByRole('heading',{name:'Your playbook.'}).count()===1,'Mobile saved destination')
-  await page.emulateMedia({reducedMotion:'reduce'})
-  await page.getByRole('button',{name:'GridironDex home',exact:true}).click()
-  await page.getByRole('button',{name:'X: Split end · outside receiver',exact:true}).click()
-  await page.waitForFunction(()=>Number(document.querySelector('.route-selection').getAttribute('stroke-dasharray').split(' ')[0])>.99)
-  await page.getByRole('button',{name:'Close assignment',exact:true}).click()
-  await page.getByRole('button',{name:'On film',exact:true}).click()
-  await page.screenshot({path:'output/playwright/paper-film.png',fullPage:true,animations:'disabled'})
-  await closeDialog('Close film')
-  await page.setViewportSize({width:1440,height:1000})
-  await page.screenshot({path:'output/playwright/paper-final-desktop.png',fullPage:true,animations:'disabled'})
-  check(errors.length===0,'Runtime errors: '+errors.join('; '))
-  return {passed:true,checks:'Paper styling, assignment hover/dimming/redraw, keyboard route replay, playback, coverage, pan/zoom/fullscreen, bookmarks, search/drawer, sourced film chapters, mobile destinations, five viewport sizes and reduced motion',runtimeErrors:errors}
-  } catch(error) { throw new Error(`${phase}: ${error.message}`) }
+async page=>{
+ const errors=[];page.on('pageerror',error=>errors.push(error.message));
+ const check=(condition,message)=>{if(!condition)throw new Error(message)};
+ let phase='Home';
+ try {
+ await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'no-preference'});
+ await page.goto('http://127.0.0.1:5173/');await page.evaluate(()=>document.fonts.ready);
+ check(await page.locator('main button').count()===2,'Home has exactly two choices');
+ check(await page.locator('.home-block.offense circle').count()===11,'Offense has eleven O nodes');
+ check(await page.locator('.home-block.defense .alignment path').count()===11,'Defense has eleven X nodes');
+ check(await page.locator('.sidebar,.library-drawer,.coaching-panel').count()===0,'No previous dashboard');
+ await page.getByRole('button',{name:'GridironDex home'}).hover();
+ await page.waitForFunction(()=>getComputedStyle(document.querySelector('.wordmark')).color==='rgb(0, 112, 243)');
+ await page.getByRole('button',{name:'Offense',exact:true}).hover();
+ await page.waitForFunction(()=>getComputedStyle(document.querySelector('.home-block.offense')).backgroundColor==='rgb(230, 228, 223)');
+ await page.screenshot({path:'output/playwright/toy-home-hover.png',animations:'disabled'});
+ await page.getByRole('button',{name:'Offense',exact:true}).click();
+ await page.getByRole('button',{name:'Open routes',exact:true}).waitFor();
+ check(await page.locator('.toy-tile').count()===7,'Offense has seven categories');
+ await page.getByRole('button',{name:'Open routes',exact:true}).click();
+ phase='Routes';await page.getByRole('button',{name:'Select 2 · Slant',exact:true}).waitFor();
+ check(await page.locator('.toy-tile').count()===13,'All thirteen routes shown');
+ await page.screenshot({path:'output/playwright/toy-routes.png',fullPage:true,animations:'disabled'});
+ const slant=page.getByRole('button',{name:'Select 2 · Slant',exact:true});await slant.hover();
+ await page.waitForFunction(()=>Number(document.querySelectorAll('.route-glyph')[1].querySelector('.path-ink')?.getAttribute('stroke-dasharray')?.split(' ')[0])>.99);
+ await slant.click();check(await slant.getAttribute('aria-pressed')==='true','Click selects route');
+ await page.waitForFunction(()=>Number(document.querySelectorAll('.route-glyph')[1].querySelector('.path-ink')?.getAttribute('stroke-dasharray')?.split(' ')[0])>.99);
+ await slant.focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(()=>Number(document.querySelectorAll('.route-glyph')[1].querySelector('.path-ink')?.getAttribute('stroke-dasharray')?.split(' ')[0])<.9);
+ await page.getByRole('button',{name:'Watch 2 · Slant',exact:true}).click();
+ phase='Film';await page.getByRole('dialog').waitFor();
+ check((await page.locator('iframe').getAttribute('src')).includes('start=131'),'Exact route chapter');
+ check(await page.locator('.film-card > *').count()===2,'Film card contains only video and takeaway');
+ check(await page.locator('.film-card p').count()===1,'One short coaching takeaway');
+ check((await page.locator('.takeaway').textContent()).length<250,'Takeaway is concise');
+ check(await page.locator('main').getAttribute('inert')!==null,'Background cannot receive focus');
+ await page.screenshot({path:'output/playwright/toy-film.png',animations:'disabled'});
+ await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden'});
+ check(await page.getByRole('button',{name:'Watch 2 · Slant',exact:true}).evaluate(el=>el===document.activeElement),'Film returns focus');
+ await page.getByRole('button',{name:'BACK',exact:true}).click();await page.getByRole('button',{name:'Open concepts',exact:true}).click();
+ await page.getByRole('button',{name:'Watch Mesh',exact:true}).click();await page.getByRole('dialog').waitFor();
+ check((await page.locator('iframe').getAttribute('src')).includes('NJJKbs-eOKw'),'Mesh film');
+ check((await page.locator('.takeaway').textContent()).includes('traffic'),'Direct Mesh takeaway');
+ await page.getByRole('button',{name:'Close film',exact:true}).click();await page.getByRole('dialog').waitFor({state:'hidden'});
+ await page.getByRole('button',{name:'GridironDex home'}).click();
+ await page.getByRole('button',{name:'Defense',exact:true}).click();await page.getByRole('button',{name:'Open coverages',exact:true}).waitFor();
+ check(await page.locator('.toy-tile').count()===4,'Defense has four categories');
+ await page.getByRole('button',{name:'Open coverages',exact:true}).click();await page.getByRole('button',{name:'Watch Cover 3',exact:true}).waitFor();
+ check(await page.locator('.toy-tile').count()===6,'All six coverages');
+ const defenderStarts=await page.locator('.toy-tile').evaluateAll(tiles=>tiles.every(tile=>{
+  const paths=[...tile.querySelectorAll('.path-guide')];
+  const nodes=[...tile.querySelectorAll('.node-x')];
+  return paths.length===11 && paths.every((path,index)=>{
+   const start=path.getAttribute('d').match(/^M ([\d.]+) ([\d.]+)/);
+   const node=nodes[index].getAttribute('d').match(/^M ([\d.]+) ([\d.]+)/);
+   return start && node && Number(start[1])===Number(node[1])+13 && Number(start[2])===Number(node[2])+13;
+  });
+ }));
+ check(defenderStarts,'Coverage assignments originate at the eleven X nodes');
+ await page.getByRole('button',{name:'Watch Cover 3',exact:true}).hover();
+ await page.screenshot({path:'output/playwright/toy-coverages.png',fullPage:true,animations:'disabled'});
+ await page.getByRole('button',{name:'Watch Cover 3',exact:true}).click();await page.getByRole('dialog').waitFor();
+ check((await page.locator('iframe').getAttribute('src')).includes('start=926'),'Exact coverage chapter');
+ await page.getByRole('button',{name:'Close film',exact:true}).click();await page.getByRole('dialog').waitFor({state:'hidden'});
+ await page.reload();check(await page.getByRole('heading',{name:'COVERAGES',exact:true}).count()===1,'URL restores section');
+ phase='Responsive';
+ for(const width of [320,375,414,768]){
+  await page.setViewportSize({width,height:900});await page.getByRole('button',{name:'GridironDex home'}).click();await page.getByRole('button',{name:'Offense',exact:true}).waitFor();
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`No horizontal scroll at ${width}`);
+  const spills=await page.locator('.home-block-label').evaluateAll(labels=>labels.filter(label=>label.scrollWidth>label.clientWidth+1).length);
+  check(spills===0,`Home label fits at ${width}`);
+  await page.screenshot({path:`output/playwright/toy-home-${width}.png`,fullPage:true,animations:'disabled'});
+  await page.getByRole('button',{name:'Offense',exact:true}).click();await page.getByRole('button',{name:'Open routes',exact:true}).click();await page.getByRole('button',{name:'Select 2 · Slant',exact:true}).waitFor();
+  await page.screenshot({path:`output/playwright/toy-routes-${width}.png`,fullPage:true,animations:'disabled'});
+  await page.getByRole('button',{name:'Select 2 · Slant',exact:true}).click();
+  check(await page.getByRole('button',{name:'Select 2 · Slant',exact:true}).getAttribute('aria-pressed')==='true',`Touch-style selection at ${width}`);
+ }
+ phase='Reduced motion';await page.emulateMedia({reducedMotion:'reduce'});
+ await page.getByRole('button',{name:'Select 1 · Flat',exact:true}).click();
+ await page.waitForFunction(()=>Number(document.querySelector('.path-ink').getAttribute('stroke-dasharray').split(' ')[0])>.99);
+ await page.getByRole('button',{name:'Watch 1 · Flat',exact:true}).click();await page.getByRole('dialog').waitFor();
+ await page.screenshot({path:'output/playwright/toy-film-mobile.png',animations:'disabled'});
+ await page.getByRole('button',{name:'Close film',exact:true}).click();await page.getByRole('dialog').waitFor({state:'hidden'});
+ await page.getByRole('button',{name:'GridironDex home'}).click();await page.setViewportSize({width:1440,height:1000});
+ await page.mouse.move(1,1);await page.screenshot({path:'output/playwright/toy-final-home.png',animations:'disabled'});
+ check(errors.length===0,'No runtime errors: '+errors.join('; '));
+ return {passed:true,checks:'Two-choice home, ink hover, 13 routes, selection/redraw, concise film cards, chapters, keyboard dismissal/focus, all coverages, URL restoration, four responsive widths, reduced motion',runtimeErrors:errors};
+ }catch(error){throw new Error(`${phase}: ${error.message}`)}
 }

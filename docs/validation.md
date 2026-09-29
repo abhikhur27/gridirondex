@@ -1,6 +1,17 @@
 # Validation record
 
-Checked on September 28, 2026.
+Current interface checked on September 29, 2026. Earlier records below describe superseded interfaces.
+
+## Complete toy-block rebuild
+
+Home now contains only OFFENSE and DEFENSE, each with eleven X/O markers. Syne block typography, native paper grain and borderless muted tiles replace the editorial layout. The library drawer, long notes, bookmarks and full-play controls were removed. The 80 concepts and researched film records remain available across eleven categories.
+
+The browser check verifies two-choice navigation, seven offense categories, four defense categories, all thirteen route glyphs, logo and container ink states, selected route replay on click/Enter, concise film-card contents, Mesh coaching text, route and coverage chapter timestamps, Escape dismissal and focus restoration, inert modal background, section URL restoration, reduced motion and touch-style selection. Coverage vectors originate at their corresponding eleven defensive X nodes. No application runtime errors occurred.
+
+Screenshots of the home and route grid at 320, 375, 414 and 768 pixels were inspected, along with desktop hover, coverage and film views. Home labels fit every tested width and the page has no horizontal scroll. A loaded Mesh embed was visually confirmed; the early screenshot captured before the iframe loaded is not the playback evidence.
+
+`npm run check` validates the retained 80-concept dataset and TypeScript. `npm run build` compiles the production bundle. Existing Hosting HTML revalidation and immutable fingerprinted assets remain in place.
+
 
 ## Paper & ink redesign
 

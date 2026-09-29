@@ -1,3 +1,5 @@
-/* Focused ink redraws retain a faint guide beneath the moving stroke. */
-.assignment-route.focused.selected .route-ghost{opacity:.16;animation:none}
-.field-frame.in-motion .assignment-route.focused .route-ghost{opacity:.16}
+/* Syne's wide 800 cut needs explicit room inside the toy blocks. */
+.home-block-label{font-size:clamp(32px,3.6vw,50px);gap:12px}
+@media(min-width:601px) and (max-width:1000px){.home-block{padding:24px}.home-block-label{font-size:clamp(20px,3.1vw,34px);gap:10px}}
+@media(max-width:600px){.home-block-label{font-size:30px}.blocks-page h1{font-size:36px}.blocks-page h1.long-title{font-size:29px}}
+@media(max-width:360px){.home-block-label{font-size:26px;gap:10px}.home-block-label>svg{width:21px}.blocks-page h1{font-size:32px}.blocks-page h1.long-title{font-size:25px}}
