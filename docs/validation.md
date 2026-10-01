@@ -2,7 +2,18 @@
 
 Current interface checked on October 1, 2026. Earlier records below describe superseded interfaces.
 
-## Contextual play overhaul
+## Precision and navigation update
+
+The current release passes TypeScript, content, blueprint, contextual-play, game, film and position checks. All 105 lesson mappings are audited: 99 bounded films have publisher chapter or short-topic evidence, and six unverified mappings have no fallback embed. The audit checks actual generated embed/source URLs, start/end bounds, duration, availability metadata, coverage and exclusions. Evidence limits and excluded topics are detailed in `precision-update.md`.
+
+All 2,310 scene actors resolve to 40 position profiles. Browser checks cover every profile, direct position URLs, current and post-snap node clicks, thumbnail keyboard navigation, correct TE/OLB/line/special-team mappings, returning to an originating lesson, and preserving a drafted route through position navigation and browser Back. No player buttons are nested inside tile buttons.
+
+The full contextual browser suite passed all 105 lessons at all five playback stages, reversible scrubbing, both teams moving, contact/caption synchronization, hover playback, reduced motion and 320/375/414/768/1440-pixel layouts. The precision suite measured approximately half a simulated second during one second of default playback, checked previous/next event stepping, exact 12-personnel embed and attribution timestamps, withheld-film behavior, and dashed pre-snap versus solid post-snap paths. The retained navigation suite also passed focus trapping, source/backlink navigation, film chapters and game entry.
+
+The game suite passed pause/resume during execution, mouse and native touch drawing, undo, keyboard presets, package changes, successful level advancement, three failures/restart and review scrubbing. All browser suites completed without application runtime errors. Screenshots of the position deep dive and mobile playback controls were reviewed. Production build passed; Vite retains its non-blocking large-main-chunk warning (610 kB minified, 194 kB gzip).
+
+
+## Contextual play overhaul — previous release
 
 All 105 lessons now have distinct authored 11-on-11 sequences rendered by `PlayCanvas`. Validation requires both complete units, unique player IDs and scene geometry, movement by both sides, valid timed contacts/reads/highlights, a ball outcome and at least four different phase captions. Forty-three samples per lesson check finite field positions and contact spacing; repeated samples prove backward scrubbing is deterministic. Normal assignments hold until SNAP; explicitly authored pre-snap motion is exempt. Combination blockers have separate shoulder positions.
 

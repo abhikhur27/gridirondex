@@ -1,0 +1,82 @@
+import type { BlueprintNode } from './blueprints.ts'
+
+/** Labels override reusable actor IDs: H can be a slot, TE, FB or slot back. */
+export function positionForNode(node: Pick<BlueprintNode, 'id' | 'label' | 'team'>, scene?: string | { id: string }): string {
+  const sceneId = typeof scene === 'string' ? scene : scene?.id ?? ''
+  const id = node.id.toUpperCase(), label = node.label.trim().toUpperCase()
+  if (id === 'HOLD' || label === 'HOLDER') return 'holder'
+  if (id === 'K' || label === 'KICKER') return 'kicker'
+  if (id === 'P' || label === 'PUNTER') return 'punter'
+  if (id === 'RET' || label === 'RETURNER') return 'returner'
+  if (label === 'LS' || id === 'LS' || (id === 'C' && /^(fg-|punt-)/.test(sceneId))) return 'long-snapper'
+  if (sceneId.startsWith('fg-')) {
+    if (['LW', 'RW'].includes(id)) return 'field-goal-wing'
+    if (['LE', 'RE'].includes(id)) return 'tight-end'
+    if (/^E\d$/.test(id)) return 'edge'
+    if (/^T\d$/.test(id)) return 'defensive-tackle'
+    if (/^W\d$/.test(id)) return 'outside-linebacker'
+    if (/^S\d$/.test(id)) return 'defensive-back'
+  }
+  if (sceneId.startsWith('punt-')) {
+    if (/^J\d$/.test(id)) return 'punt-jammer'
+    if (/^G[LR12]$/.test(id)) return 'gunner'
+    if (['PP', 'WL', 'WR'].includes(id)) return 'punt-protector'
+    if (sceneId === 'punt-spread' && /^S[123]$/.test(id)) return 'punt-protector'
+    if (sceneId === 'punt-spread' && /^L[05]$/.test(id)) return 'gunner'
+    if (sceneId === 'punt-spread' && /^L[1-4]$/.test(id)) return 'punt-coverage'
+    if (sceneId === 'punt-return-wall') {
+      if (/^B\d$/.test(id)) return 'return-blocker'
+      if (/^C\d$/.test(id)) return 'punt-coverage'
+      if (/^S\d$/.test(id)) return 'punt-protector'
+    }
+    if (['VL', 'VR'].includes(id)) return 'return-blocker'
+    if (['BL', 'BR'].includes(id)) return 'linebacker'
+    if (['DL', 'DR'].includes(id)) return 'defensive-end'
+    if (['DTL', 'DTR', 'TL', 'TR'].includes(id)) return 'defensive-tackle'
+  }
+  if (node.team === 'defense') {
+    if (sceneId === 'edge' && id === 'ER') return 'edge'
+    if (['NT', '0', '1'].includes(label)) return 'nose'
+    if (['DT', 'T', '2', '3', '4'].includes(label)) return 'defensive-tackle'
+    if (['DE', 'E', '5', '6', '7'].includes(label)) return 'defensive-end'
+    if (label === '9' || label === 'EDGE') return 'edge'
+    if (label === 'OLB') return 'outside-linebacker'
+    if (label === 'LB') return 'linebacker'
+    if (label === 'DB') return 'defensive-back'
+    if (label === 'SAM' || (label === 'S' && id === 'N')) return 'sam'
+    if (label === 'S') return 'strong-safety'
+    if (['N', 'NICK', 'NB'].includes(id) || ['NB', 'NICKEL'].includes(label)) return 'nickel'
+    if (/^CB/.test(id) || label === 'CB') return 'cornerback'
+    if (id === 'FS' || label === 'FS') return 'free-safety'
+    if (id === 'SS' || label === 'SS') return 'strong-safety'
+    if (id === 'M' || label === 'MIKE') return 'mike'
+    if (id === 'W' || label === 'WILL') return 'will'
+    if (['EL', 'ER', 'DE'].includes(id)) return 'defensive-end'
+    if (['TL', 'TR', 'T', 'DT'].includes(id)) return 'defensive-tackle'
+    if (['D2', 'D3'].includes(id)) return 'defensive-tackle'
+    if (/^D\d/.test(id)) return 'defensive-end'
+    if (/^B\d/.test(id)) return 'linebacker'
+    if (id === 'MH') return 'nickel'
+    if (['MY', 'MRB'].includes(id)) return 'linebacker'
+    if (/^M[XZ]/.test(id)) return 'cornerback'
+    if (/^S\d/.test(id)) return 'free-safety'
+    if (/^U\d/.test(id) || id === 'R') return 'defensive-back'
+    return 'defensive-back'
+  }
+  const line: Record<string, string> = { LT: 'left-tackle', LG: 'left-guard', C: 'center', RG: 'right-guard', RT: 'right-tackle' }
+  if (line[id]) return line[id]
+  if (label === 'TE' || label === 'TIGHT END') return 'tight-end'
+  if (label === 'FB' || label === 'FULLBACK') return 'fullback'
+  if (label === 'HB' || label === 'RUNNING BACK') return 'running-back'
+  if (label === 'SB') return 'slot-back'
+  if (label === 'SLOT' || label === 'SLOT RECEIVER') return 'slot'
+  if (label === 'WR' || label === 'RECEIVER') return id === 'X' ? 'x-receiver' : id === 'Z' ? 'z-receiver' : id === 'H' ? 'slot' : 'wide-receiver'
+  if (id === 'QB') return 'quarterback'
+  if (id === 'RB') return 'running-back'
+  if (id === 'FB') return 'fullback'
+  if (id === 'Y' || id === 'TE') return 'tight-end'
+  if (id === 'X') return 'x-receiver'
+  if (id === 'Z') return 'z-receiver'
+  if (id === 'H') return ['inside-zone', 'duo'].includes(sceneId) ? 'h-back' : 'slot'
+  return 'wide-receiver'
+}

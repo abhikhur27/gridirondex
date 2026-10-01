@@ -20,7 +20,7 @@ async page => {
   const actorPositions = () => page.locator('.preview-field .blueprint-node:not(.blueprint-origin):not(.blueprint-endpoint)').evaluateAll(nodes => nodes.map(n => [n.getAttribute('data-player'), n.getAttribute('data-team'), n.getAttribute('transform')]));
   const stage = async name => {
     await page.getByRole('button', { name, exact: true }).click();
-    await page.locator(`.preview-field svg[data-play-phase="${name}"]`).waitFor();
+    await page.getByRole('button', { name, exact: true }).filter({ has: page.locator(':scope[aria-pressed="true"]') }).waitFor();
   };
   const scrub = async seconds => {
     await page.getByRole('slider', { name: 'Play progress', exact: true }).evaluate((el, value) => {
@@ -34,7 +34,7 @@ async page => {
     check(before.filter(n => n[1] === 'defense').length >= 7, `${lesson.id}: defensive context`);
     check(before.filter(n => n[1] !== 'defense').length >= 7, `${lesson.id}: offensive context`);
     const captions = new Set([await page.locator('.preview-caption p').innerText()]);
-    for (const name of ['SNAP', 'DEVELOPMENT', 'RESULT']) {
+    for (const name of ['MOTION / RELEASE', 'SNAP / CONTACT', 'BREAK / DROP', 'RESULT']) {
       await stage(name);
       captions.add(await page.locator('.preview-caption p').innerText());
     }
@@ -51,7 +51,7 @@ async page => {
       await scrub(.9);
       await page.locator('.preview-field [data-contact="Y:ER"]').waitFor();
       check(Number(await page.locator('.preview-field svg').getAttribute('data-play-seconds')) > .8, 'Precise slider scrub');
-    } else await stage('DEVELOPMENT');
+    } else await stage('BREAK / DROP');
     await page.screenshot({ path: `output/playwright/context-${id}-desktop.png`, animations: 'disabled' });
   }
   for (const width of [320, 375, 414, 768]) {
@@ -84,5 +84,5 @@ async page => {
   check(game.width > 250, 'Game SVG retains full mobile width');
   await page.screenshot({ path: 'output/playwright/context-game-mobile.png', fullPage: true, animations: 'disabled' });
   check(errors.length === 0, `No runtime errors: ${errors.join('; ')}`);
-  return { lessons: lessons.length, phases: 4, viewports: [320, 375, 414, 768, 1440], reducedMotion: true, gameSharedCanvas: true, errors };
+  return { lessons: lessons.length, phases: 5, viewports: [320, 375, 414, 768, 1440], reducedMotion: true, gameSharedCanvas: true, errors };
 }

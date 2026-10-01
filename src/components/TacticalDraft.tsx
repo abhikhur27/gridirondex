@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { PointerEvent as ReactPointerEvent } from 'react';
+import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react';
 import { useMotionPreference } from '../useMotionPreference';
 import { ArrowLeft, ArrowRight, RotateCcw, Undo2 } from 'lucide-react';
 import { advanceRun, arrowGeometry, clamp, defenseFor, distance, emptyRoutes, FIELD, LINEMEN, frameAt, lookForLevel, newRun, receiversFor, ROUTE_NAMES, routePreset, sanitizeRoute, simulate, smoothPath } from '../game/engine';
 import type { Personnel, Point, Protection, ReceiverId, RouteName, Routes, Simulation } from '../game/engine';
 import PlayCanvas from './PlayCanvas';
+import { DEFAULT_PLAYBACK_RATE, PLAYBACK_RATES } from '../data/playback';
+import { positionForNode } from '../data/positionNavigation';
 import '../game.css';
 
 type Phase = 'draw' | 'playing' | 'result';
@@ -27,7 +29,13 @@ function Cross({ point, faded = false }: { point: Point; faded?: boolean }) {
   return <path className={`draft-x${faded ? ' faded' : ''}`} d={`M ${point.x - 7} ${point.y - 7} L ${point.x + 7} ${point.y + 7} M ${point.x + 7} ${point.y - 7} L ${point.x - 7} ${point.y + 7}`} />;
 }
 
-export default function TacticalDraft({ onExit }: { onExit: () => void }) {
+function PositionNode({ id, label = id, team, point, onNavigate, children }: { id: string; label?: string; team: 'offense' | 'defense'; point: Point; onNavigate: (slug: string) => void; children: ReactNode }) {
+  const slug = positionForNode({ id, label, team });
+  const open = () => onNavigate(slug);
+  return <g className="draft-position" role="button" tabIndex={0} aria-label={`Open ${slug.replaceAll('-', ' ')} position`} data-position={slug} onClick={open} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); } }}><title>{slug.replaceAll('-', ' ')}</title><circle className="draft-position-hit" cx={point.x} cy={point.y} r="15" />{children}</g>;
+}
+
+export default function TacticalDraft({ onExit, onNavigatePosition }: { onExit: () => void; onNavigatePosition: (slug: string) => void }) {
   const [run, setRun] = useState(() => newRun());
   const [personnel, setPersonnel] = useState<Personnel>('11');
   const [routes, setRoutes] = useState<Routes>(() => emptyRoutes('11'));
@@ -36,6 +44,8 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
   const [phase, setPhase] = useState<Phase>('draw');
   const [result, setResult] = useState<Simulation | null>(null);
   const [time, setTime] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [rate, setRate] = useState<number>(DEFAULT_PLAYBACK_RATE);
   const [history, setHistory] = useState<Routes[]>([]);
   const [announcement, setAnnouncement] = useState('');
   const svg = useRef<SVGSVGElement>(null);
@@ -54,7 +64,7 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
   const runOver = lives <= 0;
 
   useEffect(() => {
-    if (phase !== 'playing' || !result) return;
+    if (phase !== 'playing' || !result || paused) return;
     if (reducedMotion) {
       setTime(result.catchTime + .25);
       setPhase('result');
@@ -62,16 +72,17 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
     }
     let request = 0;
     const started = performance.now();
+    const startTime = time;
     const end = result.catchTime + .5;
     function tick(now: number) {
-      const elapsed = Math.min(end, (now - started) / 1000);
+      const elapsed = Math.min(end, startTime + (now - started) / 1000 * rate);
       setTime(elapsed);
       if (elapsed >= end) setPhase('result');
       else request = requestAnimationFrame(tick);
     }
     request = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(request);
-  }, [phase, result, reducedMotion]);
+  }, [phase, result, reducedMotion, paused, rate]);
 
   useEffect(() => {
     if (phase === 'result') resultHeading.current?.focus({ preventScroll: true });
@@ -127,13 +138,17 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
       setHistory(previous => [...previous.slice(-19), drawing.original]);
       setAnnouncement(`Custom route drawn for ${drawing.id}.`);
     }
+    else {
+      const receiver = receivers.find(r => r.id === drawing.id)!;
+      onNavigatePosition(positionForNode({ id: receiver.id, label: receiver.role, team: 'offense' }));
+    }
     stroke.current = null;
   }
 
   function snap() {
     if (!drawnCount || phase !== 'draw') return;
     const simulation = simulate(look, personnel, routes, protection);
-    setResult(simulation); setTime(0); setPhase('playing');
+    setResult(simulation); setTime(0); setPaused(false); setPhase('playing');
     setAnnouncement('Snap. The quarterback will throw to the best available window.');
     svg.current?.scrollIntoView({ block: 'center', behavior: reducedMotion ? 'instant' : 'smooth' });
   }
@@ -170,19 +185,20 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
       {PACKAGES.map(pack => <button key={pack.id} aria-pressed={personnel === pack.id} disabled={phase !== 'draw'} onClick={() => selectPackage(pack.id)}><strong>{pack.label}</strong><span>{pack.detail}</span></button>)}
     </div>
     <div className="draft-field-wrap">
-      <div className="draft-field-tools"><p id="draft-drawing-help">{phase === 'draw' ? 'Drag from an O to draw. Or pick a player and route below.' : phase === 'playing' ? 'Find the window.' : result?.won ? 'Keep that play in your pocket.' : 'Watch where the window closes.'}</p><div><button title="Undo route" aria-label="Undo last route" disabled={phase !== 'draw' || !history.length} onClick={() => { setRoutes(history[history.length - 1]); setHistory(previous => previous.slice(0, -1)); }}><Undo2 size={17} /></button><button title="Clear routes" aria-label="Clear all routes" disabled={phase !== 'draw' || !drawnCount} onClick={() => remember(emptyRoutes(personnel))}><RotateCcw size={17} /></button></div></div>
+      <div className="draft-field-tools"><p id="draft-drawing-help">{phase === 'draw' ? 'Drag an O to draw. Tap any player for their position. Route buttons are below.' : phase === 'playing' ? "Find the window. Use pause or scrub to follow the play." : result?.won ? 'Keep that play in your pocket.' : 'Watch where the window closes.'}</p><div><button title="Undo route" aria-label="Undo last route" disabled={phase !== 'draw' || !history.length} onClick={() => { setRoutes(history[history.length - 1]); setHistory(previous => previous.slice(0, -1)); }}><Undo2 size={17} /></button><button title="Clear routes" aria-label="Clear all routes" disabled={phase !== 'draw' || !drawnCount} onClick={() => remember(emptyRoutes(personnel))}><RotateCcw size={17} /></button></div></div>
       <PlayCanvas svgRef={svg} offensiveNodes={offensiveNodes} defensiveNodes={defensiveNodes} renderPlayers={false} grid={false} className={`draft-field ${phase}`} viewBox="0 0 720 510" role="group" aria-label="Draw offensive routes against the defense" aria-describedby="draft-drawing-help" onPointerMove={continueStroke} onPointerUp={event => finishStroke(event)} onPointerCancel={event => finishStroke(event, true)}>
         <g className="draft-grid" aria-hidden="true">{[65, 125, 185, 245, 305, 365].map((y, index) => <g key={y}><path d={`M 24 ${y} H 696`} /><text x="33" y={y - 9}>{(5 - index) * 5}</text><path d={`M 246 ${y - 5} v 10 M 474 ${y - 5} v 10`} /></g>)}</g>
         <text className="draft-los-label" x="675" y="385" textAnchor="end" aria-hidden="true">LOS</text>
         {phase === 'draw' && <g aria-hidden="true">{defenders.map(d => d.assignment !== 'man' && <g key={d.id}><InkRoute points={[d.start, d.drop]} defense /><Cross point={d.drop} faded /></g>)}</g>}
         <g aria-hidden="true">{receivers.map(r => <InkRoute key={r.id} points={routes[r.id]} selected={selected === r.id && phase === 'draw'} />)}</g>
         {targetPoint && time > .45 && <g className="draft-window" aria-hidden="true"><ellipse cx={targetPoint.x} cy={targetPoint.y} rx="38" ry="24" />{conflict && <path d={`M ${FIELD.qb.x} ${FIELD.qb.y} L ${currentFrame!.defenders[conflict.id].x} ${currentFrame!.defenders[conflict.id].y}`} />}</g>}
-        <g className="draft-line" aria-label="Five offensive linemen">{LINEMEN.map(n => { const p=currentFrame?.linemen[n.id] ?? n.start; return <rect key={n.id} x={p.x - 8} y={p.y - 8} width="16" height="16" rx="3" />; })}<circle cx={FIELD.qb.x} cy={FIELD.qb.y} r="12" /><text x={FIELD.qb.x} y={FIELD.qb.y + 31} textAnchor="middle">QB</text></g>
+        <g className="draft-line" aria-label="Five offensive linemen">{LINEMEN.map(n => { const p=currentFrame?.linemen[n.id] ?? n.start; return <PositionNode key={n.id} id={n.id} team="offense" point={p} onNavigate={onNavigatePosition}><rect x={p.x - 8} y={p.y - 8} width="16" height="16" rx="3" /></PositionNode>; })}<PositionNode id="QB" team="offense" point={FIELD.qb} onNavigate={onNavigatePosition}><circle cx={FIELD.qb.x} cy={FIELD.qb.y} r="12" /><text x={FIELD.qb.x} y={FIELD.qb.y + 31} textAnchor="middle">QB</text></PositionNode></g>
         <g className="draft-engagements" aria-label="Active protection contacts">{currentFrame?.engagements.map(e => <path key={e.rusher} data-blocker={e.blocker} data-rusher={e.rusher} d={`M ${e.point.x-10} ${e.point.y} H ${e.point.x+10}`} />)}</g>
-        <g aria-label="Eleven defenders">{defenders.map(d => <Cross key={d.id} point={currentFrame?.defenders[d.id] ?? d.start} />)}</g>
+        <g aria-label="Eleven defenders">{defenders.map(d => { const point = currentFrame?.defenders[d.id] ?? d.start; return <PositionNode key={d.id} id={d.id} team="defense" point={point} onNavigate={onNavigatePosition}><Cross point={point} /></PositionNode>; })}</g>
         {receivers.map(receiver => {
           const p = currentFrame?.receivers[receiver.id] ?? receiver.start;
-          return <g key={receiver.id} className={`draft-receiver${selected === receiver.id ? ' selected' : ''}`} role="button" tabIndex={phase === 'draw' ? 0 : -1} aria-label={`Draw route for ${receiver.id}, ${receiver.role}`} aria-pressed={selected === receiver.id} aria-disabled={phase !== 'draw'} onPointerDown={event => beginStroke(event, receiver.id)} onKeyDown={event => { if (phase === 'draw' && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); setSelected(receiver.id); } }}>
+          const slug = positionForNode({ id: receiver.id, label: receiver.role, team: 'offense' });
+          return <g key={receiver.id} className={`draft-receiver${selected === receiver.id ? ' selected' : ''}`} role="button" tabIndex={0} aria-label={`${receiver.id}: open ${receiver.role} position or drag to draw a route`} data-position={slug} onPointerDown={event => beginStroke(event, receiver.id)} onClick={() => { if (phase !== 'draw') onNavigatePosition(slug); }} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onNavigatePosition(slug); } }}>
             <circle className="draft-hit-area" cx={p.x} cy={p.y} r="24" />
             <circle className="draft-o" cx={p.x} cy={p.y} r="12" />
             <text x={p.x} y={p.y + 32} textAnchor="middle">{receiver.id}</text>
@@ -193,7 +209,7 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
       </PlayCanvas>
     </div>
     <p className="draft-context-caption"><span aria-hidden="true">{Math.min(time,result?.catchTime ?? 0).toFixed(2)}s</span> <span aria-live="polite">{liveCaption}</span></p>
-    {phase === 'result' && result && <div className="draft-review"><label htmlFor="draft-timeline">REVIEW THE PLAY</label><input id="draft-timeline" aria-label="Game play progress" type="range" min="0" max={result.catchTime} step=".01" value={Math.min(time,result.catchTime)} onChange={event => setTime(Number(event.target.value))} /><div>{[['PRE-SNAP',0],['SNAP',.45],['DEVELOPMENT',result.throwTime],['RESULT',result.catchTime]].map(([label,at]) => <button key={label} onClick={() => setTime(Number(at))}>{label}</button>)}</div></div>}
+    {phase !== 'draw' && result && <div className="draft-review"><div className="draft-clock-tools"><label htmlFor="draft-timeline">{phase === 'playing' ? 'FOLLOW THE PLAY' : 'REVIEW THE PLAY'}</label>{phase === 'playing' && <button aria-label={paused ? 'Resume game animation' : 'Pause game animation'} onClick={() => setPaused(value => !value)}>{paused ? 'RESUME' : 'PAUSE'}</button>}<label className="playback-rate">Speed <select aria-label="Game playback speed" value={rate} onChange={event => setRate(Number(event.target.value))}>{PLAYBACK_RATES.map(value => <option key={value} value={value}>{value}×</option>)}</select></label></div><input id="draft-timeline" aria-label="Game play progress" type="range" min="0" max={result.catchTime} step=".01" value={Math.min(time,result.catchTime)} onChange={event => { setPaused(true); setTime(Number(event.target.value)); }} /><div>{[['PRE-SNAP',0],['MOTION / RELEASE',.15],['SNAP / CONTACT',.45],['BREAK / DROP',Math.min(1.5,result.throwTime)],['RESULT',result.catchTime]].map(([label,at]) => <button key={label} onClick={() => { setPaused(true); setTime(Number(at)); }}>{label}</button>)}</div></div>}
     {phase === 'draw' ? <>
       <div className="draft-route-controls">
         <div className="draft-player-picker" role="group" aria-label="Select a receiver">{receivers.map(r => <button key={r.id} onClick={() => setSelected(r.id)} aria-pressed={selected === r.id}>{r.id}</button>)}</div>
@@ -204,7 +220,7 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
     </> : phase === 'playing' ? <p className="draft-playing" role="status">PLAY IS LIVE <span>{time.toFixed(1)}s</span></p> : result && <div className="draft-result" aria-live="polite">
       <div className="draft-result-title"><div><p>{runOver ? 'RUN OVER' : result.won ? `LEVEL ${run.level} CLEARED` : 'NO FIRST DOWN'}</p><h2 ref={resultHeading} tabIndex={-1}>{result.score}<span> / {look.targetScore} needed</span></h2></div><span className="draft-total">RUN TOTAL <strong>{run.total + (result.won ? result.score : 0)}</strong></span></div>
       <div className="draft-feedback">{result.feedback.map(line => <p key={line}>{line}</p>)}</div>
-      <div className="draft-result-actions">{!runOver && <button className="draft-snap" onClick={nextPlay}>{result.won ? 'NEXT LEVEL' : 'EDIT & RETRY'} <ArrowRight size={19} /></button>}<button className={runOver ? 'draft-snap' : 'draft-text-button'} onClick={restart}>{runOver ? 'NEW RUN' : 'Restart run'}</button><button className="draft-text-button" onClick={() => { setTime(0); setPhase('playing'); }}>Replay</button></div>
+      <div className="draft-result-actions">{!runOver && <button className="draft-snap" onClick={nextPlay}>{result.won ? 'NEXT LEVEL' : 'EDIT & RETRY'} <ArrowRight size={19} /></button>}<button className={runOver ? 'draft-snap' : 'draft-text-button'} onClick={restart}>{runOver ? 'NEW RUN' : 'Restart run'}</button><button className="draft-text-button" onClick={() => { setTime(0); setPaused(false); setPhase('playing'); }}>Replay</button></div>
     </div>}
     <p className="draft-sr-only" role="status">{announcement}</p>
   </section>;

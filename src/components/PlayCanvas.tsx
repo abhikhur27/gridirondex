@@ -2,9 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import type { Ref, SVGProps } from 'react'
 import type { BlueprintNode } from '../data/blueprints'
 import type { PlayScene } from '../data/playModel'
-import { samplePlay } from '../data/playEngine'
+import { samplePlay, trackPosition } from '../data/playEngine'
+import { DEFAULT_PLAYBACK_RATE } from '../data/playback'
 import { arrowGeometry, type Point } from '../data/vectorGeometry'
 import { useMotionPreference } from '../useMotionPreference'
+import { positionForNode } from '../data/positionNavigation'
+import { positionProfileBySlug } from '../data/positionProfiles'
 import '../field.css'
 
 export type PlayCanvasProps = Omit<SVGProps<SVGSVGElement>, 'ref'> & {
@@ -19,12 +22,20 @@ export type PlayCanvasProps = Omit<SVGProps<SVGSVGElement>, 'ref'> & {
   grid?: boolean
   renderPlayers?: boolean
   svgRef?: Ref<SVGSVGElement>
+  onNavigatePosition?: (slug: string) => void
 }
 
-function Player({ node, at, ghost = false, endpoint = false, moving = false }: { node: BlueprintNode; at: Point; ghost?: boolean; endpoint?: boolean; moving?: boolean }) {
+function Player({ node, at, ghost = false, endpoint = false, moving = false, sceneId, onNavigatePosition }: { node: BlueprintNode; at: Point; ghost?: boolean; endpoint?: boolean; moving?: boolean; sceneId?: string; onNavigatePosition?: (slug: string) => void }) {
+  const position = positionForNode(node, sceneId)
+  const name = positionProfileBySlug.get(position)?.name ?? node.label
   return <g data-player={node.id} data-team={node.team}
+    data-position={position} role={onNavigatePosition ? 'button' : undefined} tabIndex={onNavigatePosition ? ghost || endpoint ? -1 : 0 : undefined}
+    aria-label={onNavigatePosition ? `Explore ${name}${ghost ? ' pre-snap position' : endpoint ? ' assignment endpoint' : ''}` : undefined}
+    onClick={onNavigatePosition ? event => { event.stopPropagation(); onNavigatePosition(position) } : undefined}
+    onKeyDown={onNavigatePosition ? event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); onNavigatePosition(position) } } : undefined}
     className={`blueprint-node team-${node.team}${node.focus ? ' focused' : ''}${ghost ? ' blueprint-origin' : ''}${endpoint ? ' blueprint-endpoint' : ''}${moving ? ' blueprint-moving' : ''}`}
     transform={`translate(${at[0]} ${at[1]})`}>
+    {onNavigatePosition && <><title>{name} · open position</title><circle className="player-hit-area" r="24" /></>}
     {node.team === 'defense'
       ? <path d="M -12 -12 L 12 12 M 12 -12 L -12 12" className="blueprint-x" />
       : <circle r="15" className="blueprint-o" />}
@@ -34,7 +45,7 @@ function Player({ node, at, ghost = false, endpoint = false, moving = false }: {
 
 /** Both sides share one sampled clock. The game can reuse the SVG shell with its own sampled actors. */
 export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, progress, active = false, replay = 0, preview = progress !== undefined,
-  grid = true, renderPlayers = true, svgRef, children, className = '', viewBox = '35 25 830 505', ...svgProps }: PlayCanvasProps) {
+  grid = true, renderPlayers = true, svgRef, onNavigatePosition, children, className = '', viewBox = '35 25 830 505', ...svgProps }: PlayCanvasProps) {
   const reduced = useMotionPreference()
   const [hoverProgress, setHoverProgress] = useState(0)
   const controlled = progress !== undefined
@@ -46,7 +57,7 @@ export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, prog
     let frame = 0
     const start = performance.now()
     const tick = (now: number) => {
-      const next = Math.min(1, (now - start) / (scene.duration * 1000))
+      const next = Math.min(1, (now - start) * DEFAULT_PLAYBACK_RATE / (scene.duration * 1000))
       setHoverProgress(next)
       if (next < 1) frame = requestAnimationFrame(tick)
     }
@@ -58,7 +69,13 @@ export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, prog
   const frame = useMemo(() => scene ? samplePlay(scene, seconds) : undefined, [scene, seconds])
   const nodes = useMemo(() => [...offensiveNodes, ...defensiveNodes], [offensiveNodes, defensiveNodes])
   const byId = useMemo(() => new Map(nodes.map(node => [node.id, node])), [nodes])
-  const tracks = useMemo(() => scene?.tracks.map(track => ({ track, geometry: arrowGeometry(track.frames.map(key => key.pos), 18) })) ?? [], [scene])
+  const tracks = useMemo(() => scene?.tracks.flatMap(track => {
+    const snap = trackPosition(track, .35)
+    const after = [{ at: .35, pos: snap }, ...track.frames.filter(key => key.at > .35)]
+    const before = [...track.frames.filter(key => key.at < .35), { at: .35, pos: snap }]
+    return (track.presnap ? [{ frames: before, presnap: true }, { frames: after, presnap: false }] : [{ frames: track.frames, presnap: false }])
+      .map(part => ({ track, ...part, geometry: arrowGeometry(part.frames.map(key => key.pos), 18) }))
+  }) ?? [], [scene])
   const { teachingPlayers, engagedPlayers } = useMemo(() => {
     const primary = new Set(nodes.filter(node => node.focus).map(node => node.id))
     scene?.reads.forEach(read => primary.add(read.to))
@@ -93,8 +110,8 @@ export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, prog
     return best
   }
   const focused = nodes.some(node => node.focus)
-  const labelled = svgProps.role || svgProps['aria-label'] || svgProps['aria-labelledby']
-  return <svg ref={svgRef} viewBox={viewBox} aria-hidden={labelled ? undefined : true} {...svgProps}
+  const labelled = onNavigatePosition || svgProps.role || svgProps['aria-label'] || svgProps['aria-labelledby']
+  return <svg ref={svgRef} viewBox={viewBox} role={onNavigatePosition ? 'group' : undefined} aria-hidden={labelled ? undefined : true} {...svgProps}
     data-blueprint={scene?.id} data-play-phase={frame?.phase} data-play-seconds={seconds.toFixed(3)}
     className={`toy-field blueprint-field play-canvas${active ? ' blueprint-active' : ''}${preview ? ' blueprint-preview' : ''}${focused ? ' has-focus' : ''} ${className}`}>
     {grid && <path d="M 55 95 H 845 M 55 195 H 845 M 55 295 H 845 M 55 395 H 845 M 55 495 H 845" className="mini-grid" />}
@@ -103,16 +120,16 @@ export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, prog
         <rect x={area.x} y={area.y} width={area.width} height={area.height} rx="12" />
         <text x={area.x + area.width / 2} y={area.y - 11} textAnchor="middle">{area.label}</text>
       </g>)}
-      {tracks.map(({ track, geometry }) => {
+      {tracks.map(({ track, geometry, frames, presnap }) => {
         const node = byId.get(track.player)
         if (!node || !geometry.shaft) return null
         // Bodies and contact seals explain ordinary protection; reserve the path ink for the lesson.
         if (engagedPlayers.has(node.id) && !teachingPlayers.has(node.id)) return null
-        const visited = track.frames.filter(key => key.at < seconds).map(key => key.pos)
-        const trail = seconds > (track.frames[0]?.at ?? 0) ? [...visited, pos(track.player)] : []
+        const segmentTime = Math.min(seconds, frames.at(-1)!.at)
+        const visited = frames.filter(key => key.at < segmentTime).map(key => key.pos)
+        const trail = seconds > frames[0].at ? [...visited, presnap ? trackPosition(track, segmentTime) : pos(track.player)] : []
         const ink = arrowGeometry(trail, 18)
-        const dashed = track.dashed || node.team === 'defense'
-        return <g key={track.player} className={`blueprint-route team-${node.team}${dashed ? ' is-dashed' : ''}`}>
+        return <g key={`${track.player}-${presnap}`} data-movement={presnap ? 'pre-snap' : 'post-snap'} className={`blueprint-route team-${node.team}${presnap ? ' is-presnap' : ''}`}>
           <path d={geometry.shaft} className="blueprint-guide" />
           <polygon points={geometry.cap} className="blueprint-cap blueprint-guide-cap" />
           {amount > 0 && ink.shaft && <path d={ink.shaft} className="blueprint-ink" />}
@@ -122,13 +139,13 @@ export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, prog
         const track = scene?.tracks.find(track => track.player === node.id)
         const end = track?.frames.at(-1)?.pos
         return end && Math.hypot(end[0] - node.x, end[1] - node.y) > 20
-          ? <Player key={`end-${node.id}`} node={node} at={end} endpoint /> : null
+          ? <Player key={`end-${node.id}`} node={node} at={end} endpoint sceneId={scene?.id} onNavigatePosition={onNavigatePosition} /> : null
       })}
       {amount > 0 && nodes.map(node => {
         const current = pos(node.id)
         if (node.team !== 'defense' && engagedPlayers.has(node.id) && !teachingPlayers.has(node.id)) return null
         return Math.hypot(current[0] - node.x, current[1] - node.y) > 3
-          ? <Player key={`origin-${node.id}`} node={node} at={[node.x, node.y]} ghost /> : null
+          ? <Player key={`origin-${node.id}`} node={node} at={[node.x, node.y]} ghost sceneId={scene?.id} onNavigatePosition={onNavigatePosition} /> : null
       })}
       {frame?.reads.map((read, index) => {
         const from = pos(read.from), to = pos(read.to)
@@ -139,7 +156,7 @@ export default function PlayCanvas({ offensiveNodes, defensiveNodes, scene, prog
           <text x={label[0]} y={label[1]} textAnchor="middle">{read.label}</text>
         </g>
       })}
-      {nodes.map(node => <Player key={node.id} node={node} at={pos(node.id)} moving={amount > 0} />)}
+      {nodes.map(node => <Player key={node.id} node={node} at={pos(node.id)} moving={amount > 0} sceneId={scene?.id} onNavigatePosition={onNavigatePosition} />)}
       {frame?.contacts.map((contact, index) => {
         const a = pos(contact.a), b = pos(contact.b), mid: Point = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]
         const dx = b[0] - a[0], dy = b[1] - a[1], length = Math.hypot(dx, dy) || 1

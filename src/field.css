@@ -3,8 +3,9 @@
 .play-canvas .blueprint-guide,.play-canvas .blueprint-ink{fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round}
 .play-canvas .blueprint-cap{fill:currentColor;stroke:none}
 .play-canvas .blueprint-guide,.play-canvas .blueprint-guide-cap{opacity:.23}
-.play-canvas .blueprint-ink{opacity:.72;stroke-width:6}
-.play-canvas .is-dashed .blueprint-guide,.play-canvas .is-dashed .blueprint-ink{stroke-dasharray:12 11;stroke-width:4}
+.play-canvas .blueprint-ink{opacity:.9;stroke-width:6}
+.play-canvas .is-presnap .blueprint-guide,.play-canvas .is-presnap .blueprint-ink{stroke-dasharray:12 11;stroke-width:4;opacity:.4}
+.play-canvas .is-presnap .blueprint-cap{opacity:.4}
 .play-canvas .blueprint-o{fill:var(--paper);stroke:currentColor;stroke-width:6}
 .lit .play-canvas .blueprint-o{fill:var(--block)}
 .play-canvas .blueprint-x{fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round}

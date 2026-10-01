@@ -1,0 +1,1177 @@
+{
+  "checkedOn": "2026-10-01",
+  "scope": "All 40 defense and special-teams lessons",
+  "policy": "A topic-specific publisher chapter or timed transcript is required for long videos. Zero is allowed only for an entire exclusive-topic clip shorter than 120 seconds. No category fallback and no fabricated offset.",
+  "method": "Public YouTube watch-page player metadata and publisher descriptions, plus public search metadata including Shorts shelves. Caption endpoints returned an HTML error page rather than a usable timed transcript; no segment is labeled transcript-verified. Short-topic verification proves topic and complete clip duration from publisher metadata, not independent frame-by-frame review.",
+  "verified": 35,
+  "withheld": 5,
+  "records": [
+    {
+      "conceptId": "cover-0",
+      "priorMapping": {
+        "id": "itG3h01DwJQ",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "LSYsJmhnw5k",
+        "title": "Cover 0: no deep safety",
+        "channel": "Football IQ",
+        "start": 0,
+        "end": 20,
+        "durationSeconds": 20
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=LSYsJmhnw5k",
+        "excerpt": "Publisher describes only Cover 0: no safeties and man assignments; player duration is 20 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "conceptId": "cover-1",
+      "priorMapping": {
+        "id": "ywFXMI1X-Ys",
+        "start": 71,
+        "end": 430,
+        "note": "Publisher chapter: Cover 1."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 1 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 71,
+        "end": 430,
+        "durationSeconds": 1794
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
+        "excerpt": "1:11–7:10 Cover 1",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 1794
+      }
+    },
+    {
+      "conceptId": "cover-2",
+      "priorMapping": {
+        "id": "ywFXMI1X-Ys",
+        "start": 431,
+        "end": 925,
+        "note": "Publisher chapter: Cover 2."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 2 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 431,
+        "end": 925,
+        "durationSeconds": 1794
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
+        "excerpt": "7:11–15:25 Cover 2",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 1794
+      }
+    },
+    {
+      "conceptId": "cover-3",
+      "priorMapping": {
+        "id": "ywFXMI1X-Ys",
+        "start": 926,
+        "end": 1260,
+        "note": "Publisher chapter: Cover 3."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 3 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 926,
+        "end": 1260,
+        "durationSeconds": 1794
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
+        "excerpt": "15:26–21:00 Cover 3",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 1794
+      }
+    },
+    {
+      "conceptId": "cover-4",
+      "priorMapping": {
+        "id": "ywFXMI1X-Ys",
+        "start": 1261,
+        "end": 1771,
+        "note": "Publisher chapter: Cover 4."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 4 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 1261,
+        "end": 1771,
+        "durationSeconds": 1794
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
+        "excerpt": "21:01–29:31 Cover 4",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 1794
+      }
+    },
+    {
+      "conceptId": "cover-6",
+      "priorMapping": {
+        "id": "TToQn1rC1GI",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "3H85mWMTdME",
+        "title": "Cover 6 whiteboard breakdown",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 129,
+        "end": 214,
+        "durationSeconds": 471
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=3H85mWMTdME",
+        "excerpt": "02:09 Whiteboard: Breaking Down Cover 6; 03:34 begins Cover 8.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 471
+      }
+    },
+    {
+      "conceptId": "4-3",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "4–3 defensive formation",
+        "channel": "Fourth and Film",
+        "start": 348,
+        "end": 421,
+        "durationSeconds": 726
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
+        "excerpt": "5:48 4-3; 7:01 46 Bear",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 726
+      }
+    },
+    {
+      "conceptId": "3-4",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "3–4 defensive formation",
+        "channel": "Fourth and Film",
+        "start": 279,
+        "end": 348,
+        "durationSeconds": 726
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
+        "excerpt": "4:39 3-4; 5:48 4-3",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 726
+      }
+    },
+    {
+      "conceptId": "bear",
+      "priorMapping": {
+        "id": "WrrjcI1DZVo",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "46 Bear front",
+        "channel": "Fourth and Film",
+        "start": 421,
+        "end": 503,
+        "durationSeconds": 726
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
+        "excerpt": "7:01 46 Bear; 8:23 Nickel",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 726
+      }
+    },
+    {
+      "conceptId": "penny",
+      "priorMapping": {
+        "id": "uNHJIwlkPMk",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "uNHJIwlkPMk",
+        "title": "Penny front against wide zone",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 1130,
+        "end": 1245,
+        "durationSeconds": 2420
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=uNHJIwlkPMk",
+        "excerpt": "18:50 Defending Wide Zone with a 5-1 Front; next chapter 20:45.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 2420
+      }
+    },
+    {
+      "conceptId": "dollar",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "withheld",
+      "reason": "The old generic-front video has no verified Dollar segment. The new formation guide ends with Dime (six DBs), which is not Dollar (seven DBs). The dedicated Dime/Dollar candidate uses Madden gameplay and has no publisher chapters.",
+      "rejectedCandidates": [
+        {
+          "id": "Qsjp0n3gi3s",
+          "url": "https://www.youtube.com/watch?v=Qsjp0n3gi3s",
+          "reason": "Unchaptered front overview, 252 seconds."
+        },
+        {
+          "id": "Q6iuu58jLgU",
+          "url": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
+          "reason": "Chapters verify Dime, not Dollar."
+        },
+        {
+          "id": "9MfvBFVpaHw",
+          "url": "https://www.youtube.com/watch?v=9MfvBFVpaHw",
+          "reason": "Madden Dime/Dollar overview, 442 seconds; no verified topic offset."
+        }
+      ]
+    },
+    {
+      "conceptId": "techniques",
+      "priorMapping": {
+        "id": "ynj3jMUi_Yk",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "_4xylByLjbs",
+        "title": "Defensive line alignment numbers",
+        "channel": "Coach Peters",
+        "start": 0,
+        "end": 37,
+        "durationSeconds": 37
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=_4xylByLjbs",
+        "excerpt": "Dedicated alignment-number explanation; public player duration is 37 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 37
+      }
+    },
+    {
+      "conceptId": "stunt-tex",
+      "priorMapping": {
+        "id": "hDhaF_cw11U",
+        "start": 0,
+        "end": null,
+        "note": "Dedicated 23-second T/E exchange clip."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "hDhaF_cw11U",
+        "title": "Tackle–end exchange",
+        "channel": "Inside the Pylon",
+        "start": 0,
+        "end": 23,
+        "durationSeconds": 23
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=hDhaF_cw11U",
+        "excerpt": "Publisher identifies a TEX exchange between the tackle and end; public player duration is 23 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 23
+      }
+    },
+    {
+      "conceptId": "stunt-ext",
+      "priorMapping": {
+        "id": "j5MQJWcHc18",
+        "start": 0,
+        "end": null,
+        "note": "Dedicated coaching breakdown; starts at the introduction."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "4rye0ch5QGM",
+        "title": "End first, tackle second",
+        "channel": "vIQtory Sports · Football Coaching Education",
+        "start": 0,
+        "end": 18,
+        "durationSeconds": 18
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=4rye0ch5QGM",
+        "excerpt": "Publisher specifies end first and tackle second, with the tackle looping outside after occupying the guard; duration 18 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 18
+      }
+    },
+    {
+      "conceptId": "stunt-loop",
+      "priorMapping": {
+        "id": "bi30r3n3ymg",
+        "start": 0,
+        "end": null,
+        "note": "Stunt overview covering the penetrator/looper exchange in E/T and T/E games."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "5zTXCj_j-LQ",
+        "title": "Looping stunts from a Bear front",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 319,
+        "end": 378,
+        "durationSeconds": 982
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=5zTXCj_j-LQ",
+        "excerpt": "05:19 Using Looping Stunts in a Bear Front; next chronological chapter is 06:18.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 982
+      }
+    },
+    {
+      "conceptId": "blitz-cross-dog",
+      "priorMapping": {
+        "id": "6j74uknbvHE",
+        "start": 148,
+        "end": 251,
+        "note": "Publisher chapter: Film Breakdown: At the Snap."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "6j74uknbvHE",
+        "title": "Cross Dog at the snap",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 148,
+        "end": 251,
+        "durationSeconds": 422
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=6j74uknbvHE",
+        "excerpt": "02:28 Film Breakdown: At the Snap; 04:11 The Key Mechanic: Attacking the Running Back",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 422
+      }
+    },
+    {
+      "conceptId": "blitz-fire-zone",
+      "priorMapping": {
+        "id": "yfIVNlN2AXY",
+        "start": 0,
+        "end": null,
+        "note": "Dedicated clinic excerpt: five rush, three under, three deep."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "wRu-ESzYeo4",
+        "title": "Three deep, three under fire zone",
+        "channel": "Rich Madrid",
+        "start": 0,
+        "end": 44,
+        "durationSeconds": 44
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=wRu-ESzYeo4",
+        "excerpt": "Publisher identifies a disguised three-deep, three-under Packers fire zone against Dallas; public player duration is 44 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 44
+      }
+    },
+    {
+      "conceptId": "fit-one-gap",
+      "priorMapping": {
+        "id": "1Sd3VmAm3Xo",
+        "start": 0,
+        "end": null,
+        "note": "Comparative run-fit breakdown; starts at the introduction."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "k0giC2Xvw2I",
+        "title": "One-gap defense cutup",
+        "channel": "Charles Fischer",
+        "start": 0,
+        "end": 20,
+        "durationSeconds": 20
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=k0giC2Xvw2I",
+        "excerpt": "Video title and description identify only one-gap defense; public player duration is 20 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "conceptId": "fit-two-gap",
+      "priorMapping": {
+        "id": "1Sd3VmAm3Xo",
+        "start": 0,
+        "end": null,
+        "note": "Comparative run-fit breakdown; starts at the introduction."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "GZPfV9ecnmg",
+        "title": "Two-gap defense cutup",
+        "channel": "Charles Fischer",
+        "start": 0,
+        "end": 17,
+        "durationSeconds": 17
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=GZPfV9ecnmg",
+        "excerpt": "Video title and description identify only two-gap defense; public player duration is 17 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 17
+      }
+    },
+    {
+      "conceptId": "nose",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "43klhpDGg-8",
+        "title": "Nose tackle: control the interior",
+        "channel": "Football IQ",
+        "start": 0,
+        "end": 25,
+        "durationSeconds": 25
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=43klhpDGg-8",
+        "excerpt": "Publisher describes the nose over the center, taking multiple blockers and stopping inside runs; public player duration is 25 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 25
+      }
+    },
+    {
+      "conceptId": "edge",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "E4upsl2iK9Y",
+        "title": "Defensive end: keep contain",
+        "channel": "ExpertVillage",
+        "start": 0,
+        "end": 43,
+        "durationSeconds": 43
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=E4upsl2iK9Y",
+        "excerpt": "Dedicated defensive-end containment instruction; public player duration is 43 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 43
+      }
+    },
+    {
+      "conceptId": "mike",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "ivGrYaVD6b8",
+        "title": "Mike linebacker responsibilities",
+        "channel": "Linebacker Prototype Academy",
+        "start": 0,
+        "end": 82,
+        "durationSeconds": 82
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=ivGrYaVD6b8",
+        "excerpt": "Publisher title identifies the Mike / middle-linebacker position alone; public player duration is 82 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 82
+      }
+    },
+    {
+      "conceptId": "will",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "PoN6M6xFQUw",
+        "title": "Will linebacker: weakside range",
+        "channel": "Raiders Allegiance",
+        "start": 0,
+        "end": 24,
+        "durationSeconds": 24
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=PoN6M6xFQUw",
+        "excerpt": "Publisher identifies Devin White as a Will and describes weakside pursuit, range and coverage; public player duration is 24 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 24
+      }
+    },
+    {
+      "conceptId": "sam",
+      "priorMapping": {
+        "id": "Qsjp0n3gi3s",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "6e28ha1rrws",
+        "title": "Sam linebacker responsibilities",
+        "channel": "Munster High School Football",
+        "start": 0,
+        "end": 57,
+        "durationSeconds": 57
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=6e28ha1rrws",
+        "excerpt": "Dedicated SAM linebacker role clip; public player duration is 57 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 57
+      }
+    },
+    {
+      "conceptId": "cornerback",
+      "priorMapping": {
+        "id": "I1Q6htr5o-c",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "-8j04Kevotg",
+        "title": "Cornerback press technique with Darius Slay",
+        "channel": "All Eyes DB Camp · Chad Wilson",
+        "start": 0,
+        "end": 27,
+        "durationSeconds": 27
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=-8j04Kevotg",
+        "excerpt": "Publisher identifies press-man work with Slay and coach Chad Wilson; public player duration is 27 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 27
+      }
+    },
+    {
+      "conceptId": "free-safety",
+      "priorMapping": {
+        "id": "eeQ7R9qN310",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "SALBQ-p647I",
+        "title": "Free safety: reading the throw",
+        "channel": "The DB Network",
+        "start": 0,
+        "end": 111,
+        "durationSeconds": 111
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=SALBQ-p647I",
+        "excerpt": "Dedicated free-safety interception instruction; public player duration is 111 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 111
+      }
+    },
+    {
+      "conceptId": "strong-safety",
+      "priorMapping": {
+        "id": "eeQ7R9qN310",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "oEoIqSWZpLU",
+        "title": "Strong safety responsibilities",
+        "channel": "Decyfr Sport",
+        "start": 0,
+        "end": 58,
+        "durationSeconds": 58
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=oEoIqSWZpLU",
+        "excerpt": "Dedicated strong-safety position explanation; public player duration is 58 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 58
+      }
+    },
+    {
+      "conceptId": "nickel",
+      "priorMapping": {
+        "id": "HrRcd36HuCI",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "B5JLA-j7QDA",
+        "title": "Nickel: hold the seam before the flat",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 0,
+        "end": 13,
+        "durationSeconds": 13
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=B5JLA-j7QDA",
+        "excerpt": "Publisher instructs the nickel to protect the seam first against Sail; public player duration is 13 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 13
+      }
+    },
+    {
+      "conceptId": "creeping-safety",
+      "priorMapping": {
+        "id": "eibqDMAkOrc",
+        "start": 65,
+        "end": 120,
+        "note": "Publisher chapter: five-man safety blitz from weak rotation."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "eibqDMAkOrc",
+        "title": "Safety down in a weak rotation",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 65,
+        "end": 120,
+        "durationSeconds": 498
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=eibqDMAkOrc",
+        "excerpt": "1:05 Variation 1: 5-Man Safety Blitz (Weak Rotation); next chapter 2:00.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 498
+      }
+    },
+    {
+      "conceptId": "motion-adjustment",
+      "priorMapping": {
+        "id": "eeQ7R9qN310",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "viD-K_vFcWc",
+        "title": "Changing coverage with motion",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 86,
+        "end": 150,
+        "durationSeconds": 668,
+        "note": "This clip shows a man-away/zone-to adjustment; the animation shows a defender following the motion."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=viD-K_vFcWc",
+        "excerpt": "01:26 Adjusting Coverage: Man Away, Zone To; next chapter 02:30.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 668
+      },
+      "scopeNote": "Both teach defensive adjustment to motion. The publisher chapter shows man-away/zone-to rules; it is explicitly labeled as a variation of the animation’s man-travel example, not identical coverage."
+    },
+    {
+      "conceptId": "coverage-roll",
+      "priorMapping": {
+        "id": "uNHJIwlkPMk",
+        "start": 1500,
+        "end": 2180,
+        "note": "Publisher chapter: weak rotation Cover 3 and spinning safeties."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "uNHJIwlkPMk",
+        "title": "Weak rotation and spinning safeties",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 1500,
+        "end": 2180,
+        "durationSeconds": 2420
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=uNHJIwlkPMk",
+        "excerpt": "25:00 Coverage: Weak Rotation Cover 3 & Spinning Safeties; next chapter 36:20.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 2420
+      }
+    },
+    {
+      "conceptId": "one-gap",
+      "priorMapping": {
+        "id": "1Sd3VmAm3Xo",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "k0giC2Xvw2I",
+        "title": "One-gap defense cutup",
+        "channel": "Charles Fischer",
+        "start": 0,
+        "end": 20,
+        "durationSeconds": 20
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=k0giC2Xvw2I",
+        "excerpt": "Video title and description identify only one-gap defense; public player duration is 20 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "conceptId": "two-gap",
+      "priorMapping": {
+        "id": "1Sd3VmAm3Xo",
+        "start": 0,
+        "end": null,
+        "note": null
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "GZPfV9ecnmg",
+        "title": "Two-gap defense cutup",
+        "channel": "Charles Fischer",
+        "start": 0,
+        "end": 17,
+        "durationSeconds": 17
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=GZPfV9ecnmg",
+        "excerpt": "Video title and description identify only two-gap defense; public player duration is 17 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 17
+      }
+    },
+    {
+      "conceptId": "fg-edge-overload",
+      "priorMapping": null,
+      "status": "withheld",
+      "reason": "Found a dedicated overload clinic, but it is 673 seconds with no publisher chapter or timed transcript. Search results for short blocked kicks do not establish an edge-overload scheme.",
+      "rejectedCandidates": [
+        {
+          "id": "wE8EMKRLivA",
+          "url": "https://www.youtube.com/watch?v=wE8EMKRLivA",
+          "reason": "Publisher describes an overload, but provides no timed segment; 673 seconds."
+        },
+        {
+          "id": "GOxHthXYoHU",
+          "url": "https://www.youtube.com/watch?v=GOxHthXYoHU",
+          "reason": "Untimed field-goal-block transcript spans multiple techniques; no verified overload offset."
+        }
+      ]
+    },
+    {
+      "conceptId": "fg-a-gap-push",
+      "priorMapping": {
+        "id": "GOxHthXYoHU",
+        "start": 0,
+        "end": null,
+        "note": "Field-goal block clinic with interior-push examples; starts at the introduction."
+      },
+      "status": "withheld",
+      "reason": "The old 876-second field-goal clinic has an untimed transcript but no verified A-gap timestamp. The Ravens source verifies Campbell used A-gap penetration against Pittsburgh, but the available short YouTube candidates did not verify that exact play.",
+      "rejectedCandidates": [
+        {
+          "id": "GOxHthXYoHU",
+          "url": "https://www.youtube.com/watch?v=GOxHthXYoHU",
+          "reason": "876 seconds; untimed transcript; no defensible segment boundaries."
+        },
+        {
+          "id": "_NRNXLaVgU8",
+          "url": "https://www.youtube.com/watch?v=_NRNXLaVgU8",
+          "reason": "Postgame interview, not a timestamped A-gap coaching cutup."
+        }
+      ]
+    },
+    {
+      "conceptId": "fg-block-safe",
+      "priorMapping": null,
+      "status": "withheld",
+      "reason": "The block clinic mentions contain responsibility on fakes in an untimed transcript, but no verified safe-block chapter or exact-topic short clip was found.",
+      "rejectedCandidates": [
+        {
+          "id": "GOxHthXYoHU",
+          "url": "https://www.youtube.com/watch?v=GOxHthXYoHU",
+          "reason": "Fake-contain discussion is not timestamped."
+        },
+        {
+          "id": "wE8EMKRLivA",
+          "url": "https://www.youtube.com/watch?v=wE8EMKRLivA",
+          "reason": "Overload clinic does not establish a safe-block segment."
+        }
+      ]
+    },
+    {
+      "conceptId": "punt-spread",
+      "priorMapping": {
+        "id": "NgeXQFEbfUM",
+        "start": 0,
+        "end": null,
+        "note": "Dedicated shield-protection clinic; starts at the introduction."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "Zc_KqP5SCZw",
+        "title": "Shield punt: protection and coverage",
+        "channel": "Championship Productions · Courtney Messingham",
+        "start": 0,
+        "end": 95,
+        "durationSeconds": 95
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=Zc_KqP5SCZw",
+        "excerpt": "Publisher specifies shield-punt formation, protection and coverage; public player duration is 95 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 95
+      }
+    },
+    {
+      "conceptId": "punt-pro",
+      "priorMapping": {
+        "id": "z4AH-ZXfjHY",
+        "start": 0,
+        "end": null,
+        "note": "Full coaching clinic; starts at the introduction."
+      },
+      "status": "withheld",
+      "reason": "The old pro-style punt clinic is 3260 seconds with no publisher chapters. A 26-second NFL protection-call cutup does not independently establish the complete pro-style protection topic. Generic punting and shield clips are not substitutes.",
+      "rejectedCandidates": [
+        {
+          "id": "z4AH-ZXfjHY",
+          "url": "https://www.youtube.com/watch?v=z4AH-ZXfjHY",
+          "reason": "3260 seconds; no publisher chapters or timed transcript retrieved."
+        },
+        {
+          "id": "1BhbZGCmPlE",
+          "url": "https://www.youtube.com/watch?v=1BhbZGCmPlE",
+          "reason": "26-second protection-call cutup, but metadata does not establish pro-style scheme."
+        },
+        {
+          "id": "MxXp1_AxFZw",
+          "url": "https://www.youtube.com/watch?v=MxXp1_AxFZw",
+          "reason": "585-second pro punt clinic; no publisher chapter offsets."
+        }
+      ]
+    },
+    {
+      "conceptId": "punt-gunner",
+      "priorMapping": {
+        "id": "jUxJNPrXO2U",
+        "start": 0,
+        "end": null,
+        "note": "Dedicated coaching excerpt on single and double-team releases."
+      },
+      "status": "verified",
+      "change": "replaced",
+      "currentMapping": {
+        "id": "9wAktmBDotQ",
+        "title": "Gunner shimmy release drill",
+        "channel": "Coach Staff",
+        "start": 0,
+        "end": 50,
+        "durationSeconds": 50
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=9wAktmBDotQ",
+        "excerpt": "Dedicated punt-gunner shimmy drill; public player duration is 50 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 50
+      }
+    },
+    {
+      "conceptId": "punt-return-wall",
+      "priorMapping": {
+        "id": "NTUSG3aQ04I",
+        "start": 0,
+        "end": null,
+        "note": "Dedicated 22-second WPI wall-return practice cutup."
+      },
+      "status": "verified",
+      "change": "retained-with-explicit-boundaries",
+      "currentMapping": {
+        "id": "NTUSG3aQ04I",
+        "title": "WPI wall-return drill",
+        "channel": "Mike Kuchar",
+        "start": 0,
+        "end": 22,
+        "durationSeconds": 22
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=NTUSG3aQ04I",
+        "excerpt": "Publisher identifies a WPI wall-punt-return practice cutup; public player duration is 22 seconds.",
+        "checkedOn": "2026-10-01"
+      },
+      "playerCheck": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 22
+      }
+    }
+  ]
+}

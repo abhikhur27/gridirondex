@@ -3,6 +3,7 @@ async page => {
   page.on('pageerror', error => errors.push(error.message));
   const check = (value, message) => { if (!value) throw new Error(message); };
   await page.setViewportSize({ width: 1280, height: 1000 });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('http://127.0.0.1:5173/#draft');
   await page.reload();
   await page.getByRole('heading', { name: 'TACTICAL DRAFT' }).waitFor();
@@ -29,7 +30,7 @@ async page => {
   await page.getByRole('button', { name:/12 personnel/ }).click();
   check(await polygons().count() === 0, 'Changing personnel clears old routes.');
   await page.getByRole('button', { name:/5-wide/ }).click();
-  check(await page.getByRole('button', { name:'Draw route for RB, slot receiver' }).count() === 1, 'Empty puts RB in the slot.');
+  check(await page.getByRole('button', { name:'RB: open slot receiver position or drag to draw a route' }).count() === 1, 'Empty puts RB in the slot.');
   await page.getByRole('button', { name:/11 personnel/ }).click();
   const assignments = [['X','Slant'],['Z','Post'],['Y','Out'],['RB','Stay in'],['H','Drag']];
   for (const [id, name] of assignments) {
@@ -40,12 +41,17 @@ async page => {
   await page.getByRole('button', { name:name.includes('left') ? 'Slide left' : name.includes('edge') ? 'Slide right' : 'Balanced', exact:true }).click();
   await page.screenshot({ path:'output/playwright/draft-desktop.png', fullPage:true });
   await page.getByRole('button', { name:'SNAP', exact:true }).click();
-  await page.getByRole('button', { name:'NEXT LEVEL', exact:true }).waitFor({ timeout:10000 });
+  await page.getByRole('button', { name:'Pause game animation', exact:true }).click();
+  const pausedAt = await page.getByRole('slider', { name:'Game play progress', exact:true }).inputValue();
+  await page.waitForTimeout(200);
+  check(await page.getByRole('slider', { name:'Game play progress', exact:true }).inputValue() === pausedAt, 'Game clock pauses during execution.');
+  await page.getByRole('button', { name:'Resume game animation', exact:true }).click();
+  await page.getByRole('button', { name:'NEXT LEVEL', exact:true }).waitFor({ timeout:15000 });
   check((await page.locator('.draft-feedback').textContent()).includes('completion'), 'Winning geometry produces a completion.');
   await page.screenshot({ path:'output/playwright/draft-result.png', fullPage:true });
   await page.getByRole('button', { name:'PRE-SNAP', exact:true }).click();
   check(await page.locator('.draft-engagements path').count() === 0, 'Review resets protection contact before the snap.');
-  await page.getByRole('button', { name:'SNAP', exact:true }).click();
+  await page.getByRole('button', { name:'SNAP / CONTACT', exact:true }).click();
   check(await page.locator('.draft-engagements path').count() >= 4, 'Review shows actual paired blocking contact at the snap.');
   check((await page.locator('.draft-context-caption').textContent()).includes('blocks hold the pocket'), 'Review caption matches the held-block frame.');
   await page.getByRole('button', { name:'RESULT', exact:true }).click();

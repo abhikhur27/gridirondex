@@ -1,0 +1,72 @@
+async page => {
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.message));
+  const check = (value, message) => { if (!value) throw new Error(message); };
+  await page.setViewportSize({ width: 1440, height: 1050 });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('http://127.0.0.1:5173/#offense/personnel/personnel-12');
+  await page.getByRole('dialog').waitFor();
+  const go = async hash => { await page.evaluate(h => location.hash = h, hash); };
+  const diagram = page.locator('.preview-field svg');
+  check(await page.getByLabel('Playback speed').inputValue() === '0.5', 'Default playback is half speed');
+  await page.getByRole('button', { name: 'Play diagram', exact: true }).click();
+  await page.waitForTimeout(1000);
+  await page.getByRole('button', { name: 'Pause diagram', exact: true }).click();
+  const seconds = Number(await diagram.getAttribute('data-play-seconds'));
+  check(seconds > .3 && seconds < .85, `Actual half-speed clock: ${seconds}`);
+  await page.getByRole('button', { name: 'PRE-SNAP', exact: true }).click();
+  await page.getByRole('button', { name: 'Next keyframe', exact: true }).click();
+  const next = Number(await diagram.getAttribute('data-play-seconds'));
+  check(next > 0 && next <= .4, 'Next keyframe reaches first release event');
+  await page.getByRole('button', { name: 'Previous keyframe', exact: true }).click();
+  check(Number(await diagram.getAttribute('data-play-seconds')) === 0, 'Previous keyframe restores pre-snap');
+  await page.getByRole('button', { name: 'Film', exact: true }).click();
+  const embed = new URL(await page.locator('.video-container iframe').getAttribute('src'));
+  check(embed.searchParams.get('start') === '285' && embed.searchParams.get('end') === '369', '12 personnel exact chapter boundaries');
+  for (const credit of await page.locator('.source-credit a').all()) {
+    check((await credit.getAttribute('href')).endsWith('&t=285s'), 'Film and note credit target the same exact timestamp');
+    check(await credit.getAttribute('target') === '_blank', 'Sources open separately');
+  }
+  await page.getByRole('button', { name: 'Diagram', exact: true }).click();
+  await page.locator('.preview-field [data-position="tight-end"]:not(.blueprint-endpoint):not(.blueprint-origin)').first().click();
+  await page.locator('.position-detail').waitFor();
+  check(page.url().includes('positions/tight-end'), 'Player enters tight-end deep dive');
+  await page.goBack();
+  await page.getByRole('dialog').waitFor();
+  await page.getByRole('button', { name: 'Close breakdown' }).click();
+  check(await page.locator('button [role="button"]').count() === 0, 'No interactive player nested in HTML button');
+  await page.locator('.toy-tile [data-player="QB"]:not(.blueprint-origin)').first().focus();
+  await page.keyboard.press('Enter');
+  await page.locator('.position-detail').waitFor();
+  check(page.url().includes('positions/quarterback'), 'Thumbnail keyboard player navigation');
+  await page.goto('http://127.0.0.1:5173/positions/tight-end');
+  await page.locator('.position-detail').waitFor();
+  await go('#defense/reactions/motion-adjustment');
+  await page.getByRole('dialog').waitFor();
+  check(await page.locator('.preview-field [data-movement="pre-snap"]').count() > 0, 'Real pre-snap motion segments');
+  const styles = await page.locator('.preview-field .blueprint-route').evaluateAll(nodes => nodes.map(n => ({ phase: n.dataset.movement, dash: getComputedStyle(n.querySelector('path')).strokeDasharray })));
+  check(styles.filter(n => n.phase === 'pre-snap').every(n => n.dash !== 'none'), 'Pre-snap motion is dashed');
+  check(styles.filter(n => n.phase === 'post-snap').every(n => n.dash === 'none'), 'Post-snap assignments are solid');
+  await go('#offense/personnel/personnel-00');
+  await page.getByRole('heading', { name: '00 personnel', exact: true }).waitFor();
+  check(await page.getByRole('button', { name: 'Film', exact: true }).count() === 0, 'Unverified topic has no misleading fallback embed');
+  check(await page.locator('.breakdown-notes .source-credit a').count() === 1, 'Written source retained without film');
+  for (const width of [320, 375, 768]) {
+    await page.setViewportSize({ width, height: 950 });
+    await go('#offense/blocking/chip');
+    await page.getByRole('button', { name: 'SNAP / CONTACT', exact: true }).click();
+    check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No overflow at ${width}`);
+    await page.screenshot({ path: `output/playwright/precision-${width}.png`, animations: 'disabled' });
+  }
+  await go('#draft');
+  await page.locator('.draft-field').waitFor();
+  check(await page.locator('.draft-position, .draft-receiver').count() === 22, 'All 22 game actors are buttons');
+  await page.getByRole('button', { name: 'Slant', exact: true }).click();
+  await page.locator('.draft-position[data-position="quarterback"]').click();
+  await page.locator('.position-detail').waitFor();
+  await page.goBack();
+  await page.locator('.draft-field').waitFor();
+  check(await page.locator('.draft-route:not(.defensive) polygon').count() === 1, 'Game retains drawn route after position navigation');
+  check(errors.length === 0, errors.join('; '));
+  return { passed: true, halfSpeedSeconds: seconds, exactTimestamps: true, nodeNavigation: true, motionStyles: true, viewports: [320, 375, 768], errors };
+}

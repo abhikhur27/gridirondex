@@ -1,0 +1,2134 @@
+{
+  "checkedOn": "2026-10-01",
+  "scope": "All 65 offensive lessons",
+  "method": "Fetched the public YouTube player metadata for every selected replacement on the checked date. Publisher descriptions supply chapter boundaries. A zero start is allowed only for an entire topic-specific upload shorter than 120 seconds. Caption endpoints returned no usable timed transcript; no transcript verification is claimed. Short-topic evidence is publisher metadata, not a claim that every frame was manually reviewed.",
+  "counts": {
+    "audited": 65,
+    "verified": 64,
+    "animationOnly": 1
+  },
+  "lessons": [
+    {
+      "conceptId": "mesh",
+      "topic": "Mesh",
+      "prior": {
+        "videoId": "NJJKbs-eOKw",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 20,
+        "end": 85,
+        "durationSeconds": 771,
+        "title": "Mesh",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Mesh at 20s and the next section (Levels) at 85s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "smash",
+      "topic": "Smash",
+      "prior": {
+        "videoId": "_qjUnnfibDQ",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 210,
+        "end": 265,
+        "durationSeconds": 771,
+        "title": "Smash",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Smash at 210s and the next section (Y-Cross) at 265s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "flood",
+      "topic": "Flood",
+      "prior": {
+        "videoId": "UPF6Fm0xD2Y",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 152,
+        "end": 210,
+        "durationSeconds": 771,
+        "title": "Flood",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Flood at 152s and the next section (Smash) at 210s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "hi-lo",
+      "topic": "Hi-Lo",
+      "prior": {
+        "videoId": "XBHIVeYpj5c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "RWilD1L4EBU",
+        "start": 0,
+        "end": 60,
+        "durationSeconds": 60,
+        "title": "Chiefs high-low: shallow cross and dig",
+        "channel": "RGR Football - Kansas City Chiefs"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=RWilD1L4EBU",
+        "excerpt": "60-second Chiefs high-low breakdown; publisher explicitly identifies a shallow cross paired with a basic dig, with a back in the flat and a deep clear-out.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "RWilD1L4EBU"
+      ]
+    },
+    {
+      "conceptId": "drive",
+      "topic": "Drive",
+      "prior": {
+        "videoId": "XBHIVeYpj5c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 459,
+        "end": 522,
+        "durationSeconds": 771,
+        "title": "Drive",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Drive at 459s and the next section (Dagger) at 522s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "y-cross",
+      "topic": "Y-Cross",
+      "prior": {
+        "videoId": "n55z_KypxlE",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 265,
+        "end": 331,
+        "durationSeconds": 771,
+        "title": "Y-Cross",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Y-Cross at 265s and the next section (Four Verticals) at 331s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "four-verticals",
+      "topic": "Four Verticals",
+      "prior": {
+        "videoId": "3emDC2CKOZE",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 331,
+        "end": 395,
+        "durationSeconds": 771,
+        "title": "Four Verticals",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Four Verticals at 331s and the next section (Stick) at 395s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "dagger",
+      "topic": "Dagger",
+      "prior": {
+        "videoId": "r_DOW_rIq9s",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 522,
+        "end": 578,
+        "durationSeconds": 771,
+        "title": "Dagger",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Dagger at 522s and the next section (Slant-Flat) at 578s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "scissors",
+      "topic": "Scissors",
+      "prior": {
+        "videoId": "iCIaPvVNEDo",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "2zV4rLnfzJ4",
+        "start": 0,
+        "end": 31,
+        "durationSeconds": 31,
+        "title": "Eagles Scissors cutup",
+        "channel": "Bobby Peters"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=2zV4rLnfzJ4",
+        "excerpt": "31-second football cutup; publisher labels this single play 2017 Eagles Scissors 2.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2zV4rLnfzJ4"
+      ]
+    },
+    {
+      "conceptId": "boot",
+      "topic": "Boots & rollouts",
+      "prior": {
+        "videoId": "fZzsR_7xbpc",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "fZzsR_7xbpc",
+        "start": 105,
+        "end": 220,
+        "durationSeconds": 669,
+        "title": "Boot pass: first All-22 example",
+        "channel": "American Football Academy"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=fZzsR_7xbpc",
+        "excerpt": "Publisher description places Boot pass: first All-22 example at 105s and the next section (Second All-22 example) at 220s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "fZzsR_7xbpc"
+      ]
+    },
+    {
+      "conceptId": "flat",
+      "topic": "1 · Flat",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 20,
+        "end": 131
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 20,
+        "end": 131,
+        "durationSeconds": 1152,
+        "title": "Flat route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Flat route at 20s and the next section (Slant) at 131s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "slant",
+      "topic": "2 · Slant",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 131,
+        "end": 220
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 131,
+        "end": 220,
+        "durationSeconds": 1152,
+        "title": "Slant route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Slant route at 131s and the next section (Comeback) at 220s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "comeback",
+      "topic": "3 · Comeback",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 220,
+        "end": 332
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 220,
+        "end": 332,
+        "durationSeconds": 1152,
+        "title": "Comeback route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Comeback route at 220s and the next section (Curl) at 332s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "curl",
+      "topic": "4 · Curl",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 332,
+        "end": 405
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 332,
+        "end": 405,
+        "durationSeconds": 1152,
+        "title": "Curl route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Curl route at 332s and the next section (Hitch) at 405s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "out",
+      "topic": "5 · Out",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 467,
+        "end": 555
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 467,
+        "end": 555,
+        "durationSeconds": 1152,
+        "title": "Out route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Out route at 467s and the next section (Dig) at 555s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "dig",
+      "topic": "6 · Dig / in",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 555,
+        "end": 611
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 555,
+        "end": 611,
+        "durationSeconds": 1152,
+        "title": "Dig route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Dig route at 555s and the next section (Drag) at 611s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "corner",
+      "topic": "7 · Corner",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 730,
+        "end": 789
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 730,
+        "end": 789,
+        "durationSeconds": 1152,
+        "title": "Corner route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Corner route at 730s and the next section (Post) at 789s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "post",
+      "topic": "8 · Post",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 789,
+        "end": 871
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 789,
+        "end": 871,
+        "durationSeconds": 1152,
+        "title": "Post route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Post route at 789s and the next section (Go) at 871s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "go",
+      "topic": "9 · Go / fly",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 871,
+        "end": 957
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 871,
+        "end": 957,
+        "durationSeconds": 1152,
+        "title": "Go route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Go route at 871s and the next section (Wheel) at 957s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "option",
+      "topic": "Option route",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 1067,
+        "end": 1096
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 1067,
+        "end": 1096,
+        "durationSeconds": 1152,
+        "title": "Option route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Option route at 1067s and the next section (Stop-and-go) at 1096s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "wheel",
+      "topic": "Wheel",
+      "prior": {
+        "videoId": "2exkTbFboDw",
+        "start": 957,
+        "end": 982
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "2exkTbFboDw",
+        "start": 957,
+        "end": 982,
+        "durationSeconds": 1152,
+        "title": "Wheel route",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=2exkTbFboDw",
+        "excerpt": "Publisher description places Wheel route at 957s and the next section (Seam) at 982s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "2exkTbFboDw"
+      ]
+    },
+    {
+      "conceptId": "angle",
+      "topic": "Angle / Texas",
+      "prior": {
+        "videoId": "gBHQZOulvIY",
+        "start": 113,
+        "end": 122
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "gBHQZOulvIY",
+        "start": 113,
+        "end": 122,
+        "durationSeconds": 263,
+        "title": "Angle route",
+        "channel": "Everything Explained"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=gBHQZOulvIY",
+        "excerpt": "Publisher description places Angle route at 113s and the next section (Hitch) at 122s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "gBHQZOulvIY"
+      ]
+    },
+    {
+      "conceptId": "mesh-crossers",
+      "topic": "Mesh crossers",
+      "prior": {
+        "videoId": "NJJKbs-eOKw",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Ebn6c1jNZbo",
+        "start": 20,
+        "end": 85,
+        "durationSeconds": 771,
+        "title": "Mesh crossers",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+        "excerpt": "Publisher description places Mesh crossers at 20s and the next section (Levels) at 85s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Ebn6c1jNZbo"
+      ]
+    },
+    {
+      "conceptId": "inside-zone",
+      "topic": "Inside zone",
+      "prior": {
+        "videoId": "jS3U_fGpkGg",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Of_TwCsCETs",
+        "start": 512,
+        "end": 719,
+        "durationSeconds": 1631,
+        "title": "Inside zone",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+        "excerpt": "Publisher description places Inside zone at 512s and the next section (Split zone) at 719s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Of_TwCsCETs"
+      ]
+    },
+    {
+      "conceptId": "outside-zone",
+      "topic": "Outside zone",
+      "prior": {
+        "videoId": "RL8kn63AnuE",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Of_TwCsCETs",
+        "start": 809,
+        "end": 950,
+        "durationSeconds": 1631,
+        "title": "Outside zone",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+        "excerpt": "Publisher description places Outside zone at 809s and the next section (Jet zone) at 950s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Of_TwCsCETs"
+      ]
+    },
+    {
+      "conceptId": "power",
+      "topic": "Power",
+      "prior": {
+        "videoId": "HezArTWs_3M",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Of_TwCsCETs",
+        "start": 998,
+        "end": 1185,
+        "durationSeconds": 1631,
+        "title": "Power O",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+        "excerpt": "Publisher description places Power O at 998s and the next section (Counter) at 1185s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Of_TwCsCETs"
+      ]
+    },
+    {
+      "conceptId": "trap",
+      "topic": "Trap",
+      "prior": {
+        "videoId": "yAUqGQmYhX8",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Of_TwCsCETs",
+        "start": 1364,
+        "end": 1498,
+        "durationSeconds": 1631,
+        "title": "Trap",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+        "excerpt": "Publisher description places Trap at 1364s and the next section (Wham) at 1498s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Of_TwCsCETs"
+      ]
+    },
+    {
+      "conceptId": "counter",
+      "topic": "Counter",
+      "prior": {
+        "videoId": "mZZ0SE5wwR0",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Of_TwCsCETs",
+        "start": 1185,
+        "end": 1222,
+        "durationSeconds": 1631,
+        "title": "Counter",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+        "excerpt": "Publisher description places Counter at 1185s and the next section (Duo) at 1222s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Of_TwCsCETs"
+      ]
+    },
+    {
+      "conceptId": "duo",
+      "topic": "Duo",
+      "prior": {
+        "videoId": "Vc6A2q3NGXI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "Of_TwCsCETs",
+        "start": 1222,
+        "end": 1364,
+        "durationSeconds": 1631,
+        "title": "Duo",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+        "excerpt": "Publisher description places Duo at 1222s and the next section (Trap) at 1364s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "Of_TwCsCETs"
+      ]
+    },
+    {
+      "conceptId": "slide",
+      "topic": "Slide protection",
+      "prior": {
+        "videoId": "El_c0KljacM",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "NnRR6K-xt9k",
+        "start": 224,
+        "end": 276,
+        "durationSeconds": 895,
+        "title": "Full slide protection",
+        "channel": "Thinking Football"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=NnRR6K-xt9k",
+        "excerpt": "Publisher description places Full slide protection at 224s and the next section (Half slide protection) at 276s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "NnRR6K-xt9k"
+      ]
+    },
+    {
+      "conceptId": "man-protection",
+      "topic": "Man protection",
+      "prior": {
+        "videoId": "CeWRO9XkD6E",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "NnRR6K-xt9k",
+        "start": 146,
+        "end": 224,
+        "durationSeconds": 895,
+        "title": "5-0 / B.O.B protection",
+        "channel": "Thinking Football"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=NnRR6K-xt9k",
+        "excerpt": "Publisher description places 5-0 / B.O.B protection at 146s and the next section (Full slide protection) at 224s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "NnRR6K-xt9k"
+      ]
+    },
+    {
+      "conceptId": "chip",
+      "topic": "Chip blocks",
+      "prior": {
+        "videoId": "CeWRO9XkD6E",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "kdFkHSkszkM",
+        "start": 0,
+        "end": 76,
+        "durationSeconds": 76,
+        "title": "Chip block",
+        "channel": "The QB Nerd"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=kdFkHSkszkM",
+        "excerpt": "76-second instructional upload by The QB Nerd, titled CHIP BLOCK; the upload is dedicated to that block.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "kdFkHSkszkM"
+      ]
+    },
+    {
+      "conceptId": "play-action",
+      "topic": "Play-action",
+      "prior": {
+        "videoId": "_WXKHRTSMm4",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "_WXKHRTSMm4",
+        "start": 0,
+        "end": 103,
+        "durationSeconds": 103,
+        "title": "NFL 101: The Play-Action Pass",
+        "channel": "NFL"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=_WXKHRTSMm4",
+        "excerpt": "103-second NFL lesson; publisher identifies Solomon Wilcots explaining the play-action pass.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "_WXKHRTSMm4"
+      ]
+    },
+    {
+      "conceptId": "personnel-11",
+      "topic": "11 personnel",
+      "prior": {
+        "videoId": "VD5iNMca9y8",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "A-HH3Ws1Nw4",
+        "start": 121,
+        "end": 223,
+        "durationSeconds": 528,
+        "title": "11 personnel",
+        "channel": "Armchair Coach Justin"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4",
+        "excerpt": "Publisher description places 11 personnel at 121s and the next section (21 personnel) at 223s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "A-HH3Ws1Nw4"
+      ]
+    },
+    {
+      "conceptId": "personnel-12",
+      "topic": "12 personnel",
+      "prior": {
+        "videoId": "VD5iNMca9y8",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "A-HH3Ws1Nw4",
+        "start": 285,
+        "end": 369,
+        "durationSeconds": 528,
+        "title": "12 personnel",
+        "channel": "Armchair Coach Justin"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4",
+        "excerpt": "Publisher description places 12 personnel at 285s and the next section (22 personnel) at 369s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "A-HH3Ws1Nw4"
+      ]
+    },
+    {
+      "conceptId": "personnel-21",
+      "topic": "21 personnel",
+      "prior": {
+        "videoId": "VD5iNMca9y8",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "A-HH3Ws1Nw4",
+        "start": 223,
+        "end": 285,
+        "durationSeconds": 528,
+        "title": "21 personnel",
+        "channel": "Armchair Coach Justin"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4",
+        "excerpt": "Publisher description places 21 personnel at 223s and the next section (12 personnel) at 285s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "A-HH3Ws1Nw4"
+      ]
+    },
+    {
+      "conceptId": "personnel-22",
+      "topic": "22 personnel",
+      "prior": {
+        "videoId": "VD5iNMca9y8",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "A-HH3Ws1Nw4",
+        "start": 369,
+        "end": 441,
+        "durationSeconds": 528,
+        "title": "22 personnel",
+        "channel": "Armchair Coach Justin"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4",
+        "excerpt": "Publisher description places 22 personnel at 369s and the next section (13 personnel) at 441s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "A-HH3Ws1Nw4"
+      ]
+    },
+    {
+      "conceptId": "personnel-00",
+      "topic": "00 personnel",
+      "prior": {
+        "videoId": "VD5iNMca9y8",
+        "start": 0,
+        "end": null
+      },
+      "status": "animation-only",
+      "result": null,
+      "proof": null,
+      "reason": "The 00-personnel-specific replacement is 141 seconds with no publisher chapters or retrievable transcript. The old PFF video discusses multiple personnel groups and has no verified 00 timestamp. Empty-formation clips do not prove five-WR personnel. No offset was invented.",
+      "candidatesChecked": [
+        "lVB5exZ0gJ8",
+        "VD5iNMca9y8",
+        "A-HH3Ws1Nw4"
+      ]
+    },
+    {
+      "conceptId": "personnel-10",
+      "topic": "10 personnel",
+      "prior": {
+        "videoId": "VD5iNMca9y8",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "A-HH3Ws1Nw4",
+        "start": 82,
+        "end": 121,
+        "durationSeconds": 528,
+        "title": "10 personnel",
+        "channel": "Armchair Coach Justin"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4",
+        "excerpt": "Publisher description places 10 personnel at 82s and the next section (11 personnel) at 121s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "A-HH3Ws1Nw4"
+      ]
+    },
+    {
+      "conceptId": "quarterback",
+      "topic": "Quarterback · QB",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "KA_EFlU0CWY",
+        "start": 35,
+        "end": 60,
+        "durationSeconds": 642,
+        "title": "Quarterback",
+        "channel": "Lurks Lessons"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+        "excerpt": "Publisher description places Quarterback at 35s and the next section (Running back) at 60s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "KA_EFlU0CWY"
+      ]
+    },
+    {
+      "conceptId": "running-back",
+      "topic": "Running back · RB / TB",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "KA_EFlU0CWY",
+        "start": 60,
+        "end": 81,
+        "durationSeconds": 642,
+        "title": "Running back",
+        "channel": "Lurks Lessons"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+        "excerpt": "Publisher description places Running back at 60s and the next section (Fullback) at 81s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "KA_EFlU0CWY"
+      ]
+    },
+    {
+      "conceptId": "fullback",
+      "topic": "Fullback · FB",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "KA_EFlU0CWY",
+        "start": 81,
+        "end": 107,
+        "durationSeconds": 642,
+        "title": "Fullback",
+        "channel": "Lurks Lessons"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+        "excerpt": "Publisher description places Fullback at 81s and the next section (Wide receiver) at 107s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "KA_EFlU0CWY"
+      ]
+    },
+    {
+      "conceptId": "tight-end",
+      "topic": "Tight end · TE / Y",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "KA_EFlU0CWY",
+        "start": 223,
+        "end": 259,
+        "durationSeconds": 642,
+        "title": "Tight end",
+        "channel": "Lurks Lessons"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+        "excerpt": "Publisher description places Tight end at 223s and the next section (Defensive line) at 259s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "KA_EFlU0CWY"
+      ]
+    },
+    {
+      "conceptId": "x-receiver",
+      "topic": "X receiver",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "wtr9X6HGDkU",
+        "start": 0,
+        "end": 15,
+        "durationSeconds": 15,
+        "title": "X receiver: boundary double move",
+        "channel": "SpreadOffense"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=wtr9X6HGDkU",
+        "excerpt": "15-second X-receiver example; publisher identifies an X boundary post-and-go with maximum protection.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "wtr9X6HGDkU"
+      ]
+    },
+    {
+      "conceptId": "z-receiver",
+      "topic": "Z receiver",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "IP-vp9T1BBE",
+        "start": 0,
+        "end": 16,
+        "durationSeconds": 16,
+        "title": "Z receiver: motion into a shallow route",
+        "channel": "SpreadOffense"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=IP-vp9T1BBE",
+        "excerpt": "16-second Z-receiver example; publisher describes presnap motion improving the angle against man/Cover 1 and confirming coverage.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "IP-vp9T1BBE"
+      ]
+    },
+    {
+      "conceptId": "slot",
+      "topic": "Slot receiver",
+      "prior": {
+        "videoId": "HrRcd36HuCI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "gA3bQrIkxA8",
+        "start": 0,
+        "end": 60,
+        "durationSeconds": 60,
+        "title": "Slot receiver coaching detail",
+        "channel": "First Down Training"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=gA3bQrIkxA8",
+        "excerpt": "60-second First Down Training coaching short exclusively addressed to slot wide receivers in its publisher title.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "gA3bQrIkxA8"
+      ]
+    },
+    {
+      "conceptId": "safety-count",
+      "topic": "1-high vs. 2-high",
+      "prior": {
+        "videoId": "WehkMpcV3-c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "6jIUfw0ISUM",
+        "start": 0,
+        "end": 73,
+        "durationSeconds": 73,
+        "title": "One-high vs. two-high: Josh Gattis read",
+        "channel": "SpreadOffense"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=6jIUfw0ISUM",
+        "excerpt": "73-second Josh Gattis coaching excerpt: publisher explicitly contrasts one-high/closed middle with two-high/open middle and the corresponding receiver read.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "6jIUfw0ISUM"
+      ]
+    },
+    {
+      "conceptId": "hot-read",
+      "topic": "Identify the hot blitzer",
+      "prior": {
+        "videoId": "jofkg9Q6ZYg",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "fWQk9BOYPn0",
+        "start": 0,
+        "end": 46,
+        "durationSeconds": 46,
+        "title": "Hot answer against edge pressure",
+        "channel": "Cover 1"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=fWQk9BOYPn0",
+        "excerpt": "46-second Cover 1 analysis: publisher identifies edge pressure, a required quick release, correct leverage placement, and the tight end dropping the pass.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "fWQk9BOYPn0"
+      ]
+    },
+    {
+      "conceptId": "leverage",
+      "topic": "Read leverage",
+      "prior": {
+        "videoId": "WehkMpcV3-c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "mLS-BvxIKFM",
+        "start": 0,
+        "end": 114,
+        "durationSeconds": 114,
+        "title": "Attack the defender’s leverage",
+        "channel": "First Down Training"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=mLS-BvxIKFM",
+        "excerpt": "114-second First Down Training lesson; publisher says it teaches attacking leverage and creating route separation with a vertical set.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "mLS-BvxIKFM"
+      ]
+    },
+    {
+      "conceptId": "apex",
+      "topic": "The apex defender",
+      "prior": {
+        "videoId": "WehkMpcV3-c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "GyJ5lfIJ34E",
+        "start": 0,
+        "end": 119,
+        "durationSeconds": 119,
+        "title": "Read the apex defender",
+        "channel": "CoachLasker"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=GyJ5lfIJ34E",
+        "excerpt": "119-second coaching demonstration; publisher specifically describes teaching quarterbacks to read movement of the apex/conflict defender.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "GyJ5lfIJ34E"
+      ]
+    },
+    {
+      "conceptId": "conflict-linebacker",
+      "topic": "Conflict linebacker",
+      "prior": {
+        "videoId": "WehkMpcV3-c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "xrpX3Qy8Vu8",
+        "start": 0,
+        "end": 19,
+        "durationSeconds": 19,
+        "title": "Drive: the high-low read",
+        "channel": "SpreadOffense"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=xrpX3Qy8Vu8",
+        "excerpt": "19-second Drive high-low cutup; publisher identifies the cross-country route used instead of a dig in a trips-bunch variation.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "xrpX3Qy8Vu8"
+      ]
+    },
+    {
+      "conceptId": "press-check",
+      "topic": "Audibles vs. press",
+      "prior": {
+        "videoId": "WehkMpcV3-c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "CaRErLtTPww",
+        "start": 0,
+        "end": 86,
+        "durationSeconds": 86,
+        "title": "The defensive answer to a stack check",
+        "channel": "The DB Network"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=CaRErLtTPww",
+        "excerpt": "86-second coaching lesson about defending stacked receivers; publisher discusses the man-coverage response to the stack and avoiding in/out exchanges.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "CaRErLtTPww"
+      ]
+    },
+    {
+      "conceptId": "zero-beater",
+      "topic": "Cover 0 blitz beaters",
+      "prior": {
+        "videoId": "itG3h01DwJQ",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "tLx-yfYD5AQ",
+        "start": 0,
+        "end": 44,
+        "durationSeconds": 44,
+        "title": "Hoss Y-Juke: Cover 0 check",
+        "channel": "Noah Riley"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=tLx-yfYD5AQ",
+        "excerpt": "44-second cutup dedicated to a Hoss Y-Juke Cover 0 check, explicitly identified in the publisher title.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "tLx-yfYD5AQ"
+      ]
+    },
+    {
+      "conceptId": "box-count",
+      "topic": "Light box vs. heavy box",
+      "prior": {
+        "videoId": "WehkMpcV3-c",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "fvaR530daz8",
+        "start": 0,
+        "end": 29,
+        "durationSeconds": 29,
+        "title": "Box count: give or pull",
+        "channel": "SpreadOffense"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=fvaR530daz8",
+        "excerpt": "29-second cutup; publisher explicitly shows two presnap box-count decisions, giving the ball versus pulling and throwing.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "fvaR530daz8"
+      ]
+    },
+    {
+      "conceptId": "formation-i",
+      "topic": "I-Formation",
+      "prior": {
+        "videoId": "sRaIlyv95hs",
+        "start": 107,
+        "end": 249
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "sRaIlyv95hs",
+        "start": 107,
+        "end": 249,
+        "durationSeconds": 1086,
+        "title": "I-formation",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=sRaIlyv95hs",
+        "excerpt": "Publisher description places I-formation at 107s and the next section (Single back) at 249s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "sRaIlyv95hs"
+      ]
+    },
+    {
+      "conceptId": "formation-singleback",
+      "topic": "Singleback",
+      "prior": {
+        "videoId": "sRaIlyv95hs",
+        "start": 249,
+        "end": 351
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "sRaIlyv95hs",
+        "start": 249,
+        "end": 351,
+        "durationSeconds": 1086,
+        "title": "Single back",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=sRaIlyv95hs",
+        "excerpt": "Publisher description places Single back at 249s and the next section (Pro set) at 351s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "sRaIlyv95hs"
+      ]
+    },
+    {
+      "conceptId": "formation-trips",
+      "topic": "Shotgun / Trips",
+      "prior": {
+        "videoId": "HcJVN1h4xvI",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "GhCDEK3Go8k",
+        "start": 0,
+        "end": 16,
+        "durationSeconds": 16,
+        "title": "Shotgun Trips Right alignment",
+        "channel": "Football Flex"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=GhCDEK3Go8k",
+        "excerpt": "16-second alignment clip; publisher explicitly identifies Shotgun Trips Right as three WRs on one side, with the running back aligned opposite.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "GhCDEK3Go8k"
+      ]
+    },
+    {
+      "conceptId": "formation-empty",
+      "topic": "Empty",
+      "prior": {
+        "videoId": "sRaIlyv95hs",
+        "start": 876,
+        "end": 971
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "sRaIlyv95hs",
+        "start": 876,
+        "end": 971,
+        "durationSeconds": 1086,
+        "title": "Empty",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=sRaIlyv95hs",
+        "excerpt": "Publisher description places Empty at 876s and the next section (Jumbo) at 971s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "sRaIlyv95hs"
+      ]
+    },
+    {
+      "conceptId": "formation-pistol",
+      "topic": "Pistol",
+      "prior": {
+        "videoId": "sRaIlyv95hs",
+        "start": 564,
+        "end": 669
+      },
+      "status": "verified-existing",
+      "result": {
+        "videoId": "sRaIlyv95hs",
+        "start": 564,
+        "end": 669,
+        "durationSeconds": 1086,
+        "title": "Pistol",
+        "channel": "Fourth and Film"
+      },
+      "proof": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=sRaIlyv95hs",
+        "excerpt": "Publisher description places Pistol at 564s and the next section (Spread) at 669s.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "sRaIlyv95hs"
+      ]
+    },
+    {
+      "conceptId": "formation-wishbone",
+      "topic": "Wishbone",
+      "prior": {
+        "videoId": "EvYU8Jo7uRo",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "G4CvyWoWVwE",
+        "start": 0,
+        "end": 13,
+        "durationSeconds": 13,
+        "title": "Wishbone dive example",
+        "channel": "Chris Cole"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=G4CvyWoWVwE",
+        "excerpt": "13-second standalone play upload explicitly titled Wishbone Dive by its publisher.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "G4CvyWoWVwE"
+      ]
+    },
+    {
+      "conceptId": "formation-flexbone",
+      "topic": "Flexbone",
+      "prior": {
+        "videoId": "a0Dv0lTy2Y0",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "HDv2EcqpDcU",
+        "start": 0,
+        "end": 64,
+        "durationSeconds": 64,
+        "title": "Flexbone triple option",
+        "channel": "FirstDown PlayBook"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=HDv2EcqpDcU",
+        "excerpt": "64-second FirstDown PlayBook lesson specifically installing triple option from the FlexBone formation.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "HDv2EcqpDcU"
+      ]
+    },
+    {
+      "conceptId": "gap-a",
+      "topic": "A-Gap",
+      "prior": {
+        "videoId": "ynj3jMUi_Yk",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "u7sjtJfJuAk",
+        "start": 0,
+        "end": 22,
+        "durationSeconds": 22,
+        "title": "Tom Brady explains the A-gap",
+        "channel": "NFL"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=u7sjtJfJuAk",
+        "excerpt": "22-second official NFL short specifically titled Brady explaining the A Gap.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "u7sjtJfJuAk"
+      ]
+    },
+    {
+      "conceptId": "gap-b",
+      "topic": "B-Gap",
+      "prior": {
+        "videoId": "ynj3jMUi_Yk",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "FQDh04WRz7M",
+        "start": 0,
+        "end": 14,
+        "durationSeconds": 14,
+        "title": "B-gap: open and closed",
+        "channel": "Coach and Coordinator Network"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=FQDh04WRz7M",
+        "excerpt": "14-second Coach and Coordinator Network drill, explicitly titled B-Gap Opened & Closed and credited to Keith Grabowski.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "FQDh04WRz7M"
+      ]
+    },
+    {
+      "conceptId": "gap-c",
+      "topic": "C-Gap",
+      "prior": {
+        "videoId": "ynj3jMUi_Yk",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "aQGZUzThaMM",
+        "start": 0,
+        "end": 62,
+        "durationSeconds": 62,
+        "title": "Press the C-gap",
+        "channel": "Championship Productions"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=aQGZUzThaMM",
+        "excerpt": "62-second coach Brad Seaburg clinic excerpt specifically teaching the quarterback to press the C-gap in inside veer.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "aQGZUzThaMM"
+      ]
+    },
+    {
+      "conceptId": "gap-d",
+      "topic": "D-Gap",
+      "prior": {
+        "videoId": "ynj3jMUi_Yk",
+        "start": 0,
+        "end": null
+      },
+      "status": "verified-replacement",
+      "result": {
+        "videoId": "0yJPC-_gHFs",
+        "start": 0,
+        "end": 36,
+        "durationSeconds": 36,
+        "title": "Outside veer: the D-gap keep",
+        "channel": "CFBK - Coaching Football with Brian Klee"
+      },
+      "proof": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=0yJPC-_gHFs",
+        "excerpt": "36-second Coach Brian Klee cutup; publisher explicitly identifies the fullback give in C-gap versus the quarterback keep in D-gap.",
+        "checkedOn": "2026-10-01"
+      },
+      "reason": "Exact publisher chapter boundaries, or a complete topic-specific upload shorter than 120 seconds.",
+      "candidatesChecked": [
+        "0yJPC-_gHFs"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "id": "2exkTbFboDw",
+      "url": "https://www.youtube.com/watch?v=2exkTbFboDw",
+      "title": "Every Passing Route Explained in 19 Minutes",
+      "channel": "Fourth and Film",
+      "durationSeconds": 1152,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "gBHQZOulvIY",
+      "url": "https://www.youtube.com/watch?v=gBHQZOulvIY",
+      "title": "Every Receiver ROUTE in American Football explained in 5 minutes",
+      "channel": "Everything Explained",
+      "durationSeconds": 263,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "Ebn6c1jNZbo",
+      "url": "https://www.youtube.com/watch?v=Ebn6c1jNZbo",
+      "title": "Every Passing Concept Explained in 13 Minutes",
+      "channel": "Fourth and Film",
+      "durationSeconds": 771,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "RWilD1L4EBU",
+      "url": "https://www.youtube.com/watch?v=RWilD1L4EBU",
+      "title": "Drive: Exploring Chiefs High-low Concept",
+      "channel": "RGR Football - Kansas City Chiefs",
+      "durationSeconds": 60,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "2zV4rLnfzJ4",
+      "url": "https://www.youtube.com/watch?v=2zV4rLnfzJ4",
+      "title": "2017 Eagles Scissors 2",
+      "channel": "Bobby Peters",
+      "durationSeconds": 31,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "fZzsR_7xbpc",
+      "url": "https://www.youtube.com/watch?v=fZzsR_7xbpc",
+      "title": "How To Run The Play Action Boot Pass",
+      "channel": "American Football Academy",
+      "durationSeconds": 669,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "Of_TwCsCETs",
+      "url": "https://www.youtube.com/watch?v=Of_TwCsCETs",
+      "title": "Every Running Concept Explained in 27 Minutes",
+      "channel": "Fourth and Film",
+      "durationSeconds": 1631,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "NnRR6K-xt9k",
+      "url": "https://www.youtube.com/watch?v=NnRR6K-xt9k",
+      "title": "How Pass Protection Works",
+      "channel": "Thinking Football",
+      "durationSeconds": 895,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "kdFkHSkszkM",
+      "url": "https://www.youtube.com/watch?v=kdFkHSkszkM",
+      "title": "CHIP BLOCK",
+      "channel": "The QB Nerd",
+      "durationSeconds": 76,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "_WXKHRTSMm4",
+      "url": "https://www.youtube.com/watch?v=_WXKHRTSMm4",
+      "title": "NFL 101: The Play-Action Pass",
+      "channel": "NFL",
+      "durationSeconds": 103,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "A-HH3Ws1Nw4",
+      "url": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4",
+      "title": "Personnel Packages Explained (How Offenses CREATE Mismatches)",
+      "channel": "Armchair Coach Justin",
+      "durationSeconds": 528,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "KA_EFlU0CWY",
+      "url": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+      "title": "SPORTS 101 // Guide to American Football Positions",
+      "channel": "Lurks Lessons",
+      "durationSeconds": 642,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "wtr9X6HGDkU",
+      "url": "https://www.youtube.com/watch?v=wtr9X6HGDkU",
+      "title": "X Receiver double move to boundary",
+      "channel": "SpreadOffense com -  Domain Name & X page for sale",
+      "durationSeconds": 15,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "IP-vp9T1BBE",
+      "url": "https://www.youtube.com/watch?v=IP-vp9T1BBE",
+      "title": "Z shallow with Pre Snap Motion - Spread Offense",
+      "channel": "SpreadOffense com -  Domain Name & X page for sale",
+      "durationSeconds": 16,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "gA3bQrIkxA8",
+      "url": "https://www.youtube.com/watch?v=gA3bQrIkxA8",
+      "title": "ALL SLOT WRs NEED TO WATCH THIS",
+      "channel": "First Down Training",
+      "durationSeconds": 60,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "6jIUfw0ISUM",
+      "url": "https://www.youtube.com/watch?v=6jIUfw0ISUM",
+      "title": "Read RPO based on Middle of the Field Safety Coverage",
+      "channel": "SpreadOffense com -  Domain Name & X page for sale",
+      "durationSeconds": 73,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "fWQk9BOYPn0",
+      "url": "https://www.youtube.com/watch?v=fWQk9BOYPn0",
+      "title": "Peterman blitzed Quick Pass to O'Leary",
+      "channel": "Cover 1",
+      "durationSeconds": 46,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "mLS-BvxIKFM",
+      "url": "https://www.youtube.com/watch?v=mLS-BvxIKFM",
+      "title": "How To Attack Leverage",
+      "channel": "First Down Training",
+      "durationSeconds": 114,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "GyJ5lfIJ34E",
+      "url": "https://www.youtube.com/watch?v=GyJ5lfIJ34E",
+      "title": "How Coach Teaches Apex/Conflict Defender Reads on Playrbook's Magic Chalkboard",
+      "channel": "CoachLasker",
+      "durationSeconds": 119,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "xrpX3Qy8Vu8",
+      "url": "https://www.youtube.com/watch?v=xrpX3Qy8Vu8",
+      "title": "Drive Concept - High Low Read",
+      "channel": "SpreadOffense com -  Domain Name & X page for sale",
+      "durationSeconds": 19,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "CaRErLtTPww",
+      "url": "https://www.youtube.com/watch?v=CaRErLtTPww",
+      "title": "How To Defend Stack Formations",
+      "channel": "The DB Network",
+      "durationSeconds": 86,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "tLx-yfYD5AQ",
+      "url": "https://www.youtube.com/watch?v=tLx-yfYD5AQ",
+      "title": "Hoss y juke (cover 0 check)",
+      "channel": "Noah Riley",
+      "durationSeconds": 44,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "fvaR530daz8",
+      "url": "https://www.youtube.com/watch?v=fvaR530daz8",
+      "title": "Pre-snap box count, RPO",
+      "channel": "SpreadOffense com -  Domain Name & X page for sale",
+      "durationSeconds": 29,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "sRaIlyv95hs",
+      "url": "https://www.youtube.com/watch?v=sRaIlyv95hs",
+      "title": "Every Offensive Formation Explained in 18 Minutes",
+      "channel": "Fourth and Film",
+      "durationSeconds": 1086,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "GhCDEK3Go8k",
+      "url": "https://www.youtube.com/watch?v=GhCDEK3Go8k",
+      "title": "#football Shotgun | Trips Right (3 WRs to one side, RB aligned opposite/trips left = weak side)",
+      "channel": "Football Flex",
+      "durationSeconds": 16,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "HDv2EcqpDcU",
+      "url": "https://www.youtube.com/watch?v=HDv2EcqpDcU",
+      "title": "FlexBone Triple Option",
+      "channel": "FirstDown PlayBook",
+      "durationSeconds": 64,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "G4CvyWoWVwE",
+      "url": "https://www.youtube.com/watch?v=G4CvyWoWVwE",
+      "title": "Wishbone Dive",
+      "channel": "Chris Cole",
+      "durationSeconds": 13,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "FQDh04WRz7M",
+      "url": "https://www.youtube.com/watch?v=FQDh04WRz7M",
+      "title": "B-Gap Opened & Closed",
+      "channel": "Coach and Coordinator Network",
+      "durationSeconds": 14,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "u7sjtJfJuAk",
+      "url": "https://www.youtube.com/watch?v=u7sjtJfJuAk",
+      "title": "Brady explaining the \"A Gap\"",
+      "channel": "NFL",
+      "durationSeconds": 22,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "aQGZUzThaMM",
+      "url": "https://www.youtube.com/watch?v=aQGZUzThaMM",
+      "title": "How Brad Seaburg Trains Football Quarterbacks to Press the C-Gap!",
+      "channel": "Championship Productions",
+      "durationSeconds": 62,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    },
+    {
+      "id": "0yJPC-_gHFs",
+      "url": "https://www.youtube.com/watch?v=0yJPC-_gHFs",
+      "title": "2023.05.05 Outside Veer (Keep, Give, Keep TD!)",
+      "channel": "CFBK - Coaching Football with Brian Klee",
+      "durationSeconds": 36,
+      "status": "OK",
+      "embeddable": true,
+      "checkedOn": "2026-10-01"
+    }
+  ]
+}

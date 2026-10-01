@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Pause, Play, RotateCcw, X } from 'lucide-react'
+import { ArrowUpRight, Pause, Play, RotateCcw, SkipBack, SkipForward, X } from 'lucide-react'
 import { concepts } from '../data/concepts'
 import { conceptPage, pageHash } from '../data/navigation'
 import type { Concept } from '../data/types'
@@ -8,6 +8,9 @@ import PlayCanvas from './PlayCanvas'
 import { sceneFor } from '../data/playScenes'
 import { samplePlay } from '../data/playEngine'
 import { useMotionPreference } from '../useMotionPreference'
+import { adjacentKeyframe, DEFAULT_PLAYBACK_RATE, PLAYBACK_RATES, playSteps } from '../data/playback'
+import { youtubeEmbedUrl } from '../data/filmModel'
+import SourceCredit from './SourceCredit'
 import '../breakdown.css'
 
 const aliases: Record<string, string[]> = {
@@ -40,19 +43,18 @@ function CoachingText({ concept, onNavigate }: { concept: Concept; onNavigate: (
   })}</p>
 }
 
-export default function FilmModal({ concept, onClose, onNavigate, returnFocus }: { concept: Concept; onClose: () => void; onNavigate: (concept: Concept) => void; returnFocus?: HTMLElement | null }) {
+export default function FilmModal({ concept, onClose, onNavigate, onNavigatePosition, returnFocus }: { concept: Concept; onClose: () => void; onNavigate: (concept: Concept) => void; onNavigatePosition: (slug: string) => void; returnFocus?: HTMLElement | null }) {
   const ref = useRef<HTMLDivElement>(null)
   const initialFocus = useRef(returnFocus)
   const reduced = useMotionPreference()
   const [mode, setMode] = useState<'diagram' | 'film'>('diagram')
   const [progress, setProgress] = useState(0)
   const [playing, setPlaying] = useState(false)
+  const [rate, setRate] = useState(DEFAULT_PLAYBACK_RATE)
   const scene = useMemo(() => sceneFor(concept), [concept.id])
   const playFrame = useMemo(() => samplePlay(scene, progress * scene.duration), [scene, progress])
-  const stages = [
-    { name: 'PRE-SNAP', seconds: 0 }, { name: 'SNAP', seconds: .55 },
-    { name: 'DEVELOPMENT', seconds: 1.5 }, { name: 'RESULT', seconds: scene.duration },
-  ] as const
+  const stages = playSteps(scene)
+  const activeStage = [...stages].reverse().find(stage => playFrame.seconds >= stage.seconds - .005)
   const film = concept.film
   const related = (concept.related ?? []).map(id => concepts.find(c => c.id === id)).filter((c): c is Concept => !!c && c.id !== concept.id).slice(0, 4)
 
@@ -65,7 +67,7 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
     const keydown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') { event.preventDefault(); onClose(); return }
       if (event.key !== 'Tab') return
-      const nodes = [...(ref.current?.querySelectorAll<HTMLElement>('button:not(:disabled), a[href], input, iframe, summary') ?? [])].filter(el => el.getClientRects().length > 0)
+      const nodes = [...(ref.current?.querySelectorAll<HTMLElement>('button:not(:disabled), [role="button"][tabindex="0"], a[href], input, select, iframe, summary') ?? [])].filter(el => el.getClientRects().length > 0)
       if (!nodes.length) return
       const first = nodes[0], last = nodes[nodes.length - 1]
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus() }
@@ -85,12 +87,12 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
     let frame = 0, last = performance.now()
     const tick = (now: number) => {
       const elapsed = now - last; last = now
-      setProgress(value => Math.min(1, value + elapsed / (scene.duration * 1000)))
+      setProgress(value => Math.min(1, value + elapsed * rate / (scene.duration * 1000)))
       frame = requestAnimationFrame(tick)
     }
     frame = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(frame)
-  }, [playing, reduced, scene.duration])
+  }, [playing, reduced, scene.duration, rate])
   useEffect(() => { if (progress >= 1) setPlaying(false) }, [progress])
   const play = () => {
     if (playing) { setPlaying(false); return }
@@ -112,13 +114,13 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
           </div>}
         </div>
         {mode === 'film' && film ? <div className="breakdown-film">
-          <div className="video-container"><iframe title={film.title} src={`https://www.youtube-nocookie.com/embed/${film.id}?start=${film.start}${film.end ? `&end=${film.end}` : ''}&rel=0&playsinline=1`}
+          <div className="video-container"><iframe title={film.title} src={youtubeEmbedUrl(film)}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /></div>
-          <a className="film-fallback" href={`https://www.youtube.com/watch?v=${film.id}&t=${film.start}s`} target="_blank" rel="noreferrer">Open on YouTube <ArrowUpRight size={13} /></a>
+          <SourceCredit concept={concept} />
           {film.note && <p className="film-note">{film.note}</p>}
         </div> : <div className="diagram-preview">
-          <div className={`preview-field lit ${concept.side}`} role="img" aria-label={`${shortName(concept)}: offense and defense, ${playFrame.phase.toLowerCase()}`}>
-            <PlayCanvas offensiveNodes={scene.offensiveNodes} defensiveNodes={scene.defensiveNodes} scene={scene} active progress={progress} preview className={`side-${concept.side}`} />
+          <div className={`preview-field lit ${concept.side}`} role="group" aria-label={`${shortName(concept)}: offense and defense, ${playFrame.phase.toLowerCase()}`}>
+            <PlayCanvas offensiveNodes={scene.offensiveNodes} defensiveNodes={scene.defensiveNodes} scene={scene} active progress={progress} preview onNavigatePosition={onNavigatePosition} className={`side-${concept.side}`} />
           </div>
           <div className="preview-controls">
             <button className="preview-play" aria-label={playing ? 'Pause diagram' : progress >= 1 ? 'Replay diagram' : 'Play diagram'} onClick={play}>{playing ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}<span>{playing ? 'PAUSE' : progress >= 1 ? 'REPLAY' : 'PLAY'}</span></button>
@@ -126,12 +128,15 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
             <button className="preview-reset" aria-label="Reset diagram" onClick={() => { setPlaying(false); setProgress(0) }}><RotateCcw size={18} /></button>
             <span className="snap-label" aria-hidden="true">{playFrame.seconds.toFixed(2)}s</span>
           </div>
-          <div className="preview-stages" role="group" aria-label="Play stages">{stages.map(stage => <button key={stage.name} aria-pressed={playFrame.phase === stage.name}
+          <div className="playback-tools"><div className="keyframe-controls" role="group" aria-label="Step through play"><button aria-label="Previous keyframe" disabled={progress === 0} onClick={() => { setPlaying(false); setProgress(adjacentKeyframe(scene, playFrame.seconds, -1) / scene.duration) }}><SkipBack size={14} /> Step</button><button aria-label="Next keyframe" disabled={progress === 1} onClick={() => { setPlaying(false); setProgress(adjacentKeyframe(scene, playFrame.seconds, 1) / scene.duration) }}>Step <SkipForward size={14} /></button></div><label className="playback-rate">Speed <select aria-label="Playback speed" value={rate} onChange={event => setRate(Number(event.target.value))}>{PLAYBACK_RATES.map(value => <option key={value} value={value}>{value}×</option>)}</select></label></div>
+          <div className="preview-stages" role="group" aria-label="Play stages">{stages.map(stage => <button key={stage.name} aria-pressed={activeStage === stage}
             onClick={() => { setPlaying(false); setProgress(stage.seconds / scene.duration) }}>{stage.name}</button>)}</div>
           <div className="preview-caption"><span className="caption-time" aria-hidden="true">{playFrame.seconds.toFixed(2)}s</span><p aria-live="polite" aria-atomic="true">{playFrame.caption}</p></div>
+          <p className="preview-legend"><span className="motion-swatch" /> Pre-snap motion <span className="assignment-swatch" /> After the snap · Tap a player to explore their position.</p>
         </div>}
         <div className="breakdown-notes">
           <CoachingText concept={concept} onNavigate={onNavigate} />
+          <SourceCredit concept={concept} />
           {related.length > 0 && <nav className="related-concepts" aria-label="Related concepts">{related.map(target => <a key={target.id} className="concept-pill" href={pageHash(conceptPage(target))} onClick={event => { event.preventDefault(); onNavigate(target) }}>{shortName(target)}<ArrowUpRight size={12} /></a>)}</nav>}
           <details className="coaching-sources"><summary>Sources</summary><ul>{concept.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}<ArrowUpRight size={12} /></a><span>{source.publisher}</span></li>)}</ul></details>
         </div>

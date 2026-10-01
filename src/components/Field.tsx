@@ -13,8 +13,8 @@ export function Alignment({ side }: { side: Side }) {
     : <path key={i} d={`M ${x - 6} ${y - 6} L ${x + 6} ${y + 6} M ${x + 6} ${y - 6} L ${x - 6} ${y + 6}`} fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />)}</svg>
 }
 
-export default function Field({ concept, active, replay, progress }: { concept: Concept; active: boolean; replay: number; progress?: number }) {
+export default function Field({ concept, active, replay, progress, onNavigatePosition }: { concept: Concept; active: boolean; replay: number; progress?: number; onNavigatePosition?: (slug: string) => void }) {
   const scene = useMemo(() => sceneFor(concept), [concept.id])
   return <PlayCanvas offensiveNodes={scene.offensiveNodes} defensiveNodes={scene.defensiveNodes} scene={scene}
-    active={active} replay={replay} progress={progress} className={`alignment-field side-${concept.side}`} />
+    active={active} replay={replay} progress={progress} onNavigatePosition={onNavigatePosition} className={`alignment-field side-${concept.side}`} />
 }

@@ -6,25 +6,30 @@ import { conceptPage, homePage, pageHash, readPage, sections, type Page } from '
 import type { Concept } from './data/types'
 import Field, { Alignment } from './components/Field'
 import FilmModal from './components/FilmModal'
+import PositionDetail from './components/PositionDetail'
+import { positionProfileBySlug } from './data/positionProfiles'
 import { useMotionPreference } from './useMotionPreference'
 import './expansion.css'
+import './position.css'
 
 const TacticalDraft = lazy(() => import('./components/TacticalDraft'))
 
-function ToyTile({ concept, route, selected, onSelect, onOpen, section = false }: { concept: Concept; route: boolean; selected: boolean; onSelect: () => void; onOpen: () => void; section?: boolean }) {
+function ToyTile({ concept, route, selected, onSelect, onOpen, onNavigatePosition, section = false }: { concept: Concept; route: boolean; selected: boolean; onSelect: () => void; onOpen: () => void; onNavigatePosition: (slug: string) => void; section?: boolean }) {
   const [hovered, setHovered] = useState(false)
   const [replay, setReplay] = useState(0)
   const reduced = useMotionPreference()
   const active = hovered || selected
+  const activate = () => { setReplay(value => value + 1); route ? onSelect() : onOpen() }
   return <motion.article className={`toy-tile ${concept.side} ${active ? 'lit' : ''}`} data-concept={section ? undefined : concept.id} whileHover={reduced ? {} : { y: -3 }}
     onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)}
     onFocusCapture={() => setHovered(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setHovered(false) }}>
-    <button className="tile-main" aria-label={section ? `Open ${concept.name.toLowerCase()}` : route ? `Select ${concept.name}` : `Explore ${concept.name}`} aria-pressed={route ? selected : undefined}
-      onClick={() => { setReplay(value => value + 1); route ? onSelect() : onOpen() }}>
-      <Field concept={concept} active={active} replay={replay} />
-      <span className="tile-label" title={concept.name}>{concept.name.replace(/^\d+ · /, '')}</span>
+    <div className="tile-main" onClick={activate}>
+      <Field concept={concept} active={active} replay={replay} onNavigatePosition={onNavigatePosition} />
+      <button className="tile-label" title={concept.name} aria-label={section ? `Open ${concept.name.toLowerCase()}` : route ? `Select ${concept.name}` : `Explore ${concept.name}`} aria-pressed={route ? selected : undefined}
+        onClick={event => { event.stopPropagation(); activate() }}>{concept.name.replace(/^\d+ · /, '')}
       {!route && (section ? <ArrowUpRight className="tile-corner" size={19} strokeWidth={2.5} /> : <Play className="tile-corner" size={17} fill="currentColor" />)}
-    </button>
+      </button>
+    </div>
     {route && <button className="tile-film" aria-label={`Explore ${concept.name}`} onClick={onOpen}><Play size={17} fill="currentColor" /></button>}
   </motion.article>
 }
@@ -40,10 +45,13 @@ function DraftGlyph() {
 
 export default function App() {
   const [page, setPage] = useState<Page>(readPage)
+  const [draftVisited, setDraftVisited] = useState(() => !!readPage().game)
   const [selected, setSelected] = useState<string | null>(null)
   const filmTrigger = useRef<HTMLElement | null>(null)
+  const positionReturn = useRef<Page | null>(null)
   const reduced = useMotionPreference()
   const section = sections.find(s => s.side === page.side && s.key === page.section)
+  const position = page.position ? positionProfileBySlug.get(page.position) : undefined
   const film = page.concept ? concepts.find(c => c.id === page.concept && c.side === page.side && c.category === section?.category) : undefined
 
   useEffect(() => {
@@ -51,8 +59,10 @@ export default function App() {
     window.addEventListener('popstate', update); window.addEventListener('hashchange', update)
     return () => { window.removeEventListener('popstate', update); window.removeEventListener('hashchange', update) }
   }, [])
+  useEffect(() => { if (page.game) setDraftVisited(true) }, [page.game])
   const navigate = (next: Page) => {
-    history.pushState(null, '', location.pathname + location.search + pageHash(next))
+    const base = location.pathname.startsWith('/positions/') ? '/' : location.pathname
+    history.pushState(null, '', base + location.search + pageHash(next))
     setPage(next); setSelected(next.concept ?? null)
     if (!next.concept) window.scrollTo({ top: 0, behavior: 'instant' })
   }
@@ -68,22 +78,27 @@ export default function App() {
     navigate(conceptPage(concept))
   }
   const home = () => navigate(homePage)
+  const openPosition = (slug: string) => {
+    if (!page.position) positionReturn.current = page
+    navigate({ ...homePage, position: slug })
+  }
   const draft = () => navigate({ ...homePage, game: true })
-  const back = () => navigate(page.game || page.side === 'special' ? homePage : page.section ? { side: page.side, section: null } : homePage)
+  const back = () => navigate(page.position ? positionReturn.current ?? { side: position?.side ?? 'offense', section: position?.side === 'special' ? 'teams' : 'positions' } : page.game || page.side === 'special' ? homePage : page.section ? { side: page.side, section: null } : homePage)
 
   return <div className="app">
     <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus() }}>Skip to field</a>
     <header className="topbar" inert={!!film}>
       <button className="wordmark" aria-label="GridironDex home" onClick={home}>GridironDex</button>
       <div className="topbar-actions">
-        {page.side && <button className="quick-draft" aria-label="PLAY" title="Tactical Draft" onClick={draft}><span>PLAY</span><Gamepad2 size={18} /></button>}
-        {(page.side || page.game) && <button className="back-button" onClick={back}><ArrowLeft size={18} /><span>BACK</span></button>}
+        {(page.side || page.position) && <button className="quick-draft" aria-label="PLAY" title="Tactical Draft" onClick={draft}><span>PLAY</span><Gamepad2 size={18} /></button>}
+        {(page.side || page.game || page.position) && <button className="back-button" onClick={back}><ArrowLeft size={18} /><span>BACK</span></button>}
       </div>
     </header>
-    <main id="main" tabIndex={-1} className={page.game ? 'draft-page' : page.side ? 'blocks-page' : 'home-page'} inert={!!film}>
+    <main id="main" tabIndex={-1} className={page.position ? 'position-page' : page.game ? 'draft-page' : page.side ? 'blocks-page' : 'home-page'} inert={!!film}>
+      {draftVisited && <div hidden={!page.game}><Suspense fallback={<p className="loading-draft" role="status">Setting the field…</p>}><TacticalDraft onExit={home} onNavigatePosition={openPosition} /></Suspense></div>}
       <AnimatePresence mode="wait" initial={false}>
-        <motion.div key={page.game ? 'draft' : `${page.side}-${page.section}`} initial={{ opacity: 0, y: reduced ? 0 : 7 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .16 }}>
-          {page.game ? <Suspense fallback={<p className="loading-draft" role="status">Setting the field…</p>}><TacticalDraft onExit={home} /></Suspense> : !page.side ? <>
+        <motion.div key={page.position ? `position-${page.position}` : page.game ? 'draft' : `${page.side}-${page.section}`} initial={{ opacity: 0, y: reduced ? 0 : 7 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .16 }}>
+          {page.position ? position ? <PositionDetail profile={position} onOpenConcept={openConcept} onNavigatePosition={openPosition} onBack={back} backLabel={positionReturn.current?.game ? 'Back to your draft' : positionReturn.current?.concept ? 'Back to the play' : 'Back to the playbook'} /> : <div className="position-missing"><h1>Position not found</h1><button onClick={home}>Back to the playbook</button></div> : page.game ? null : !page.side ? <>
             <div className="home-blocks">
               {(['offense', 'defense'] as const).map(side => <motion.button key={side} className={`home-block ${side}`} aria-label={side === 'offense' ? 'Offense' : 'Defense'}
                 whileHover={reduced ? {} : { y: -4 }} whileTap={reduced ? {} : { scale: .985 }} onClick={() => navigate({ side, section: null })}>
@@ -103,19 +118,19 @@ export default function App() {
               {sections.filter(s => s.side === page.side).map(s => {
                 const sample = concepts.find(c => c.category === s.category && c.side === s.side)
                 return sample && <ToyTile key={s.key} concept={{ ...sample, name: s.name }} route={false} selected={false} section
-                  onSelect={() => {}} onOpen={() => navigate({ side: page.side, section: s.key })} />
+                  onSelect={() => {}} onOpen={() => navigate({ side: page.side, section: s.key })} onNavigatePosition={openPosition} />
               })}
             </div>
           </> : <>
             <h1 className={section.name.length >= 9 ? 'long-title' : ''}>{section.name}</h1>
             <div className={`concept-blocks ${section.key === 'routes' ? 'route-blocks' : ''}`}>
               {concepts.filter(c => c.category === section.category && c.side === section.side).map(concept => <ToyTile key={concept.id} concept={concept}
-                route={section.key === 'routes'} selected={selected === concept.id} onSelect={() => setSelected(concept.id)} onOpen={() => openConcept(concept)} />)}
+                route={section.key === 'routes'} selected={selected === concept.id} onSelect={() => setSelected(concept.id)} onOpen={() => openConcept(concept)} onNavigatePosition={openPosition} />)}
             </div>
           </>}
         </motion.div>
       </AnimatePresence>
     </main>
-    <AnimatePresence>{film && <FilmModal concept={film} onClose={closeFilm} onNavigate={target => navigate(conceptPage(target))} returnFocus={filmTrigger.current} />}</AnimatePresence>
+    <AnimatePresence>{film && <FilmModal concept={film} onClose={closeFilm} onNavigate={target => navigate(conceptPage(target))} onNavigatePosition={openPosition} returnFocus={filmTrigger.current} />}</AnimatePresence>
   </div>
 }

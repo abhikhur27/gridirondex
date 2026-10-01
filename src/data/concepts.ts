@@ -3,14 +3,14 @@ import { films, sources } from './sources.ts'
 import { coachingNotes, expansion } from './expansion.ts'
 
 type Seed = [id: string, name: string, subtitle: string, summary: string, watch: string, counter: string]
-function lesson(seed: Seed, category: string, side: Side, diagram: Diagram, source: string, film: string, extra: Partial<Concept> = {}): Concept {
+function lesson(seed: Seed, category: string, side: Side, diagram: Diagram, source: string, _film: string, extra: Partial<Concept> = {}): Concept {
   const [id, name, subtitle, summary, seedWatch, counter] = seed
   const watch = coachingNotes[id]?.watch ?? seedWatch
-  const video=films[id]??films[category]??films[film]
+  const video = films[id]
   return { id, name, category, side, diagram, subtitle, summary, watch, counter,
     difficulty: 'Fundamentals', tags: [side === 'offense' ? 'Offense' : 'Defense', category],
     read: [watch, 'Follow the movement after the snap.', 'Compare the available space with the assignment.'],
-    sources: [sources[source], {title:video.title,publisher:video.channel,url:`https://www.youtube.com/watch?v=${video.id}&t=${video.start}s`}], film: video, related: coachingNotes[id]?.related ?? [], ...extra }
+    sources: [sources[source], ...(video ? [{title:video.title,publisher:video.channel,url:`https://www.youtube.com/watch?v=${video.id}&t=${video.start}s`}] : [])], film: video, related: coachingNotes[id]?.related ?? [], ...extra }
 }
 
 export const passing: Concept[] = [
