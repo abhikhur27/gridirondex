@@ -1,6 +1,6 @@
 # GridironDex
 
-A minimal football toy: choose offense or defense, trace a pattern, and watch it on film.
+A paper-and-ink football playbook with a route-drawing game.
 
 [Live app](https://gridirondex.web.app) · [Repository](https://github.com/abhikhur27/gridirondex)
 
@@ -21,20 +21,29 @@ npm run build
 firebase deploy --only hosting
 ```
 
-`npm run deploy` also builds and deploys. Hosting targets the dedicated `gridirondex` site in `brickbrickholdingsllc`. HTML revalidates on visits; fingerprinted assets use immutable caching.
+`npm run check` runs TypeScript, content/link checks, the custom diagram validator and the deterministic Tactical Draft engine checks. `scripts/browser-check.cjs` and `scripts/game-browser-check.cjs` are Playwright CLI `run-code` functions for the local application and game. `npm run deploy` builds and deploys the dedicated `gridirondex` Hosting site in `brickbrickholdingsllc`.
 
-## Interface
+## Playbook
 
-- Two borderless home blocks with eleven O/X alignment markers each.
-- 80 visual concepts across 11 offensive and defensive categories.
-- Muted vector routes that turn blue/red and draw on hover, keyboard focus or selection.
-- Compact film popups containing only a YouTube embed and a one- or two-sentence coaching takeaway.
-- Syne block typography, off-white paper texture, tactile states, mobile layouts, keyboard navigation and reduced-motion support.
+- 105 concepts across 15 football categories: routes, passing concepts, formations, blocking, gaps, personnel, positions, reads, situations, coverages, fronts, stunts, reactions and special teams.
+- Every concept has its own explicit vector blueprint. Missing diagrams fail validation instead of falling back to a repeated placeholder.
+- Trimmed shafts meet filled arrow caps. Defensive assignments use dashed paths between solid pre-snap X markers and faded destinations.
+- Breakdowns open with a playable, scrubbable diagram and two sentences at most. Linked terms and related pills open the corresponding concept; the URL can be copied to share it.
+- Film tabs retain researched coaching clips and chapter timestamps. Field-goal edge overload and safe rush use diagram previews with coaching sources.
+- Off-white `#F2F0EC`, Syne block typography, muted-to-ink hover states and minimal controls. Keyboard navigation and reduced motion are supported.
 
-The previous dashboard, long explanation panels, library drawer, bookmarks, full-play clock and field controls were removed from the interface as part of the complete rebuild. Coaching sources and researched metadata remain in `src/data` and `docs/film-sources.json`.
+## Tactical Draft
 
-## Content
+Choose 11 personnel, 12 personnel or 5-wide against a randomized defensive look. Drag from an eligible O to draw a route. The player picker and route presets provide a keyboard alternative. Choose balanced protection or slide toward an edge threat, then hit SNAP.
 
-Diagrams are teaching examples. Coverage and personnel rules vary by team. Video identities and embed permission were checked on September 28, 2026; publishers can change availability. Published chapters provide exact segments where available. Dedicated unchaptered breakdowns start at their introduction; related overview sources remain identified in the dataset.
+Receivers follow the same smoothed paths that are rendered. Defenders follow man, zone or rush rules. The quarterback looks for a catch window before pressure arrives; separation at the catch, throwing-lane clearance, yards, route spacing and protection time determine the result. Keeping a back or tight end in buys protection time. Score enough with a five-yard completion to advance. Higher levels tighten reaction time, speed and the required score. Three failed plays end the run; editing, replay and restart are built in.
 
-The app uses React, TypeScript, Vite, Tailwind, Lucide and Framer Motion. No backend or API keys are required. All commits go directly to `main`.
+This is a teaching game using geometric coverage rules, not a contact or professional play-prediction simulator. The score is deterministic for the same routes, personnel, protection and defensive look; only the sequence of looks is randomized.
+
+## Structure and content
+
+`src/data/blueprints.ts` owns library geometry; `vectorGeometry.ts` owns arrow and path geometry. `src/game/engine.ts` owns game rules independently from React. `src/data/expansion.ts` contains concise coaching notes, expansion lessons and related IDs. Source metadata lives in `sources.ts`, with verification records in `docs/film-sources.json`, `docs/expansion-sources.md` and `docs/expansion-film-sources.json`.
+
+Published chapters supply exact timestamps where available. Other relevant clips start at their introduction and carry a note explaining their scope. Publishers can change availability. Playbook diagrams show teaching examples; terminology and assignments vary by team.
+
+Hosting HTML revalidates on visits; fingerprinted assets use immutable caching. React, TypeScript, Vite, Tailwind, Lucide and Framer Motion are used. No backend or API key is required. 

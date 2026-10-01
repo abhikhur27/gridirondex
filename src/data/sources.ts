@@ -1,6 +1,21 @@
 import type { Film, Source } from './types'
 
 export const sources: Record<string, Source> = {
+  formations: { title: 'Offensive formations and eligible receivers', publisher: 'NFL Football Operations', url: 'https://operations.nfl.com/rules-officiating/nfl-football-basics/formations' },
+  pistol: { title: 'The Pistol Formation Study', publisher: 'X&O Labs · Tom MacPherson and contributing coaches', url: 'https://www.xandolabs.com/wp-content/uploads/2023/12/The-Pistol-Formation-Study-small.pdf' },
+  wishbone: { title: 'FirstDown PlayBook: defending the Wishbone', publisher: 'USA Football', url: 'https://assets.usafootball.com/documents/fdpb/FDPB-DEFENSE-PLAYBOOK_final.pdf' },
+  flexbone: { title: 'Flexbone and Triple Option Basic Formational Utilization', publisher: 'Flexbone Association', url: 'https://flexboneassociation.wordpress.com/2014/02/05/flexbone-and-triple-option-basic-formational-utilization/' },
+  twists: { title: 'Tackle-end, end-tackle and coffeehouse stunts', publisher: 'USA Football · Brandon Thorn', url: 'https://blogs.usafootball.com/blog/6442/how-the-coffeehouse-stunt-can-help-your-defense' },
+  crossDog: { title: 'Eagle Eye: picking up a cross-dog blitz', publisher: 'Philadelphia Eagles · Fran Duffy', url: 'https://www.philadelphiaeagles.com/news/eagle-eye-inside-the-td-that-has-fans-excited-for-the-season-19174558' },
+  fireZone: { title: 'Manny Diaz’s fire-zone pressures', publisher: 'USA Football · Brady Grayvold', url: 'https://blogs.usafootball.com/blog/6996/learn-how-manny-diaz-s-fire-zone-s-helped-miami-lead-the-country-in-tfl-s' },
+  gaps: { title: 'A gap: the gap-lettering system', publisher: 'LINEPLAY · Coach Jay Freeman', url: 'https://lineplayfootball.com/trench-dictionary/a-gap' },
+  fits: { title: 'Defensive line techniques for defeating one-on-one blocks', publisher: 'USA Football · Mike Kuchar', url: 'https://blogs.usafootball.com/blog/583/defensive-line-techniques-for-defeating-one-on-one-blocks' },
+  kickBlock: { title: 'Special teams scouting: field-goal block and fake responsibilities', publisher: 'Southwest Baptist University · Coach Allen archive', url: 'https://www.coachallen.com/PDFs/MWSU-st.pdf' },
+  aGapBlock: { title: 'Calais Campbell’s A-gap field-goal block', publisher: 'Baltimore Ravens', url: 'https://www.baltimoreravens.com/news/calais-campbell-wins-afc-special-teams-player-week' },
+  shieldPunt: { title: 'Installing the shield punt', publisher: 'Coach Chris Fore', url: 'https://coachchrisfore.wordpress.com/2012/04/05/shield-punt-maximizing-field-position-minimizing-blocks-and-returns/' },
+  proPunt: { title: 'Installing a Pro Style Spread Punt', publisher: 'X&O Labs · Coach Christopher Smithley', url: 'https://www.xandolabs.com/the-lab/special-teams/punt/installing-a-pro-style-spread-punt/' },
+  gunners: { title: 'Neutralizing the punt team gunners', publisher: 'Coach Chris Fore', url: 'https://coachfore.org/2015/09/07/neutralizing-the-punt-team-gunners/' },
+  puntWall: { title: 'Wall Punt Return', publisher: 'Human Kinetics · American Sport Education Program', url: 'https://coachesinsider.com/football/wall-punt-return-article/' },
   mesh: { title: 'The Mesh Concept', publisher: 'Weekly Spiral', url: 'https://weeklyspiral.com/2021/03/15/mesh-concept/' },
   smash: { title: 'Smash concept coaching clinic', publisher: 'Glazier Clinics', url: 'https://www.glazierclinics.com/football-coach-resources/basic-passing-concepts-smash-concept' },
   pass: { title: 'Passing concepts: coaching guide', publisher: 'NFL FLAG', url: 'https://static.www.nfl.com/image/upload/league/w7jrxyki5ffvoncw3ckg.pdf' },
@@ -70,6 +85,34 @@ export const films: Record<string, Film> = {
   'coverage-roll': { id:'uNHJIwlkPMk', title:'Weak rotation Cover 3 and spinning safeties', channel:'MatchQuarters · Cody Alexander', start:1500,end:2180,note:'Publisher chapter: weak rotation Cover 3 and spinning safeties.' },
   'creeping-safety': { id:'eibqDMAkOrc', title:'Safety rotation and disguise', channel:'MatchQuarters · Cody Alexander', start:65,end:120,note:'Publisher chapter: five-man safety blitz from weak rotation.' },
 }
+
+// Expansion clips checked against public publisher/player metadata on 2026-10-01.
+// Chapter offsets are publisher-provided; unchaptered coaching videos start at their introduction.
+Object.assign(films, {
+  'formation-i': { id:'sRaIlyv95hs', title:'I-formation · Every Offensive Formation Explained', channel:'Fourth and Film', start:107, end:249, note:'Publisher chapter: I-formation.' },
+  'formation-singleback': { id:'sRaIlyv95hs', title:'Single back · Every Offensive Formation Explained', channel:'Fourth and Film', start:249, end:351, note:'Publisher chapter: Single back.' },
+  'formation-trips': { id:'HcJVN1h4xvI', title:'Defending Trips Formations in the 4-2-5 Defense', channel:'Joe Daniel Football', start:0, note:'Dedicated coaching introduction: how the defense adjusts to Trips.' },
+  'formation-empty': { id:'sRaIlyv95hs', title:'Empty · Every Offensive Formation Explained', channel:'Fourth and Film', start:876, end:971, note:'Publisher chapter: Empty.' },
+  'formation-pistol': { id:'sRaIlyv95hs', title:'Pistol · Every Offensive Formation Explained', channel:'Fourth and Film', start:564, end:669, note:'Publisher chapter: Pistol.' },
+  'formation-wishbone': { id:'EvYU8Jo7uRo', title:'Multiple Wishbone Attack: Base Plays', channel:'Championship Productions · Mike Rude', start:0, note:'Dedicated Wishbone clinic excerpt; starts at the introduction.' },
+  'formation-flexbone': { id:'a0Dv0lTy2Y0', title:'Flexbone 101: Formations', channel:'Flexbone101', start:0, note:'Dedicated formation breakdown; starts at the introduction.' },
+  'stunt-tex': { id:'hDhaF_cw11U', title:'Tackle–End Exchange: TEX Stunt', channel:'Inside the Pylon', start:0, note:'Dedicated 23-second T/E exchange clip.' },
+  'stunt-ext': { id:'j5MQJWcHc18', title:'End/Tackle Stunt vs. Pass', channel:'Jon Svec', start:0, note:'Dedicated coaching breakdown; starts at the introduction.' },
+  'stunt-loop': { id:'bi30r3n3ymg', title:'Football 101: Defensive Stunts', channel:'Weekly Spiral', start:0, note:'Stunt overview covering the penetrator/looper exchange in E/T and T/E games.' },
+  'blitz-cross-dog': { id:'6j74uknbvHE', title:'Cross Dog: Film Breakdown at the Snap', channel:'MatchQuarters · Cody Alexander', start:148, end:251, note:'Publisher chapter: Film Breakdown: At the Snap.' },
+  'blitz-fire-zone': { id:'yfIVNlN2AXY', title:'Fire Zone Defense Scheme from Jon Heacock', channel:'Championship Productions · Jon Heacock', start:0, note:'Dedicated clinic excerpt: five rush, three under, three deep.' },
+  'gap-a': { id:'ynj3jMUi_Yk', title:'Defensive Line Alignment & Explaining Gaps', channel:'Alex Kozora', start:0, note:'Gap taxonomy overview; starts at the introduction.' },
+  'gap-b': { id:'ynj3jMUi_Yk', title:'Defensive Line Alignment & Explaining Gaps', channel:'Alex Kozora', start:0, note:'Gap taxonomy overview; starts at the introduction.' },
+  'gap-c': { id:'ynj3jMUi_Yk', title:'Defensive Line Alignment & Explaining Gaps', channel:'Alex Kozora', start:0, note:'Gap taxonomy overview; starts at the introduction.' },
+  'gap-d': { id:'ynj3jMUi_Yk', title:'Defensive Line Alignment & Explaining Gaps', channel:'Alex Kozora', start:0, note:'Gap taxonomy overview; starts at the introduction.' },
+  'fit-one-gap': { id:'1Sd3VmAm3Xo', title:'Explaining One-Gap vs. Two-Gap Defensive Fronts', channel:'Inside Carolina', start:0, note:'Comparative run-fit breakdown; starts at the introduction.' },
+  'fit-two-gap': { id:'1Sd3VmAm3Xo', title:'Explaining One-Gap vs. Two-Gap Defensive Fronts', channel:'Inside Carolina', start:0, note:'Comparative run-fit breakdown; starts at the introduction.' },
+  'fg-a-gap-push': { id:'GOxHthXYoHU', title:'Film Cut Ups: Coaching PAT/Field Goal Block', channel:'Throw Deep Publishing · Coach Brent Young', start:0, note:'Field-goal block clinic with interior-push examples; starts at the introduction.' },
+  'punt-spread': { id:'NgeXQFEbfUM', title:'Three-Man Shield Punt Protection', channel:'Glazier Clinics · Stu Holt', start:0, note:'Dedicated shield-protection clinic; starts at the introduction.' },
+  'punt-pro': { id:'z4AH-ZXfjHY', title:'Pro-Style Punt Protection Clinic', channel:'CoachFarr1 Football', start:0, note:'Full coaching clinic; starts at the introduction.' },
+  'punt-gunner': { id:'jUxJNPrXO2U', title:'Punt Gunner Release Techniques', channel:'TJ Weist · shared by James Light', start:0, note:'Dedicated coaching excerpt on single and double-team releases.' },
+  'punt-return-wall': { id:'NTUSG3aQ04I', title:'Wall Drill Punt Return · WPI', channel:'Mike Kuchar', start:0, note:'Dedicated 22-second WPI wall-return practice cutup.' },
+} satisfies Record<string, Film>)
 
 const routeChapters: [string,string,number,number][] = [
  ['flat','Flat',20,131],['slant','Slant',131,220],['comeback','Comeback',220,332],['curl','Curl',332,405],

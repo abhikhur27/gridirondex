@@ -1,4 +1,15 @@
-# GridironDex: toy blocks
+# GridironDex: toy blocks and Tactical Draft
+
+
+Library diagrams receive individual football blueprints, with consistent line weight and filled arrow caps whose bases meet trimmed shafts. Defensive assignments connect solid pre-snap X markers to translucent post-snap destinations using dashed paths. Faint gap lanes carry A/B/C/D labels where relevant. Diagram uniqueness comes from actual alignments, movements and focused players, never random offsets.
+
+Breakdowns open with a large, playable vector preview and one or two coaching sentences. Inline terminology pills and a few related-concept pills jump directly to the other diagram. A Film tab is available when a researched clip exists; new vector-first lessons do not receive unrelated placeholder videos. Keyboard play/pause, scrubbing, reset, close and focus return all remain available.
+
+Tactical Draft uses one dominant field, a short defense label, personnel/protection choices and a SNAP button. Route drawing works with mouse or touch, with keyboard route presets as an equal alternative. Scoring comes from simulated separation, route spacing and protection versus the actual look. Failure explains the missed read and permits editing; winning advances to a more difficult randomized look. Game code, content data and library blueprints are separate modules.
+
+
+
+## Original toy-block foundation
 
 One job: pick a visual football pattern and see it move. Home consists of two alignment blocks, OFFENSE and DEFENSE. No persistent navigation rail, editorial explanations, separators, visible default borders or promotional copy.
 

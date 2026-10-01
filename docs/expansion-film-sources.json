@@ -1,0 +1,310 @@
+{
+  "checkedOn": "2026-10-01",
+  "method": "Public YouTube player metadata: status OK and playableInEmbed true. Topic match checked against publisher title, description and coaching page when present. Caption fetch did not return transcripts; start times come from publisher chapter descriptions or use zero for clearly labeled topic introductions.",
+  "videos": [
+    {
+      "id": "sRaIlyv95hs",
+      "title": "Every Offensive Formation Explained in 18 Minutes",
+      "channel": "Fourth and Film",
+      "durationSeconds": 1086,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=sRaIlyv95hs",
+      "lessons": [
+        {
+          "id": "formation-i",
+          "start": 107,
+          "end": 249,
+          "note": "Publisher chapter: I-formation."
+        },
+        {
+          "id": "formation-singleback",
+          "start": 249,
+          "end": 351,
+          "note": "Publisher chapter: Single back."
+        },
+        {
+          "id": "formation-empty",
+          "start": 876,
+          "end": 971,
+          "note": "Publisher chapter: Empty."
+        },
+        {
+          "id": "formation-pistol",
+          "start": 564,
+          "end": 669,
+          "note": "Publisher chapter: Pistol."
+        }
+      ]
+    },
+    {
+      "id": "HcJVN1h4xvI",
+      "title": "Defending Trips Formations in the 4-2-5 Defense | Joe Daniel Football",
+      "channel": "Joe Daniel Football",
+      "durationSeconds": 407,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=HcJVN1h4xvI",
+      "lessons": [
+        {
+          "id": "formation-trips",
+          "start": 0,
+          "note": "Dedicated coaching introduction: how the defense adjusts to Trips."
+        }
+      ]
+    },
+    {
+      "id": "EvYU8Jo7uRo",
+      "title": "Multiple Wishbone Attack - Base Plays - Mike Rude",
+      "channel": "Championship Productions",
+      "durationSeconds": 176,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=EvYU8Jo7uRo",
+      "lessons": [
+        {
+          "id": "formation-wishbone",
+          "start": 0,
+          "note": "Dedicated Wishbone clinic excerpt; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "a0Dv0lTy2Y0",
+      "title": "Flexbone 101: Formations",
+      "channel": "Flexbone101",
+      "durationSeconds": 236,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=a0Dv0lTy2Y0",
+      "lessons": [
+        {
+          "id": "formation-flexbone",
+          "start": 0,
+          "note": "Dedicated formation breakdown; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "hDhaF_cw11U",
+      "title": "Tackle - End Exchange - TEX Stunt",
+      "channel": "Inside the Pylon",
+      "durationSeconds": 23,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=hDhaF_cw11U",
+      "lessons": [
+        {
+          "id": "stunt-tex",
+          "start": 0,
+          "note": "Dedicated 23-second T/E exchange clip."
+        }
+      ]
+    },
+    {
+      "id": "j5MQJWcHc18",
+      "title": "End/Tackle Stunt vs. Pass",
+      "channel": "Jon Svec",
+      "durationSeconds": 308,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=j5MQJWcHc18",
+      "lessons": [
+        {
+          "id": "stunt-ext",
+          "start": 0,
+          "note": "Dedicated coaching breakdown; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "bi30r3n3ymg",
+      "title": "Football 101: Defensive Stunts",
+      "channel": "Weekly Spiral",
+      "durationSeconds": 103,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=bi30r3n3ymg",
+      "lessons": [
+        {
+          "id": "stunt-loop",
+          "start": 0,
+          "note": "Stunt overview covering the penetrator/looper exchange in E/T and T/E games."
+        }
+      ]
+    },
+    {
+      "id": "6j74uknbvHE",
+      "title": "The \"Unblockable\" Blitz: Attacking the Running Back with Cross Dog | Broncos vs. Cowboys",
+      "channel": "MatchQuarters by Cody Alexander",
+      "durationSeconds": 422,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=6j74uknbvHE",
+      "lessons": [
+        {
+          "id": "blitz-cross-dog",
+          "start": 148,
+          "end": 251,
+          "note": "Publisher chapter: Film Breakdown: At the Snap."
+        }
+      ]
+    },
+    {
+      "id": "yfIVNlN2AXY",
+      "title": "Fire Zone Defense Scheme from Jon Heacock! - Football 2016 #37",
+      "channel": "Championship Productions",
+      "durationSeconds": 181,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=yfIVNlN2AXY",
+      "lessons": [
+        {
+          "id": "blitz-fire-zone",
+          "start": 0,
+          "note": "Dedicated clinic excerpt: five rush, three under, three deep."
+        }
+      ]
+    },
+    {
+      "id": "ynj3jMUi_Yk",
+      "title": "Football 101: Defensive Line Alignment & Explaining Gaps",
+      "channel": "Alex Kozora",
+      "durationSeconds": 727,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=ynj3jMUi_Yk",
+      "lessons": [
+        {
+          "id": "gap-a",
+          "start": 0,
+          "note": "Gap taxonomy overview; starts at the introduction."
+        },
+        {
+          "id": "gap-b",
+          "start": 0,
+          "note": "Gap taxonomy overview; starts at the introduction."
+        },
+        {
+          "id": "gap-c",
+          "start": 0,
+          "note": "Gap taxonomy overview; starts at the introduction."
+        },
+        {
+          "id": "gap-d",
+          "start": 0,
+          "note": "Gap taxonomy overview; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "1Sd3VmAm3Xo",
+      "title": "Explaining One-Gap vs. Two-Gap Defensive Fronts",
+      "channel": "Inside Carolina",
+      "durationSeconds": 602,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=1Sd3VmAm3Xo",
+      "lessons": [
+        {
+          "id": "fit-one-gap",
+          "start": 0,
+          "note": "Comparative run-fit breakdown; starts at the introduction."
+        },
+        {
+          "id": "fit-two-gap",
+          "start": 0,
+          "note": "Comparative run-fit breakdown; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "GOxHthXYoHU",
+      "title": "Film Cut Ups: Coaching PAT/Field Goal Block",
+      "channel": "Throw Deep Publishing - 🏈 Books and Videos",
+      "durationSeconds": 876,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=GOxHthXYoHU",
+      "lessons": [
+        {
+          "id": "fg-a-gap-push",
+          "start": 0,
+          "note": "Field-goal block clinic with interior-push examples; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "NgeXQFEbfUM",
+      "title": "Never Get Another Punt Blocked by Using This 3 Man Shield Protection",
+      "channel": "Glazier Clinics",
+      "durationSeconds": 602,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=NgeXQFEbfUM",
+      "lessons": [
+        {
+          "id": "punt-spread",
+          "start": 0,
+          "note": "Dedicated shield-protection clinic; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "z4AH-ZXfjHY",
+      "title": "Pro-Style Punt Protection Clinic",
+      "channel": "CoachFarr1 Football",
+      "durationSeconds": 3260,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=z4AH-ZXfjHY",
+      "lessons": [
+        {
+          "id": "punt-pro",
+          "start": 0,
+          "note": "Full coaching clinic; starts at the introduction."
+        }
+      ]
+    },
+    {
+      "id": "jUxJNPrXO2U",
+      "title": "Baltimore Ravens Special Teams Assistant TJ Weist - Punt Gunner Release Techniques",
+      "channel": "James Light",
+      "durationSeconds": 673,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=jUxJNPrXO2U",
+      "lessons": [
+        {
+          "id": "punt-gunner",
+          "start": 0,
+          "note": "Dedicated coaching excerpt on single and double-team releases."
+        }
+      ]
+    },
+    {
+      "id": "NTUSG3aQ04I",
+      "title": "Wall Drill Punt Return  WPI MA",
+      "channel": "Mike Kuchar",
+      "durationSeconds": 22,
+      "embeddable": true,
+      "status": "OK",
+      "url": "https://www.youtube.com/watch?v=NTUSG3aQ04I",
+      "lessons": [
+        {
+          "id": "punt-return-wall",
+          "start": 0,
+          "note": "Dedicated 22-second WPI wall-return practice cutup."
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "id": "lXk_NbuAmDI",
+      "title": "Anatomy of a Play: T-E Stunt",
+      "channel": "Philadelphia Eagles",
+      "reason": "YouTube player metadata reports playableInEmbed false."
+    }
+  ]
+}

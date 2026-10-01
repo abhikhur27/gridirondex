@@ -1,103 +1,121 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { ArrowLeft, ArrowUpRight, Play } from 'lucide-react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ArrowLeft, ArrowUpRight, Gamepad2, Play } from 'lucide-react'
 import { concepts } from './data/concepts'
-import type { Concept, Side } from './data/types'
+import { conceptPage, homePage, pageHash, readPage, sections, type Page } from './data/navigation'
+import type { Concept } from './data/types'
 import Field, { Alignment } from './components/Field'
 import FilmModal from './components/FilmModal'
+import { useMotionPreference } from './useMotionPreference'
+import './expansion.css'
 
-const sections = [
-  { key: 'routes', name: 'ROUTES', category: 'Route tree', side: 'offense' },
-  { key: 'concepts', name: 'CONCEPTS', category: 'Passing concepts', side: 'offense' },
-  { key: 'blocking', name: 'BLOCKING', category: 'Run game & blocking', side: 'offense' },
-  { key: 'personnel', name: 'PERSONNEL', category: 'Personnel groups', side: 'offense' },
-  { key: 'positions', name: 'POSITIONS', category: 'Offensive positions', side: 'offense' },
-  { key: 'reads', name: 'READS', category: 'Quarterback reads', side: 'offense' },
-  { key: 'situations', name: 'SITUATIONS', category: 'Situational adjustments', side: 'offense' },
-  { key: 'coverages', name: 'COVERAGES', category: 'Coverages & shells', side: 'defense' },
-  { key: 'fronts', name: 'FRONTS', category: 'Fronts & packages', side: 'defense' },
-  { key: 'positions', name: 'POSITIONS', category: 'Defensive positions', side: 'defense' },
-  { key: 'reactions', name: 'REACTIONS', category: 'Defensive reactions', side: 'defense' },
-] as const
-type Page = { side: Side | null; section: string | null }
-function readPage(): Page {
-  const [side, section] = location.hash.slice(1).split('/')
-  if (side !== 'offense' && side !== 'defense') return { side: null, section: null }
-  return { side, section: sections.some(s => s.side === side && s.key === section) ? section : null }
-}
+const TacticalDraft = lazy(() => import('./components/TacticalDraft'))
 
-function ToyTile({ concept, route, selected, onSelect, onFilm, section = false }: { concept: Concept; route: boolean; selected: boolean; onSelect: () => void; onFilm: () => void; section?: boolean }) {
+function ToyTile({ concept, route, selected, onSelect, onOpen, section = false }: { concept: Concept; route: boolean; selected: boolean; onSelect: () => void; onOpen: () => void; section?: boolean }) {
   const [hovered, setHovered] = useState(false)
   const [replay, setReplay] = useState(0)
-  const reduced = useReducedMotion()
+  const reduced = useMotionPreference()
   const active = hovered || selected
-  return <motion.article className={`toy-tile ${concept.side} ${active ? 'lit' : ''}`} whileHover={reduced ? {} : { y: -3 }}
+  return <motion.article className={`toy-tile ${concept.side} ${active ? 'lit' : ''}`} data-concept={section ? undefined : concept.id} whileHover={reduced ? {} : { y: -3 }}
     onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)}
     onFocusCapture={() => setHovered(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setHovered(false) }}>
-    <button className="tile-main" aria-label={section ? `Open ${concept.name.toLowerCase()}` : route ? `Select ${concept.name}` : `Watch ${concept.name}`} aria-pressed={route ? selected : undefined}
-      onClick={() => { setReplay(value => value + 1); route ? onSelect() : onFilm() }}>
+    <button className="tile-main" aria-label={section ? `Open ${concept.name.toLowerCase()}` : route ? `Select ${concept.name}` : `Explore ${concept.name}`} aria-pressed={route ? selected : undefined}
+      onClick={() => { setReplay(value => value + 1); route ? onSelect() : onOpen() }}>
       <Field concept={concept} active={active} replay={replay} />
-      <span className="tile-label">{concept.name.replace(/^\d+ · /, '')}</span>
+      <span className="tile-label" title={concept.name}>{concept.name.replace(/^\d+ · /, '')}</span>
       {!route && (section ? <ArrowUpRight className="tile-corner" size={19} strokeWidth={2.5} /> : <Play className="tile-corner" size={17} fill="currentColor" />)}
     </button>
-    {route && <button className="tile-film" aria-label={`Watch ${concept.name}`} onClick={onFilm}><Play size={17} fill="currentColor" /></button>}
+    {route && <button className="tile-film" aria-label={`Explore ${concept.name}`} onClick={onOpen}><Play size={17} fill="currentColor" /></button>}
   </motion.article>
+}
+
+function DraftGlyph() {
+  return <svg viewBox="0 0 170 80" aria-hidden="true" className="draft-glyph">
+    <path d="M 25 65 V 39 Q 25 31 33 31 H 118 M 65 65 V 49 Q 65 41 72 33 L 103 7" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="butt" strokeLinejoin="round" />
+    <path d="m118 26 10 5-10 5z M99 4 108 3 106 13z" fill="currentColor" />
+    <circle cx="25" cy="65" r="7" /><circle cx="65" cy="65" r="7" />
+    <path d="m135 52 10 10m0-10-10 10" className="draft-opponent" />
+  </svg>
 }
 
 export default function App() {
   const [page, setPage] = useState<Page>(readPage)
   const [selected, setSelected] = useState<string | null>(null)
-  const [film, setFilm] = useState<Concept | null>(null)
   const filmTrigger = useRef<HTMLElement | null>(null)
-  const reduced = useReducedMotion()
+  const reduced = useMotionPreference()
   const section = sections.find(s => s.side === page.side && s.key === page.section)
-  const closeFilm = useCallback(() => setFilm(null), [])
+  const film = page.concept ? concepts.find(c => c.id === page.concept && c.side === page.side && c.category === section?.category) : undefined
 
   useEffect(() => {
-    const update = () => { setPage(readPage()); setSelected(null); setFilm(null) }
+    const update = () => { setPage(readPage()); setSelected(null) }
     window.addEventListener('popstate', update); window.addEventListener('hashchange', update)
     return () => { window.removeEventListener('popstate', update); window.removeEventListener('hashchange', update) }
   }, [])
   const navigate = (next: Page) => {
-    const hash = next.side ? `#${next.side}${next.section ? `/${next.section}` : ''}` : ''
-    history.pushState(null, '', location.pathname + location.search + hash)
-    setPage(next); setSelected(null); setFilm(null); window.scrollTo({ top: 0, behavior: 'instant' })
+    history.pushState(null, '', location.pathname + location.search + pageHash(next))
+    setPage(next); setSelected(next.concept ?? null)
+    if (!next.concept) window.scrollTo({ top: 0, behavior: 'instant' })
   }
+  const closeFilm = useCallback(() => {
+    setPage(previous => {
+      const next = { ...previous, concept: undefined }
+      history.replaceState(null, '', location.pathname + location.search + pageHash(next))
+      return next
+    })
+  }, [])
+  const openConcept = (concept: Concept) => {
+    filmTrigger.current = document.activeElement as HTMLElement
+    navigate(conceptPage(concept))
+  }
+  const home = () => navigate(homePage)
+  const draft = () => navigate({ ...homePage, game: true })
+  const back = () => navigate(page.game || page.side === 'special' ? homePage : page.section ? { side: page.side, section: null } : homePage)
 
   return <div className="app">
-    <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus() }}>Skip to blocks</a>
+    <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus() }}>Skip to field</a>
     <header className="topbar" inert={!!film}>
-      <button className="wordmark" aria-label="GridironDex home" onClick={() => navigate({ side: null, section: null })}>GridironDex</button>
-      {page.side && <button className="back-button" onClick={() => navigate(page.section ? { side: page.side, section: null } : { side: null, section: null })}><ArrowLeft size={18} /><span>BACK</span></button>}
+      <button className="wordmark" aria-label="GridironDex home" onClick={home}>GridironDex</button>
+      <div className="topbar-actions">
+        {page.side && <button className="quick-draft" aria-label="PLAY" title="Tactical Draft" onClick={draft}><span>PLAY</span><Gamepad2 size={18} /></button>}
+        {(page.side || page.game) && <button className="back-button" onClick={back}><ArrowLeft size={18} /><span>BACK</span></button>}
+      </div>
     </header>
-    <main id="main" tabIndex={-1} className={page.side ? 'blocks-page' : 'home-page'} inert={!!film}>
+    <main id="main" tabIndex={-1} className={page.game ? 'draft-page' : page.side ? 'blocks-page' : 'home-page'} inert={!!film}>
       <AnimatePresence mode="wait" initial={false}>
-        <motion.div key={`${page.side}-${page.section}`} initial={{ opacity: 0, y: reduced ? 0 : 7 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .16 }}>
-          {!page.side ? <div className="home-blocks">
-            {(['offense', 'defense'] as const).map(side => <motion.button key={side} className={`home-block ${side}`} aria-label={side === 'offense' ? 'Offense' : 'Defense'}
-              whileHover={reduced ? {} : { y: -4 }} whileTap={reduced ? {} : { scale: .985 }} onClick={() => navigate({ side, section: null })}>
-              <Alignment side={side} />
-              <span className="home-block-label">{side.toUpperCase()}<ArrowUpRight size={37} strokeWidth={2.8} /></span>
-            </motion.button>)}
-          </div> : !section ? <>
+        <motion.div key={page.game ? 'draft' : `${page.side}-${page.section}`} initial={{ opacity: 0, y: reduced ? 0 : 7 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .16 }}>
+          {page.game ? <Suspense fallback={<p className="loading-draft" role="status">Setting the field…</p>}><TacticalDraft onExit={home} /></Suspense> : !page.side ? <>
+            <div className="home-blocks">
+              {(['offense', 'defense'] as const).map(side => <motion.button key={side} className={`home-block ${side}`} aria-label={side === 'offense' ? 'Offense' : 'Defense'}
+                whileHover={reduced ? {} : { y: -4 }} whileTap={reduced ? {} : { scale: .985 }} onClick={() => navigate({ side, section: null })}>
+                <Alignment side={side} />
+                <span className="home-block-label">{side.toUpperCase()}<ArrowUpRight size={37} strokeWidth={2.8} /></span>
+              </motion.button>)}
+            </div>
+            <div className="home-extras">
+              <button className="draft-entry" onClick={draft}>
+                <DraftGlyph /><span><strong>TACTICAL DRAFT</strong><small>Draw a play. Beat the coverage.</small></span><ArrowUpRight size={24} />
+              </button>
+              <button className="teams-entry" onClick={() => navigate({ side: 'special', section: 'teams' })}>SPECIAL TEAMS <ArrowUpRight size={20} /></button>
+            </div>
+          </> : !section ? <>
             <h1>{page.side.toUpperCase()}</h1>
             <div className="section-blocks">
               {sections.filter(s => s.side === page.side).map(s => {
-                const sample = concepts.find(c => c.category === s.category)!
-                return <ToyTile key={s.key} concept={{ ...sample, name: s.name }} route={false} selected={false} section
-                  onSelect={() => {}} onFilm={() => navigate({ side: page.side, section: s.key })} />
+                const sample = concepts.find(c => c.category === s.category && c.side === s.side)
+                return sample && <ToyTile key={s.key} concept={{ ...sample, name: s.name }} route={false} selected={false} section
+                  onSelect={() => {}} onOpen={() => navigate({ side: page.side, section: s.key })} />
               })}
             </div>
           </> : <>
             <h1 className={section.name.length >= 9 ? 'long-title' : ''}>{section.name}</h1>
             <div className={`concept-blocks ${section.key === 'routes' ? 'route-blocks' : ''}`}>
-              {concepts.filter(c => c.category === section.category).map(concept => <ToyTile key={concept.id} concept={concept}
-                route={section.key === 'routes'} selected={selected === concept.id} onSelect={() => setSelected(concept.id)} onFilm={() => { filmTrigger.current = document.activeElement as HTMLElement; setFilm(concept) }} />)}
+              {concepts.filter(c => c.category === section.category && c.side === section.side).map(concept => <ToyTile key={concept.id} concept={concept}
+                route={section.key === 'routes'} selected={selected === concept.id} onSelect={() => setSelected(concept.id)} onOpen={() => openConcept(concept)} />)}
             </div>
           </>}
         </motion.div>
       </AnimatePresence>
     </main>
-    <AnimatePresence>{film && <FilmModal concept={film} onClose={closeFilm} returnFocus={filmTrigger.current} />}</AnimatePresence>
+    <AnimatePresence>{film && <FilmModal concept={film} onClose={closeFilm} onNavigate={target => navigate(conceptPage(target))} returnFocus={filmTrigger.current} />}</AnimatePresence>
   </div>
 }

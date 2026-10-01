@@ -1,14 +1,16 @@
 import type { Concept, Diagram, Side } from './types'
 import { films, sources } from './sources.ts'
+import { coachingNotes, expansion } from './expansion.ts'
 
 type Seed = [id: string, name: string, subtitle: string, summary: string, watch: string, counter: string]
 function lesson(seed: Seed, category: string, side: Side, diagram: Diagram, source: string, film: string, extra: Partial<Concept> = {}): Concept {
-  const [id, name, subtitle, summary, watch, counter] = seed
+  const [id, name, subtitle, summary, seedWatch, counter] = seed
+  const watch = coachingNotes[id]?.watch ?? seedWatch
   const video=films[id]??films[category]??films[film]
   return { id, name, category, side, diagram, subtitle, summary, watch, counter,
     difficulty: 'Fundamentals', tags: [side === 'offense' ? 'Offense' : 'Defense', category],
     read: [watch, 'Follow the movement after the snap.', 'Compare the available space with the assignment.'],
-    sources: [sources[source], {title:video.title,publisher:video.channel,url:`https://www.youtube.com/watch?v=${video.id}&t=${video.start}s`}], film: video, ...extra }
+    sources: [sources[source], {title:video.title,publisher:video.channel,url:`https://www.youtube.com/watch?v=${video.id}&t=${video.start}s`}], film: video, related: coachingNotes[id]?.related ?? [], ...extra }
 }
 
 export const passing: Concept[] = [
@@ -127,9 +129,10 @@ const reactionSeeds: Seed[] = [
 ] as Seed[]
 const reactions=reactionSeeds.map(s=>lesson(s,'Defensive reactions','defense',s[0].includes('gap')?'front':'read','fronts','coverage',{difficulty:'Advanced',tags:['Disguise','Responsibility']}))
 
-export const concepts: Concept[] = [...passing,...routes,...blocking,...personnel,...roles,...reads,...situations,...coverages,...fronts,...defenseRoles,...reactions]
+export const concepts: Concept[] = [...passing,...routes,...blocking,...personnel,...roles,...reads,...situations,...coverages,...fronts,...defenseRoles,...reactions,...expansion]
 export const categories = [
  'Passing concepts','Route tree','Run game & blocking','Personnel groups','Offensive positions','Quarterback reads','Situational adjustments',
  'Coverages & shells','Fronts & packages','Defensive positions','Defensive reactions',
+ 'Offensive formations','Stunts & pressures','Gaps & run fits','Special teams',
 ]
 export const findConcept = (id: string) => concepts.find(c=>c.id===id) ?? concepts[0]

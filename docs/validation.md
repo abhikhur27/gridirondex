@@ -1,6 +1,19 @@
 # Validation record
 
-Current interface checked on September 29, 2026. Earlier records below describe superseded interfaces.
+Current interface checked on October 1, 2026. Earlier records below describe superseded interfaces.
+
+## Engine expansion and Tactical Draft
+
+The current library contains 105 individually defined blueprints across 15 content categories and 16 navigation sections. New modules cover formations, tackle/end games, cross-dog and fire-zone pressure, gap letters, one/two-gap fits, field-goal rush, punt protection, gunner releases and wall returns. All 105 coaching notes are at most two sentences; all 315 related references resolve. Twenty-three of the 25 added lessons have verified topic films; two field-goal variants have diagram previews and sources. See `expansion-sources.md` and `expansion-film-sources.json` for clip scope and verification limits.
+
+`npm run check` passes TypeScript, concise-content/source/link checks, explicit blueprint coverage and uniqueness, finite/bounded geometry, route starts and clean shaft/cap joins. Formation/personnel tests require eleven players, seven on the line, four in the backfield and uncovered eligible ends. Fire-zone checks require five rushers and the proper deep structure; stunt loopers have delayed movement. Blueprint geometry rejects missing concepts rather than returning a placeholder.
+
+The library browser check passes home and category navigation, all 105 reachable lessons, filled caps without SVG markers, diagram play/pause/scrubbing/reset, film chapters, inline Cover 1 backlinks, URL/back-button restoration, modal focus and inert background, reduced motion, and game entry. Visual and bounds checks cover 320, 375, 414, 768 and desktop. A live media-query hook handles reduced-motion changes during the visit. Header bounds and distinct field-goal titles received an additional responsive check.
+
+Tactical Draft engine checks compare useful calls with empty/backward routes, verify deterministic results, legal personnel, eleven defenders, protection and blocker effects, bounded coordinates, arrow caps, passing-lane clearance, progression, three-loss run completion, seed variety and a winnable late-level defense. The browser checks verify real pointer drawing, undo, keyboard route selection, personnel resets, SNAP and a successful advance, three failed plays and restart, reduced motion, and native CDP touch dragging. Mobile game screenshots at all four required widths and desktop/result views were reviewed. Both browser suites completed with zero application runtime errors.
+
+The game uses geometric teaching rules for coverage and pressure. It does not simulate contact blocking or claim to predict a real football play. Formation and film teaching examples remain source-linked; publisher introductions and overview clips are labeled honestly.
+
 
 ## Complete toy-block rebuild
 
