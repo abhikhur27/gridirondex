@@ -1,30 +1,37 @@
 .blueprint-field{isolation:isolate}
 .blueprint-field .mini-grid{stroke-width:2}
-.blueprint-field .blueprint-guide,.blueprint-field .blueprint-ink{fill:none;stroke:currentColor;stroke-width:8;stroke-linecap:butt;stroke-linejoin:round}
-.blueprint-field .blueprint-cap{fill:currentColor;stroke:none}
-.blueprint-field .blueprint-guide,.blueprint-field .blueprint-guide-cap{opacity:.66}
-.blueprint-field.blueprint-active .blueprint-route:not(.is-dashed) .blueprint-guide,.blueprint-field.blueprint-active .blueprint-route:not(.is-dashed) .blueprint-guide-cap{opacity:.18}
-.blueprint-field .is-dashed .blueprint-guide{stroke-dasharray:15 13;stroke-width:6;opacity:.62}
-.blueprint-field.blueprint-active .is-dashed .blueprint-guide{opacity:.78}
-.blueprint-field .blueprint-o{fill:var(--paper);stroke:currentColor;stroke-width:7}
-.lit .blueprint-field .blueprint-o{fill:var(--block)}
-.blueprint-field .blueprint-x{fill:none;stroke:currentColor;stroke-width:7;stroke-linecap:round}
-.blueprint-field .blueprint-node{opacity:.8}
-.blueprint-field .blueprint-node.focused,.blueprint-field .blueprint-moving{opacity:1}
-.blueprint-field.has-focus .blueprint-node:not(.focused):not(.blueprint-moving){opacity:.42}
-.blueprint-field .blueprint-node.focused .blueprint-x,.blueprint-field .blueprint-node.focused .blueprint-o{stroke-width:10}
-.blueprint-field .blueprint-label{font:700 25px var(--font-body);fill:currentColor;stroke:none;pointer-events:none}
-.blueprint-field .blueprint-gap-label{font:800 30px var(--font-block);fill:currentColor;stroke:none}
-.blueprint-field .blueprint-zone{fill:currentColor;opacity:.055}
-.blueprint-field .blueprint-lane{fill:currentColor;opacity:.14}
-.blueprint-field .blueprint-node.blueprint-endpoint,.blueprint-field.has-focus .blueprint-node.blueprint-endpoint{opacity:.25}
-.blueprint-field .blueprint-node.blueprint-origin{opacity:.2}
-.blueprint-field.blueprint-active.side-offense .team-defense,.blueprint-field.blueprint-active.side-special .team-defense{color:var(--red)}
-.blueprint-field.blueprint-active.side-defense .team-offense{color:var(--muted)}
-.blueprint-field.blueprint-active.side-special .team-special{color:var(--amber)}
-.blueprint-field.blueprint-preview{width:100%;max-width:100%;height:auto;aspect-ratio:830/505;color:var(--blue)}
-.blueprint-field.blueprint-preview.side-defense{color:var(--red)}
-.blueprint-field.blueprint-preview.side-special{color:var(--amber)}
-.blueprint-preview .blueprint-o{fill:var(--paper)!important}
-.blueprint-field.route-glyph .blueprint-guide,.blueprint-field.route-glyph .blueprint-ink{stroke-width:13}
-.blueprint-field.route-glyph .blueprint-o{r:21;stroke-width:11}
+.play-canvas .blueprint-guide,.play-canvas .blueprint-ink{fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round}
+.play-canvas .blueprint-cap{fill:currentColor;stroke:none}
+.play-canvas .blueprint-guide,.play-canvas .blueprint-guide-cap{opacity:.23}
+.play-canvas .blueprint-ink{opacity:.72;stroke-width:6}
+.play-canvas .is-dashed .blueprint-guide,.play-canvas .is-dashed .blueprint-ink{stroke-dasharray:12 11;stroke-width:4}
+.play-canvas .blueprint-o{fill:var(--paper);stroke:currentColor;stroke-width:6}
+.lit .play-canvas .blueprint-o{fill:var(--block)}
+.play-canvas .blueprint-x{fill:none;stroke:currentColor;stroke-width:6;stroke-linecap:round}
+.play-canvas .blueprint-node{opacity:.85}
+.play-canvas .blueprint-node.focused{opacity:1}
+.play-canvas.has-focus .blueprint-node:not(.focused){opacity:.63}
+.play-canvas .blueprint-node.focused .blueprint-x,.play-canvas .blueprint-node.focused .blueprint-o{stroke-width:8}
+.play-canvas .blueprint-label{font:700 20px var(--font-body);fill:currentColor;stroke:var(--paper);stroke-width:5;paint-order:stroke;pointer-events:none}
+.play-canvas .blueprint-node.blueprint-endpoint,.play-canvas.has-focus .blueprint-node.blueprint-endpoint{opacity:.13}
+.play-canvas .blueprint-node.blueprint-origin,.play-canvas.has-focus .blueprint-node.blueprint-origin{opacity:.1}
+.play-canvas.blueprint-active .team-offense,.play-canvas.blueprint-active .team-special,.play-canvas.blueprint-preview .team-offense,.play-canvas.blueprint-preview .team-special{color:var(--blue)}
+.play-canvas.blueprint-active .team-defense,.play-canvas.blueprint-preview .team-defense{color:var(--red)}
+.play-canvas.blueprint-preview{width:100%;max-width:100%;height:auto;aspect-ratio:830/505;color:var(--blue)}
+.play-canvas.blueprint-preview .blueprint-o{fill:var(--paper)!important}
+.play-canvas .play-area{color:var(--blue)}
+.play-canvas .play-area.danger{color:var(--red)}
+.play-canvas .play-area rect{fill:currentColor;opacity:.095}
+.play-canvas .play-area text{fill:currentColor;stroke:var(--paper);stroke-width:5;paint-order:stroke;font:700 17px var(--font-body)}
+.play-canvas .play-read{color:var(--ink)}
+.play-canvas .play-read path{fill:none;stroke:currentColor;stroke-width:2;stroke-dasharray:5 8;opacity:.55}
+.play-canvas .play-read text,.play-canvas .play-contact text{fill:currentColor;stroke:var(--paper);stroke-width:5;paint-order:stroke;font:700 16px var(--font-body)}
+.play-canvas .play-contact{color:var(--ink)}
+.play-canvas .play-contact path{stroke:currentColor;stroke-width:6;stroke-linecap:round}
+.play-canvas .play-contact circle{fill:none;stroke:currentColor;stroke-width:2;opacity:.25}
+.play-canvas .play-ball ellipse{fill:var(--ink);stroke:var(--paper);stroke-width:3}
+.play-canvas .play-ball path{stroke:var(--paper);stroke-width:1.3}
+.play-canvas:not(.blueprint-preview) .play-read text,.play-canvas:not(.blueprint-preview) .play-contact text,.play-canvas:not(.blueprint-preview) .play-area text{display:none}
+.play-canvas:not(.blueprint-preview) .blueprint-label{font-size:22px}
+.play-canvas.draft-field{height:auto;max-width:none;aspect-ratio:auto;margin:0}
+@media(max-width:600px){.play-canvas.blueprint-preview .blueprint-label{font-size:23px}.play-canvas.blueprint-preview .play-area text{font-size:20px}.play-canvas.blueprint-preview .play-read text,.play-canvas.blueprint-preview .play-contact text{font-size:19px}}

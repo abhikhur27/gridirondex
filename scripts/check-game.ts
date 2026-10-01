@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { advanceRun, arrowGeometry, defenseFor, emptyRoutes, frameAt, lookForLevel, newRun, pocketTime, receiversFor, routePreset, sanitizeRoute, simulate } from '../src/game/engine.ts';
+import { advanceRun, arrowGeometry, defenseFor, distance, emptyRoutes, frameAt, lookForLevel, newRun, pocketTime, receiversFor, routePreset, sanitizeRoute, simulate } from '../src/game/engine.ts';
 import type { Look, Personnel, Routes } from '../src/game/engine.ts';
 
 const man: Look = { name: 'test man', coverage: 1, press: true, rushSide: 'right', blitz: 1, hint: '', level: 1, targetScore: 48 };
@@ -61,4 +61,12 @@ const lateCall = makeCall('11', ['Out', 'Out', 'Block', 'Post', 'Post']);
 assert.equal(simulate({ ...man, level: 15, targetScore: lookForLevel(123, 15).targetScore }, '11', lateCall, 'right').won, true, 'Late-level man coverage still has a reachable winning call.');
 assert.deepEqual(lookForLevel(123, 3), lookForLevel(123, 3));
 assert.ok(new Set(Array.from({ length: 30 }, (_, seed) => lookForLevel(seed, 1).name)).size >= 5);
-console.log(`Tactical Draft: deterministic simulation, personnel, coverage, protection, safe geometry, arrow caps, and run progression passed. Man call ${goodResult.score}/100; empty call ${badResult.score}/100.`);
+const protectedFrame = frameAt(goodResult, .8);
+assert.ok(protectedFrame.engagements.length >= 4, 'The protection must visibly engage the defensive front.');
+assert.equal(new Set(protectedFrame.engagements.map(e => e.blocker)).size, protectedFrame.engagements.length, 'A blocker cannot occupy two protection assignments.');
+for (const contact of protectedFrame.engagements) {
+  const blocker = protectedFrame.linemen[contact.blocker] ?? protectedFrame.receivers[contact.blocker as keyof typeof protectedFrame.receivers];
+  assert.ok(Math.abs(distance(blocker, protectedFrame.defenders[contact.rusher]) - 24) < .01, 'The rusher holds at contact until protection releases.');
+}
+assert.equal(frameAt(goodResult, goodResult.pocket).engagements.length, 0, 'Protection cannot hold a rusher after pressure arrives.');
+console.log(`Tactical Draft: deterministic simulation, personnel, coverage, reciprocal protection contact, safe geometry, arrow caps, and run progression passed. Man call ${goodResult.score}/100; empty call ${badResult.score}/100.`);

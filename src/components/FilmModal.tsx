@@ -4,7 +4,9 @@ import { ArrowUpRight, Pause, Play, RotateCcw, X } from 'lucide-react'
 import { concepts } from '../data/concepts'
 import { conceptPage, pageHash } from '../data/navigation'
 import type { Concept } from '../data/types'
-import Field from './Field'
+import PlayCanvas from './PlayCanvas'
+import { sceneFor } from '../data/playScenes'
+import { samplePlay } from '../data/playEngine'
 import { useMotionPreference } from '../useMotionPreference'
 import '../breakdown.css'
 
@@ -45,6 +47,12 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
   const [mode, setMode] = useState<'diagram' | 'film'>('diagram')
   const [progress, setProgress] = useState(0)
   const [playing, setPlaying] = useState(false)
+  const scene = useMemo(() => sceneFor(concept), [concept.id])
+  const playFrame = useMemo(() => samplePlay(scene, progress * scene.duration), [scene, progress])
+  const stages = [
+    { name: 'PRE-SNAP', seconds: 0 }, { name: 'SNAP', seconds: .55 },
+    { name: 'DEVELOPMENT', seconds: 1.5 }, { name: 'RESULT', seconds: scene.duration },
+  ] as const
   const film = concept.film
   const related = (concept.related ?? []).map(id => concepts.find(c => c.id === id)).filter((c): c is Concept => !!c && c.id !== concept.id).slice(0, 4)
 
@@ -77,12 +85,12 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
     let frame = 0, last = performance.now()
     const tick = (now: number) => {
       const elapsed = now - last; last = now
-      setProgress(value => Math.min(1, value + elapsed / 4200))
+      setProgress(value => Math.min(1, value + elapsed / (scene.duration * 1000)))
       frame = requestAnimationFrame(tick)
     }
     frame = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(frame)
-  }, [playing, reduced])
+  }, [playing, reduced, scene.duration])
   useEffect(() => { if (progress >= 1) setPlaying(false) }, [progress])
   const play = () => {
     if (playing) { setPlaying(false); return }
@@ -109,14 +117,18 @@ export default function FilmModal({ concept, onClose, onNavigate, returnFocus }:
           <a className="film-fallback" href={`https://www.youtube.com/watch?v=${film.id}&t=${film.start}s`} target="_blank" rel="noreferrer">Open on YouTube <ArrowUpRight size={13} /></a>
           {film.note && <p className="film-note">{film.note}</p>}
         </div> : <div className="diagram-preview">
-          <div className={`preview-field lit ${concept.side}`} role="img" aria-label={`${shortName(concept)}: ${progress === 0 ? 'pre-snap alignment' : progress >= 1 ? 'post-snap destinations' : 'play in motion'}`}><Field concept={concept} active replay={0} progress={progress} /></div>
+          <div className={`preview-field lit ${concept.side}`} role="img" aria-label={`${shortName(concept)}: offense and defense, ${playFrame.phase.toLowerCase()}`}>
+            <PlayCanvas offensiveNodes={scene.offensiveNodes} defensiveNodes={scene.defensiveNodes} scene={scene} active progress={progress} preview className={`side-${concept.side}`} />
+          </div>
           <div className="preview-controls">
             <button className="preview-play" aria-label={playing ? 'Pause diagram' : progress >= 1 ? 'Replay diagram' : 'Play diagram'} onClick={play}>{playing ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}<span>{playing ? 'PAUSE' : progress >= 1 ? 'REPLAY' : 'PLAY'}</span></button>
-            <input aria-label="Play progress" type="range" min="0" max="100" step="1" value={Math.round(progress * 100)} onChange={event => { setPlaying(false); setProgress(Number(event.target.value) / 100) }} />
+            <input aria-label="Play progress" aria-valuetext={`${playFrame.seconds.toFixed(2)} seconds, ${playFrame.phase.toLowerCase()}`} type="range" min="0" max="100" step="0.1" value={progress * 100} onChange={event => { setPlaying(false); setProgress(Number(event.target.value) / 100) }} />
             <button className="preview-reset" aria-label="Reset diagram" onClick={() => { setPlaying(false); setProgress(0) }}><RotateCcw size={18} /></button>
-            <span className="snap-label">{progress === 0 ? 'PRE-SNAP' : progress >= 1 ? 'POST-SNAP' : 'IN MOTION'}</span>
+            <span className="snap-label" aria-hidden="true">{playFrame.seconds.toFixed(2)}s</span>
           </div>
-          {concept.side === 'defense' && <p className="preview-legend">Solid X: before the snap. Faded X: where he’s headed.</p>}
+          <div className="preview-stages" role="group" aria-label="Play stages">{stages.map(stage => <button key={stage.name} aria-pressed={playFrame.phase === stage.name}
+            onClick={() => { setPlaying(false); setProgress(stage.seconds / scene.duration) }}>{stage.name}</button>)}</div>
+          <div className="preview-caption"><span className="caption-time" aria-hidden="true">{playFrame.seconds.toFixed(2)}s</span><p aria-live="polite" aria-atomic="true">{playFrame.caption}</p></div>
         </div>}
         <div className="breakdown-notes">
           <CoachingText concept={concept} onNavigate={onNavigate} />

@@ -2,7 +2,18 @@
 
 Current interface checked on October 1, 2026. Earlier records below describe superseded interfaces.
 
-## Engine expansion and Tactical Draft
+## Contextual play overhaul
+
+All 105 lessons now have distinct authored 11-on-11 sequences rendered by `PlayCanvas`. Validation requires both complete units, unique player IDs and scene geometry, movement by both sides, valid timed contacts/reads/highlights, a ball outcome and at least four different phase captions. Forty-three samples per lesson check finite field positions and contact spacing; repeated samples prove backward scrubbing is deterministic. Normal assignments hold until SNAP; explicitly authored pre-snap motion is exempt. Combination blockers have separate shoulder positions.
+
+Targeted assertions cover the Y–ER chip at 0.8s, RT takeover and Y's flat release, tackle/TE climbs against linebackers in both zone schemes, and the safety entering the box against 12 personnel. Tactical Draft tests also require distinct blocker assignments, reciprocal contact while the pocket holds and released contact when pressure arrives.
+
+The contextual Playwright suite passed all 105 lessons through PRE-SNAP, SNAP, DEVELOPMENT and RESULT, checked both teams moving and exact backward restoration, and verified hover playback, chip contact/captions, reduced motion, and layouts at 320, 375, 414, 768 and 1440 pixels. Visual review covered Chip, Inside Zone, 12 Personnel, Cover 3 and Tex; contact-player guide clutter was removed and labels avoid active bodies. The retained library browser suite passed film chapters, backlinks, navigation, focus trapping and keyboard controls. Game checks passed mouse and native touch drawing, winning/losing progression, keyboard review scrubbing and the shared canvas at mobile widths. No application runtime errors occurred.
+
+Production TypeScript/build and the content, blueprint, play and game checks passed. The new lesson scenarios are authored coaching examples with simplified contact constraints; the game remains a geometric simulation. Neither claims to predict live football. Coaching references and timing scope are recorded in `contextual-plays.md`.
+
+
+## Engine expansion and Tactical Draft — previous release
 
 The current library contains 105 individually defined blueprints across 15 content categories and 16 navigation sections. New modules cover formations, tackle/end games, cross-dog and fire-zone pressure, gap letters, one/two-gap fits, field-goal rush, punt protection, gunner releases and wall returns. All 105 coaching notes are at most two sentences; all 315 related references resolve. Twenty-three of the 25 added lessons have verified topic films; two field-goal variants have diagram previews and sources. See `expansion-sources.md` and `expansion-film-sources.json` for clip scope and verification limits.
 

@@ -20,3 +20,10 @@
 @media(max-width:420px){.tactical-draft{padding:0 0 36px}.draft-heading h1{font-size:36px}.draft-exit{font-size:12px}.draft-kicker{font-size:9px}.draft-matchup h2{font-size:17px}.draft-package-row button{padding:12px 8px}.draft-package-row button strong{font-size:11px}.draft-package-row button span{font-size:9px}.draft-field-tools>div{gap:0}.draft-field-tools button{width:30px;height:32px}.draft-snap-row{align-items:stretch;flex-direction:column;gap:18px}.draft-protection button{font-size:12px;padding:12px 14px}.draft-snap{min-height:54px}.draft-result-title h2{font-size:43px}.draft-result-title h2 span{font-size:12px}.draft-feedback{font-size:13px}.draft-result-actions{gap:16px}.draft-result-actions .draft-snap{min-width:160px}.draft-hit-area{r:55px}.draft-receiver text{font-size:25px}}
 @media(max-width:700px){.draft-heading{display:block;position:relative}.draft-exit{position:absolute;top:-13px;right:0;white-space:nowrap}.draft-heading h1{font-size:clamp(31px,9vw,42px);overflow-wrap:normal;word-break:normal;white-space:nowrap;margin-top:18px}.draft-kicker{padding-right:90px}}
 .draft-field.draw{touch-action:none}
+.tactical-draft .draft-field{max-width:none;height:auto;margin:0}
+.draft-engagements path{stroke:var(--amber);stroke-width:5;stroke-linecap:butt}
+.draft-window ellipse{fill:var(--blue);opacity:.08}.draft-window path{fill:none;stroke:var(--amber);stroke-width:2;stroke-dasharray:6 8;opacity:.7}
+.draft-context-caption{display:flex;gap:12px;align-items:baseline;font:400 14px/1.55 var(--font-body);min-height:44px;margin:16px 0 8px;color:var(--ink)}
+.draft-context-caption>span:first-child{color:var(--game-quiet);font-variant-numeric:tabular-nums;font-size:12px;white-space:nowrap}
+.draft-review{margin:16px 0 25px}.draft-review label{font:700 10px var(--font-block);color:var(--game-quiet)}.draft-review input{display:block;width:100%;accent-color:var(--blue);margin:14px 0}
+.draft-review>div{display:flex;justify-content:space-between;gap:4px}.draft-review button{border:0;background:transparent;color:var(--game-quiet);font:700 10px var(--font-block);padding:10px 2px;cursor:pointer}

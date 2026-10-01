@@ -20,3 +20,5 @@ Structure: logo → two large alignment choices → side-specific category block
 Signature: empty off-white blocks become blue/red football toys under the pointer. X/O symbols are the content, not decoration. No ambient motion. Selected paths replay on click, and reduced motion makes the draw immediate. Touch users can select without hover.
 
 
+
+## Contextual play engine — October 1, 2026

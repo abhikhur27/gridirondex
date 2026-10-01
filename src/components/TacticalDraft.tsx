@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PointerEvent as ReactPointerEvent } from 'react';
 import { useMotionPreference } from '../useMotionPreference';
 import { ArrowLeft, ArrowRight, RotateCcw, Undo2 } from 'lucide-react';
-import { advanceRun, arrowGeometry, clamp, defenseFor, distance, emptyRoutes, FIELD, frameAt, lookForLevel, newRun, receiversFor, ROUTE_NAMES, routePreset, sanitizeRoute, simulate, smoothPath } from '../game/engine';
+import { advanceRun, arrowGeometry, clamp, defenseFor, distance, emptyRoutes, FIELD, LINEMEN, frameAt, lookForLevel, newRun, receiversFor, ROUTE_NAMES, routePreset, sanitizeRoute, simulate, smoothPath } from '../game/engine';
 import type { Personnel, Point, Protection, ReceiverId, RouteName, Routes, Simulation } from '../game/engine';
+import PlayCanvas from './PlayCanvas';
 import '../game.css';
 
 type Phase = 'draw' | 'playing' | 'result';
@@ -44,6 +45,8 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
   const look = useMemo(() => lookForLevel(run.seed, run.level), [run.seed, run.level]);
   const receivers = useMemo(() => receiversFor(personnel), [personnel]);
   const defenders = useMemo(() => defenseFor(look, personnel), [look, personnel]);
+  const offensiveNodes = useMemo(() => [...receivers.map(r => ({ id:r.id, label:r.id, team:'offense' as const, ...r.start })), ...LINEMEN.map(n => ({ id:n.id, label:n.id, team:'offense' as const, ...n.start })), { id:'QB', label:'QB', team:'offense' as const, ...FIELD.qb }], [receivers]);
+  const defensiveNodes = useMemo(() => defenders.map(d => ({ id:d.id, label:d.id, team:'defense' as const, ...d.start })), [defenders]);
   const activeReceiver = receivers.find(r => r.id === selected)!;
   const drawnCount = Object.values(routes).filter(points => points.length > 1).length;
   const currentFrame = result && phase !== 'draw' ? frameAt(result, Math.min(time, result.catchTime)) : null;
@@ -153,6 +156,9 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
     const t = clamp((time - result.throwTime) / Math.max(.05, result.catchTime - result.throwTime), 0, 1);
     ball = { x: FIELD.qb.x + (result.catchPoint.x - FIELD.qb.x) * t, y: FIELD.qb.y + (result.catchPoint.y - FIELD.qb.y) * t };
   }
+  const targetPoint = result?.target && currentFrame ? currentFrame.receivers[result.target] : null;
+  const conflict = targetPoint && currentFrame ? defenders.filter(d => d.assignment !== 'rush').sort((a,b) => distance(currentFrame.defenders[a.id],targetPoint)-distance(currentFrame.defenders[b.id],targetPoint))[0] : null;
+  const liveCaption = !result || phase === 'draw' ? 'Read the shell, set your protection, then give the quarterback a window.' : time < .45 ? 'The line sets to meet the rush. Receivers release into the coverage.' : time < result.throwTime ? `${currentFrame?.engagements.length ?? 0} blocks hold the pocket. ${look.coverage <= 1 ? 'Sharp breaks pull man defenders off their leverage.' : 'Receivers at different depths make the zone defenders choose.'}` : time < result.catchTime ? `The quarterback releases to ${result.target ?? 'the outlet'} before the rush gets home.` : result.feedback[0];
 
   return <section className="tactical-draft" aria-label="Tactical Draft game">
     <div className="draft-heading">
@@ -165,12 +171,14 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
     </div>
     <div className="draft-field-wrap">
       <div className="draft-field-tools"><p id="draft-drawing-help">{phase === 'draw' ? 'Drag from an O to draw. Or pick a player and route below.' : phase === 'playing' ? 'Find the window.' : result?.won ? 'Keep that play in your pocket.' : 'Watch where the window closes.'}</p><div><button title="Undo route" aria-label="Undo last route" disabled={phase !== 'draw' || !history.length} onClick={() => { setRoutes(history[history.length - 1]); setHistory(previous => previous.slice(0, -1)); }}><Undo2 size={17} /></button><button title="Clear routes" aria-label="Clear all routes" disabled={phase !== 'draw' || !drawnCount} onClick={() => remember(emptyRoutes(personnel))}><RotateCcw size={17} /></button></div></div>
-      <svg ref={svg} className={`draft-field ${phase}`} viewBox="0 0 720 510" role="group" aria-label="Draw offensive routes against the defense" aria-describedby="draft-drawing-help" onPointerMove={continueStroke} onPointerUp={event => finishStroke(event)} onPointerCancel={event => finishStroke(event, true)}>
+      <PlayCanvas svgRef={svg} offensiveNodes={offensiveNodes} defensiveNodes={defensiveNodes} renderPlayers={false} grid={false} className={`draft-field ${phase}`} viewBox="0 0 720 510" role="group" aria-label="Draw offensive routes against the defense" aria-describedby="draft-drawing-help" onPointerMove={continueStroke} onPointerUp={event => finishStroke(event)} onPointerCancel={event => finishStroke(event, true)}>
         <g className="draft-grid" aria-hidden="true">{[65, 125, 185, 245, 305, 365].map((y, index) => <g key={y}><path d={`M 24 ${y} H 696`} /><text x="33" y={y - 9}>{(5 - index) * 5}</text><path d={`M 246 ${y - 5} v 10 M 474 ${y - 5} v 10`} /></g>)}</g>
         <text className="draft-los-label" x="675" y="385" textAnchor="end" aria-hidden="true">LOS</text>
         {phase === 'draw' && <g aria-hidden="true">{defenders.map(d => d.assignment !== 'man' && <g key={d.id}><InkRoute points={[d.start, d.drop]} defense /><Cross point={d.drop} faded /></g>)}</g>}
         <g aria-hidden="true">{receivers.map(r => <InkRoute key={r.id} points={routes[r.id]} selected={selected === r.id && phase === 'draw'} />)}</g>
-        <g className="draft-line" aria-label="Five offensive linemen">{[294, 322, 350, 378, 406].map(x => <rect key={x} x={x - 8} y="371" width="16" height="16" rx="3" />)}<circle cx={FIELD.qb.x} cy={FIELD.qb.y} r="12" /><text x={FIELD.qb.x} y={FIELD.qb.y + 31} textAnchor="middle">QB</text></g>
+        {targetPoint && time > .45 && <g className="draft-window" aria-hidden="true"><ellipse cx={targetPoint.x} cy={targetPoint.y} rx="38" ry="24" />{conflict && <path d={`M ${FIELD.qb.x} ${FIELD.qb.y} L ${currentFrame!.defenders[conflict.id].x} ${currentFrame!.defenders[conflict.id].y}`} />}</g>}
+        <g className="draft-line" aria-label="Five offensive linemen">{LINEMEN.map(n => { const p=currentFrame?.linemen[n.id] ?? n.start; return <rect key={n.id} x={p.x - 8} y={p.y - 8} width="16" height="16" rx="3" />; })}<circle cx={FIELD.qb.x} cy={FIELD.qb.y} r="12" /><text x={FIELD.qb.x} y={FIELD.qb.y + 31} textAnchor="middle">QB</text></g>
+        <g className="draft-engagements" aria-label="Active protection contacts">{currentFrame?.engagements.map(e => <path key={e.rusher} data-blocker={e.blocker} data-rusher={e.rusher} d={`M ${e.point.x-10} ${e.point.y} H ${e.point.x+10}`} />)}</g>
         <g aria-label="Eleven defenders">{defenders.map(d => <Cross key={d.id} point={currentFrame?.defenders[d.id] ?? d.start} />)}</g>
         {receivers.map(receiver => {
           const p = currentFrame?.receivers[receiver.id] ?? receiver.start;
@@ -182,8 +190,10 @@ export default function TacticalDraft({ onExit }: { onExit: () => void }) {
         })}
         {phase !== 'draw' && result?.target && <ellipse className="draft-ball" cx={ball.x} cy={ball.y} rx="7" ry="4" transform={`rotate(-28 ${ball.x} ${ball.y})`} />}
         {phase === 'result' && result?.target && <circle className={`draft-catch ${result.won ? 'complete' : ''}`} cx={result.catchPoint.x} cy={result.catchPoint.y} r="25" />}
-      </svg>
+      </PlayCanvas>
     </div>
+    <p className="draft-context-caption"><span aria-hidden="true">{Math.min(time,result?.catchTime ?? 0).toFixed(2)}s</span> <span aria-live="polite">{liveCaption}</span></p>
+    {phase === 'result' && result && <div className="draft-review"><label htmlFor="draft-timeline">REVIEW THE PLAY</label><input id="draft-timeline" aria-label="Game play progress" type="range" min="0" max={result.catchTime} step=".01" value={Math.min(time,result.catchTime)} onChange={event => setTime(Number(event.target.value))} /><div>{[['PRE-SNAP',0],['SNAP',.45],['DEVELOPMENT',result.throwTime],['RESULT',result.catchTime]].map(([label,at]) => <button key={label} onClick={() => setTime(Number(at))}>{label}</button>)}</div></div>}
     {phase === 'draw' ? <>
       <div className="draft-route-controls">
         <div className="draft-player-picker" role="group" aria-label="Select a receiver">{receivers.map(r => <button key={r.id} onClick={() => setSelected(r.id)} aria-pressed={selected === r.id}>{r.id}</button>)}</div>

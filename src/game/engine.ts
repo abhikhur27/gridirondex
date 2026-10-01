@@ -7,11 +7,13 @@ export type Routes = Record<ReceiverId, Point[]>;
 export type Receiver = { id: ReceiverId; start: Point; role: string };
 export type Defender = { id: string; start: Point; drop: Point; assignment: 'man' | 'zone' | 'rush'; target?: ReceiverId };
 export type Look = { name: string; coverage: 0 | 1 | 2 | 3 | 4; press: boolean; rushSide: Protection; blitz: number; hint: string; level: number; targetScore: number };
-export type Frame = { time: number; receivers: Record<ReceiverId, Point>; defenders: Record<string, Point> };
+export type Engagement = { blocker: string; rusher: string; point: Point };
+export type Frame = { time: number; receivers: Record<ReceiverId, Point>; defenders: Record<string, Point>; linemen: Record<string, Point>; engagements: Engagement[] };
 export type Simulation = { frames: Frame[]; score: number; won: boolean; target: ReceiverId | null; throwTime: number; catchTime: number; catchPoint: Point; separation: number; yards: number; pocket: number; spacing: number; laneClearance: number; feedback: string[] };
 export type Run = { seed: number; level: number; lives: number; total: number; status: 'playing' | 'over' };
 
 export const FIELD = { width: 720, height: 510, los: 365, qb: { x: 350, y: 459 } };
+export const LINEMEN = ['LT', 'LG', 'C', 'RG', 'RT'].map((id, i) => ({ id, start: { x: 294 + i * 28, y: 379 } }));
 export const RECEIVER_IDS: ReceiverId[] = ['X', 'Z', 'Y', 'RB', 'H'];
 export const ROUTE_NAMES: RouteName[] = ['Slant', 'Post', 'Out', 'Wheel', 'Go', 'Drag', 'Block'];
 export const distance = (a: Point, b: Point) => Math.hypot(a.x - b.x, a.y - b.y);
@@ -181,15 +183,40 @@ export function simulate(look: Look, personnel: Personnel, drawn: Routes, protec
   const reaction = Math.max(.23, .34 - (look.level - 1) * .017);
   const defenderSpeed = Math.min(110, 104 + (look.level - 1) * 1.2);
   const frames: Frame[] = [];
+  const blockers = [...LINEMEN, ...receivers.filter(r => routes[r.id].length < 2 && (r.role === 'running back' || r.role === 'tight end'))];
+  const available = new Set(blockers.map(b => b.id));
+  const assignments = new Map<string, { blocker: string; point: Point }>();
+  // The slide picks up its edge first; every blocker can engage only one rusher.
+  const rushers = defense.filter(d => d.assignment === 'rush').sort((a, b) => protection === 'right' ? b.start.x - a.start.x : protection === 'left' ? a.start.x - b.start.x : Math.abs(a.start.x - 350) - Math.abs(b.start.x - 350));
+  for (const rusher of rushers) {
+    const blocker = blockers.filter(b => available.has(b.id)).sort((a, b) => distance(a.start, rusher.start) - distance(b.start, rusher.start))[0];
+    if (blocker) { available.delete(blocker.id); assignments.set(rusher.id, { blocker: blocker.id, point: { x: (blocker.start.x + rusher.start.x) / 2, y: 379 } }); }
+  }
   let positions = Object.fromEntries(defense.map(d => [d.id, d.start]));
   for (let step = 0; step <= 90; step++) {
     const time = step / 20;
     const offense = Object.fromEntries(receivers.map(r => [r.id, atDistance(routes[r.id], Math.max(0, time - (look.press && r.start.y < 400 ? .13 : 0)) * speed)])) as Frame['receivers'];
+    const linemen = Object.fromEntries(LINEMEN.map(n => [n.id, { ...n.start }]));
+    const engagements: Engagement[] = [];
+    for (const [rusher, assignment] of assignments) {
+      const blocker = blockers.find(b => b.id === assignment.blocker)!;
+      const blockedUntil = Math.max(.55, pocket - .5);
+      const setPoint = { x: assignment.point.x, y: assignment.point.y + 12 };
+      const p = lerp(blocker.start, setPoint, Math.min(time / .45, 1));
+      if (assignment.blocker in linemen) linemen[assignment.blocker] = p;
+      else offense[assignment.blocker as ReceiverId] = p;
+      if (time >= .45 && time <= blockedUntil) engagements.push({ blocker: assignment.blocker, rusher, point: assignment.point });
+    }
     if (step) positions = Object.fromEntries(defense.map(d => {
       const from = positions[d.id];
       if (d.assignment === 'rush') {
-        const t = Math.min(time / pocket, 1);
-        return [d.id, { x: d.start.x + (FIELD.qb.x - d.start.x) * t, y: d.start.y + (FIELD.qb.y - d.start.y) * t }];
+        const assignment = assignments.get(d.id);
+        if (assignment) {
+          const contact = { x: assignment.point.x, y: assignment.point.y - 12 };
+          const release = Math.max(.55, pocket - .5);
+          return [d.id, time < .45 ? lerp(d.start, contact, time / .45) : time <= release ? contact : lerp(contact, FIELD.qb, clamp((time - release) / (pocket - release), 0, 1))];
+        }
+        return [d.id, lerp(d.start, FIELD.qb, Math.min(time / pocket, 1))];
       }
       if (d.assignment === 'man' && d.target) {
         const route = routes[d.target];
@@ -210,7 +237,7 @@ export function simulate(look: Look, personnel: Personnel, drawn: Routes, protec
       const destination = threat && time > .4 ? lerp(d.drop, threat, .7) : d.drop;
       return [d.id, moveToward(from, destination, defenderSpeed / 20)];
     }));
-    frames.push({ time, receivers: offense, defenders: { ...positions } });
+    frames.push({ time, receivers: offense, defenders: { ...positions }, linemen, engagements });
   }
   let best = { score: 0, target: null as ReceiverId | null, time: Math.min(pocket, 2.4), catchTime: Math.min(pocket, 2.4), point: FIELD.qb, separation: 0, yards: 0, spacing: 0, laneClearance: 0, viable: false };
   for (let index = 12; index < frames.length; index += 2) {
@@ -253,5 +280,5 @@ export function frameAt(result: Simulation, time: number): Frame {
   const index = Math.min(result.frames.length - 1, Math.max(0, Math.floor(time * 20)));
   const from = result.frames[index], to = result.frames[Math.min(index + 1, result.frames.length - 1)];
   const t = clamp((time - from.time) * 20, 0, 1);
-  return { time, receivers: Object.fromEntries(RECEIVER_IDS.map(id => [id, lerp(from.receivers[id], to.receivers[id], t)])) as Frame['receivers'], defenders: Object.fromEntries(Object.keys(from.defenders).map(id => [id, lerp(from.defenders[id], to.defenders[id], t)])) };
+  return { time, receivers: Object.fromEntries(RECEIVER_IDS.map(id => [id, lerp(from.receivers[id], to.receivers[id], t)])) as Frame['receivers'], defenders: Object.fromEntries(Object.keys(from.defenders).map(id => [id, lerp(from.defenders[id], to.defenders[id], t)])), linemen: Object.fromEntries(LINEMEN.map(n => [n.id, lerp(from.linemen[n.id], to.linemen[n.id], t)])), engagements: from.engagements };
 }

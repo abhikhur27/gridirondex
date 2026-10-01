@@ -4,6 +4,7 @@ async page => {
   const check = (value, message) => { if (!value) throw new Error(message); };
   await page.setViewportSize({ width: 1280, height: 1000 });
   await page.goto('http://127.0.0.1:5173/#draft');
+  await page.reload();
   await page.getByRole('heading', { name: 'TACTICAL DRAFT' }).waitFor();
   await page.evaluate(() => document.fonts.ready);
   const polygons = () => page.locator('.draft-route:not(.defensive) polygon');
@@ -42,6 +43,16 @@ async page => {
   await page.getByRole('button', { name:'NEXT LEVEL', exact:true }).waitFor({ timeout:10000 });
   check((await page.locator('.draft-feedback').textContent()).includes('completion'), 'Winning geometry produces a completion.');
   await page.screenshot({ path:'output/playwright/draft-result.png', fullPage:true });
+  await page.getByRole('button', { name:'PRE-SNAP', exact:true }).click();
+  check(await page.locator('.draft-engagements path').count() === 0, 'Review resets protection contact before the snap.');
+  await page.getByRole('button', { name:'SNAP', exact:true }).click();
+  check(await page.locator('.draft-engagements path').count() >= 4, 'Review shows actual paired blocking contact at the snap.');
+  check((await page.locator('.draft-context-caption').textContent()).includes('blocks hold the pocket'), 'Review caption matches the held-block frame.');
+  await page.getByRole('button', { name:'RESULT', exact:true }).click();
+  await page.getByRole('slider', { name:'Game play progress', exact:true }).focus();
+  await page.keyboard.press('Home');
+  check(await page.locator('.draft-engagements path').count() === 0, 'Keyboard scrub returns to untouched alignment.');
+  await page.keyboard.press('End');
   await page.getByRole('button', { name:'NEXT LEVEL', exact:true }).click();
   check((await page.locator('.draft-kicker').textContent()).includes('LEVEL 2'), 'Winning advances the level.');
   await page.emulateMedia({ reducedMotion:'reduce' });
