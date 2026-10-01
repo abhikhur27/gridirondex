@@ -67,3 +67,5 @@ Hosting now serves the root page and HTML with `Cache-Control: no-cache` so visi
 
 
 Diagrams simplify match rules and movement. Chapter timestamps are verified where publishers provide them; unchaptered breakdowns start at their introduction, and related overview films are labeled. Metadata availability does not guarantee playback in every browser or region. Full authentication, cross-device storage and a physics simulation are outside this implementation.
+
+Production verification: Firebase released the build successfully. The live root returned HTTP 200 with the expected index-DkA6S2-f.js bundle. The precision browser suite passed against the live site, including direct position URLs, exact film attribution, playback rates, mobile controls and retained game routes, with no application runtime errors.

@@ -54,7 +54,7 @@ async page => {
   for (const width of [320, 375, 768]) {
     await page.setViewportSize({ width, height: 950 });
     await go('#offense/blocking/chip');
-    await page.getByRole('button', { name: 'SNAP / CONTACT', exact: true }).click();
+    await page.getByRole('dialog').getByRole('button', { name: 'SNAP / CONTACT', exact: true }).click();
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No overflow at ${width}`);
     await page.screenshot({ path: `output/playwright/precision-${width}.png`, animations: 'disabled' });
   }
