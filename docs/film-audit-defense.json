@@ -1,10 +1,10 @@
 {
-  "checkedOn": "2026-10-01",
+  "checkedOn": "2026-10-02",
   "scope": "All 40 defense and special-teams lessons",
-  "policy": "A topic-specific publisher chapter or timed transcript is required for long videos. Zero is allowed only for an entire exclusive-topic clip shorter than 120 seconds. No category fallback and no fabricated offset.",
-  "method": "Public YouTube watch-page player metadata and publisher descriptions, plus public search metadata including Shorts shelves. Caption endpoints returned an HTML error page rather than a usable timed transcript; no segment is labeled transcript-verified. Short-topic verification proves topic and complete clip duration from publisher metadata, not independent frame-by-frame review.",
-  "verified": 35,
-  "withheld": 5,
+  "policy": "Require evidence of instruction, not merely a matching title or a raw play/drill cutup. Accept exact named teaching chapters (including an instructional opening chapter at zero), timed transcripts, or an entire exclusive-topic short under 120 seconds whose publisher description establishes teaching. No fabricated offsets or category fallback.",
+  "method": "Re-reviewed all 40 decisions using public publisher descriptions, YouTube chapter cards and companion coach pages. Existing clips received fresh watch-page metadata checks; replacement metadata uses the embedded-player preview with the site origin. Bulk watch-page requests were stopped after HTTP 429. Embed preview OK is recorded separately from actual browser playback, which this content review did not test. No timed transcript was successfully retrieved.",
+  "verified": 26,
+  "withheld": 14,
   "records": [
     {
       "conceptId": "cover-0",
@@ -15,25 +15,65 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "ROliJ27Br9A",
+        "title": "Cover 0: no safety help",
+        "channel": "Fourth and Film",
+        "start": 0,
+        "end": 73,
+        "durationSeconds": 906,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=ROliJ27Br9A",
+        "excerpt": "0:00 Cover 0; 1:13 begins Cover 1. The opening chapter is the coverage lesson, not an intro.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "ROliJ27Br9A",
+        "url": "https://www.youtube-nocookie.com/embed/ROliJ27Br9A?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 906,
+        "title": "Every Defensive Coverage Explained in 15 Minutes",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "LSYsJmhnw5k",
         "title": "Cover 0: no deep safety",
         "channel": "Football IQ",
         "start": 0,
         "end": 20,
-        "durationSeconds": 20
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=LSYsJmhnw5k",
-        "excerpt": "Publisher describes only Cover 0: no safeties and man assignments; player duration is 20 seconds.",
+        "durationSeconds": 20,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 20
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "A teaching guide to recognizing coverage rules; the explicit opening Cover 0 chapter ends before Cover 1.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=%22strong%20safety%22%20%22explained%22",
+        "checkedOn": "2026-10-02",
+        "title": "Every Defensive Coverage Explained in 15 Minutes",
+        "chapterCards": [
+          {
+            "title": "Cover 0",
+            "time": "0:00",
+            "start": 0
+          },
+          {
+            "title": "Cover 1",
+            "time": "1:13",
+            "start": 73
+          }
+        ]
       }
     },
     {
@@ -45,25 +85,49 @@
         "note": "Publisher chapter: Cover 1."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "ywFXMI1X-Ys",
         "title": "Cover 1 · Joel Klatt",
         "channel": "The Joel Klatt Show",
         "start": 71,
         "end": 430,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
         "excerpt": "1:11–7:10 Cover 1",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/ywFXMI1X-Ys?start=71&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 1 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 71,
+        "end": 430,
+        "durationSeconds": 1794,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -75,25 +139,49 @@
         "note": "Publisher chapter: Cover 2."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "ywFXMI1X-Ys",
         "title": "Cover 2 · Joel Klatt",
         "channel": "The Joel Klatt Show",
         "start": 431,
         "end": 925,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
         "excerpt": "7:11–15:25 Cover 2",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/ywFXMI1X-Ys?start=71&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 2 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 431,
+        "end": 925,
+        "durationSeconds": 1794,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -105,25 +193,49 @@
         "note": "Publisher chapter: Cover 3."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "ywFXMI1X-Ys",
         "title": "Cover 3 · Joel Klatt",
         "channel": "The Joel Klatt Show",
         "start": 926,
         "end": 1260,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
         "excerpt": "15:26–21:00 Cover 3",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/ywFXMI1X-Ys?start=71&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 3 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 926,
+        "end": 1260,
+        "durationSeconds": 1794,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -135,25 +247,49 @@
         "note": "Publisher chapter: Cover 4."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "ywFXMI1X-Ys",
         "title": "Cover 4 · Joel Klatt",
         "channel": "The Joel Klatt Show",
         "start": 1261,
         "end": 1771,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=ywFXMI1X-Ys",
         "excerpt": "21:01–29:31 Cover 4",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 1794
+        "durationSeconds": 1794,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/ywFXMI1X-Ys?start=71&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "ywFXMI1X-Ys",
+        "title": "Cover 4 · Joel Klatt",
+        "channel": "The Joel Klatt Show",
+        "start": 1261,
+        "end": 1771,
+        "durationSeconds": 1794,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -165,25 +301,49 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "3H85mWMTdME",
         "title": "Cover 6 whiteboard breakdown",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 129,
         "end": 214,
-        "durationSeconds": 471
+        "durationSeconds": 471,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=3H85mWMTdME",
         "excerpt": "02:09 Whiteboard: Breaking Down Cover 6; 03:34 begins Cover 8.",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 471
+        "durationSeconds": 471,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/3H85mWMTdME?start=129&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "3H85mWMTdME",
+        "title": "Cover 6 whiteboard breakdown",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 129,
+        "end": 214,
+        "durationSeconds": 471,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -195,25 +355,49 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "Q6iuu58jLgU",
         "title": "4–3 defensive formation",
         "channel": "Fourth and Film",
         "start": 348,
         "end": 421,
-        "durationSeconds": 726
+        "durationSeconds": 726,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
         "excerpt": "5:48 4-3; 7:01 46 Bear",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 726
+        "durationSeconds": 726,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/Q6iuu58jLgU?start=348&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "4–3 defensive formation",
+        "channel": "Fourth and Film",
+        "start": 348,
+        "end": 421,
+        "durationSeconds": 726,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -225,25 +409,49 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "Q6iuu58jLgU",
         "title": "3–4 defensive formation",
         "channel": "Fourth and Film",
         "start": 279,
         "end": 348,
-        "durationSeconds": 726
+        "durationSeconds": 726,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
         "excerpt": "4:39 3-4; 5:48 4-3",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 726
+        "durationSeconds": 726,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/Q6iuu58jLgU?start=348&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "3–4 defensive formation",
+        "channel": "Fourth and Film",
+        "start": 279,
+        "end": 348,
+        "durationSeconds": 726,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -255,25 +463,49 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "Q6iuu58jLgU",
         "title": "46 Bear front",
         "channel": "Fourth and Film",
         "start": 421,
         "end": 503,
-        "durationSeconds": 726
+        "durationSeconds": 726,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
         "excerpt": "7:01 46 Bear; 8:23 Nickel",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 726
+        "durationSeconds": 726,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/Q6iuu58jLgU?start=348&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "46 Bear front",
+        "channel": "Fourth and Film",
+        "start": 421,
+        "end": 503,
+        "durationSeconds": 726,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -285,25 +517,49 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "uNHJIwlkPMk",
         "title": "Penny front against wide zone",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 1130,
         "end": 1245,
-        "durationSeconds": 2420
+        "durationSeconds": 2420,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=uNHJIwlkPMk",
         "excerpt": "18:50 Defending Wide Zone with a 5-1 Front; next chapter 20:45.",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 2420
+        "durationSeconds": 2420,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/uNHJIwlkPMk?start=1130&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "uNHJIwlkPMk",
+        "title": "Penny front against wide zone",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 1130,
+        "end": 1245,
+        "durationSeconds": 2420,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -331,8 +587,18 @@
           "id": "9MfvBFVpaHw",
           "url": "https://www.youtube.com/watch?v=9MfvBFVpaHw",
           "reason": "Madden Dime/Dollar overview, 442 seconds; no verified topic offset."
+        },
+        {
+          "id": "3GCQSONsgz0",
+          "url": "https://www.youtube.com/watch?v=3GCQSONsgz0",
+          "reason": "A named Half Dollar chapter exists at 0:18, but the retrieved evidence does not establish that this naming convention teaches the exact seven-DB Dollar package used by this lesson. Did not equate the terminology without proof."
         }
-      ]
+      ],
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
+      }
     },
     {
       "conceptId": "techniques",
@@ -343,25 +609,65 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "6WJaRaY69KY",
+        "title": "Defensive line techniques and alignments",
+        "channel": "Chris Haddad · vIQtory",
+        "start": 18,
+        "end": 223,
+        "durationSeconds": 322,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=6WJaRaY69KY",
+        "excerpt": "0:18 Diagram; 3:43 Example. Dedicated coaching guide to defensive line techniques and alignments.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "6WJaRaY69KY",
+        "url": "https://www.youtube-nocookie.com/embed/6WJaRaY69KY?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 322,
+        "title": "Defensive Line Techniques & Alignments Guide For Coaches",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "_4xylByLjbs",
         "title": "Defensive line alignment numbers",
         "channel": "Coach Peters",
         "start": 0,
         "end": 37,
-        "durationSeconds": 37
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=_4xylByLjbs",
-        "excerpt": "Dedicated alignment-number explanation; public player duration is 37 seconds.",
+        "durationSeconds": 37,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 37
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The dedicated defensive-line coaching guide moves from its intro to a technique-numbering diagram. This replaces a title-only short.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=Defensive%20Line%20Techniques%20Alignments%20Guide%20Coaches%20Chris%20Haddad",
+        "checkedOn": "2026-10-02",
+        "title": "Defensive Line Techniques & Alignments Guide For Coaches",
+        "chapterCards": [
+          {
+            "title": "Diagram",
+            "time": "0:18",
+            "start": 18
+          },
+          {
+            "title": "Example",
+            "time": "3:43",
+            "start": 223
+          }
+        ]
       }
     },
     {
@@ -373,25 +679,65 @@
         "note": "Dedicated 23-second T/E exchange clip."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "5m66Ru_8N5Y",
+        "title": "Tackle first, end loops",
+        "channel": "Chris Haddad · vIQtory",
+        "start": 265,
+        "end": 374,
+        "durationSeconds": 559,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=5m66Ru_8N5Y",
+        "excerpt": "4:25 TE Stunt; 6:14 begins Boss Twist. Coaching installation of the tackle-end game.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "5m66Ru_8N5Y",
+        "url": "https://www.youtube-nocookie.com/embed/5m66Ru_8N5Y?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 559,
+        "title": "How To Install Defensive Line Stunts (Coaching Guide)",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "hDhaF_cw11U",
         "title": "Tackle–end exchange",
         "channel": "Inside the Pylon",
         "start": 0,
         "end": 23,
-        "durationSeconds": 23
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=hDhaF_cw11U",
-        "excerpt": "Publisher identifies a TEX exchange between the tackle and end; public player duration is 23 seconds.",
+        "durationSeconds": 23,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 23
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The coaching installation guide separates TE from ET, so the tackle-first game has its own exact segment.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=Defensive%20Line%20Techniques%20Alignments%20Guide%20Coaches%20Chris%20Haddad",
+        "checkedOn": "2026-10-02",
+        "title": "How To Install Defensive Line Stunts (Coaching Guide)",
+        "chapterCards": [
+          {
+            "title": "TE Stunt",
+            "time": "4:25",
+            "start": 265
+          },
+          {
+            "title": "Boss Twist",
+            "time": "6:14",
+            "start": 374
+          }
+        ]
       }
     },
     {
@@ -403,25 +749,65 @@
         "note": "Dedicated coaching breakdown; starts at the introduction."
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "5m66Ru_8N5Y",
+        "title": "End first, tackle loops",
+        "channel": "Chris Haddad · vIQtory",
+        "start": 198,
+        "end": 265,
+        "durationSeconds": 559,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=5m66Ru_8N5Y",
+        "excerpt": "3:18 ET Stunt; 4:25 begins TE Stunt. Coaching installation of the end-tackle game.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "5m66Ru_8N5Y",
+        "url": "https://www.youtube-nocookie.com/embed/5m66Ru_8N5Y?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 559,
+        "title": "How To Install Defensive Line Stunts (Coaching Guide)",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "4rye0ch5QGM",
         "title": "End first, tackle second",
         "channel": "vIQtory Sports · Football Coaching Education",
         "start": 0,
         "end": 18,
-        "durationSeconds": 18
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=4rye0ch5QGM",
-        "excerpt": "Publisher specifies end first and tackle second, with the tackle looping outside after occupying the guard; duration 18 seconds.",
+        "durationSeconds": 18,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 18
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The same installation guide gives the end-first game a different named segment; this replaces an 18-second cutup.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=Defensive%20Line%20Techniques%20Alignments%20Guide%20Coaches%20Chris%20Haddad",
+        "checkedOn": "2026-10-02",
+        "title": "How To Install Defensive Line Stunts (Coaching Guide)",
+        "chapterCards": [
+          {
+            "title": "ET Stunt",
+            "time": "3:18",
+            "start": 198
+          },
+          {
+            "title": "TE Stunt",
+            "time": "4:25",
+            "start": 265
+          }
+        ]
       }
     },
     {
@@ -433,25 +819,49 @@
         "note": "Stunt overview covering the penetrator/looper exchange in E/T and T/E games."
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "5zTXCj_j-LQ",
         "title": "Looping stunts from a Bear front",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 319,
         "end": 378,
-        "durationSeconds": 982
+        "durationSeconds": 982,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=5zTXCj_j-LQ",
         "excerpt": "05:19 Using Looping Stunts in a Bear Front; next chronological chapter is 06:18.",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 982
+        "durationSeconds": 982,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/5zTXCj_j-LQ?start=319&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "5zTXCj_j-LQ",
+        "title": "Looping stunts from a Bear front",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 319,
+        "end": 378,
+        "durationSeconds": 982,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -463,25 +873,49 @@
         "note": "Publisher chapter: Film Breakdown: At the Snap."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "6j74uknbvHE",
         "title": "Cross Dog at the snap",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 148,
         "end": 251,
-        "durationSeconds": 422
+        "durationSeconds": 422,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=6j74uknbvHE",
         "excerpt": "02:28 Film Breakdown: At the Snap; 04:11 The Key Mechanic: Attacking the Running Back",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 422
+        "durationSeconds": 422,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/6j74uknbvHE?start=148&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "6j74uknbvHE",
+        "title": "Cross Dog at the snap",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 148,
+        "end": 251,
+        "durationSeconds": 422,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -493,26 +927,50 @@
         "note": "Dedicated clinic excerpt: five rush, three under, three deep."
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "bgFECnsRvrw",
+        "title": "Fire zone: five rush, three under, three deep",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 63,
+        "end": 164,
+        "durationSeconds": 932,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=bgFECnsRvrw",
+        "excerpt": "01:03 Defining Fire Zone: 5-Man Rush & 3-Under/3-Deep Shell; 02:44 begins the protection-overload explanation.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "bgFECnsRvrw",
+        "url": "https://www.youtube-nocookie.com/embed/bgFECnsRvrw?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 932,
+        "title": "How Fire Zones Overload Modern Protections",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "wRu-ESzYeo4",
         "title": "Three deep, three under fire zone",
         "channel": "Rich Madrid",
         "start": 0,
         "end": 44,
-        "durationSeconds": 44
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=wRu-ESzYeo4",
-        "excerpt": "Publisher identifies a disguised three-deep, three-under Packers fire zone against Dallas; public player duration is 44 seconds.",
+        "durationSeconds": 44,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 44
-      }
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "A coach clinic explicitly defines the five-man rush and three-under/three-deep coverage. The matching clinic article reproduces the chapter schedule.",
+        "actualPlaybackWatched": false
+      },
+      "companionEvidenceUrl": "https://www.matchquarters.com/p/fire-zone-masterclass-5-man-pressure-rpo-solves"
     },
     {
       "conceptId": "fit-one-gap",
@@ -522,26 +980,38 @@
         "end": null,
         "note": "Comparative run-fit breakdown; starts at the introduction."
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "k0giC2Xvw2I",
         "title": "One-gap defense cutup",
         "channel": "Charles Fischer",
         "start": 0,
         "end": 20,
-        "durationSeconds": 20
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=k0giC2Xvw2I",
-        "excerpt": "Video title and description identify only one-gap defense; public player duration is 20 seconds.",
+        "durationSeconds": 20,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 20
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous 20-second clip is a raw one-gap cutup. Its title and one-line description identify the play, but do not establish instruction. Researched coaching explanations are longer videos without a verified one-gap chapter or timed transcript.",
+      "rejectedCandidates": [
+        {
+          "id": "k0giC2Xvw2I",
+          "url": "https://www.youtube.com/watch?v=k0giC2Xvw2I",
+          "reason": "Re-reviewed prior mapping: The previous 20-second clip is a raw one-gap cutup. Its title and one-line description identify the play, but do not establish instruction. Researched coaching explanations are longer videos without a verified one-gap chapter or timed transcript."
+        },
+        {
+          "id": "1Sd3VmAm3Xo",
+          "url": "https://www.youtube.com/watch?v=1Sd3VmAm3Xo",
+          "reason": "Instructional comparison of one-gap and two-gap fronts, but no exact one-gap segment boundaries were exposed."
+        },
+        {
+          "id": "Fm62-rYtT-M",
+          "url": "https://www.youtube.com/watch?v=Fm62-rYtT-M",
+          "reason": "USA Football teaches gap assignments, but its 145-second video has no retrieved named chapter or timed transcript."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -553,25 +1023,54 @@
         "note": "Comparative run-fit breakdown; starts at the introduction."
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "d7e7EvKq6DA",
+        "title": "Two-gap stance and technique",
+        "channel": "iCoach App · Chris Rumph",
+        "start": 0,
+        "end": 84,
+        "durationSeconds": 84,
+        "note": "Complete short coaching lesson."
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=d7e7EvKq6DA",
+        "excerpt": "Publisher describes Florida defensive line coach Chris Rumph illustrating two-gap technique, including the stance. Full 84-second teaching clip.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "d7e7EvKq6DA",
+        "url": "https://www.youtube-nocookie.com/embed/d7e7EvKq6DA?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 84,
+        "title": "Chris Rumph - Two Gap Technique",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "GZPfV9ecnmg",
         "title": "Two-gap defense cutup",
         "channel": "Charles Fischer",
         "start": 0,
         "end": 17,
-        "durationSeconds": 17
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=GZPfV9ecnmg",
-        "excerpt": "Video title and description identify only two-gap defense; public player duration is 17 seconds.",
+        "durationSeconds": 17,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 17
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "publisher description identifies explicit teaching in this complete short",
+        "finding": "The publisher identifies a defensive-line coach demonstrating the two-gap stance and technique, not game footage labeled with a scheme.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=Chris%20Rumph%20Two%20Gap%20Technique",
+        "checkedOn": "2026-10-02",
+        "title": "Chris Rumph - Two Gap Technique",
+        "chapterCards": []
       }
     },
     {
@@ -582,26 +1081,38 @@
         "end": null,
         "note": null
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "43klhpDGg-8",
         "title": "Nose tackle: control the interior",
         "channel": "Football IQ",
         "start": 0,
         "end": 25,
-        "durationSeconds": 25
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=43klhpDGg-8",
-        "excerpt": "Publisher describes the nose over the center, taking multiple blockers and stopping inside runs; public player duration is 25 seconds.",
+        "durationSeconds": 25,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 25
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous 25-second source has a brief position definition in its description, but the evidence does not establish a substantive coached explanation in the clip. Dedicated nose-tackle breakdowns found during this pass had no defensible chapter boundaries.",
+      "rejectedCandidates": [
+        {
+          "id": "43klhpDGg-8",
+          "url": "https://www.youtube.com/watch?v=43klhpDGg-8",
+          "reason": "Re-reviewed prior mapping: The previous 25-second source has a brief position definition in its description, but the evidence does not establish a substantive coached explanation in the clip. Dedicated nose-tackle breakdowns found during this pass had no defensible chapter boundaries."
+        },
+        {
+          "id": "K1nToeDabYE",
+          "url": "https://www.youtube.com/watch?v=K1nToeDabYE",
+          "reason": "Dedicated Dexter Lawrence film breakdown, 7:42, but no named instructional chapter or timed transcript retrieved."
+        },
+        {
+          "id": "stgeIhqOH0k",
+          "url": "https://www.youtube.com/watch?v=stgeIhqOH0k",
+          "reason": "Covers one-technique and three-technique together, with no exact nose-tackle segment."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -613,25 +1124,48 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "KA_EFlU0CWY",
+        "title": "EDGE: rush or contain",
+        "channel": "Lurks Lessons",
+        "start": 362,
+        "end": 386,
+        "durationSeconds": 643,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+        "excerpt": "6:02 EDGE; 6:26 begins Cornerback. The guide explains football positions and their responsibilities.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "KA_EFlU0CWY",
+        "url": "https://www.youtube-nocookie.com/embed/KA_EFlU0CWY?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 643,
+        "title": "SPORTS 101 // Guide to American Football Positions",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "E4upsl2iK9Y",
         "title": "Defensive end: keep contain",
         "channel": "ExpertVillage",
         "start": 0,
         "end": 43,
-        "durationSeconds": 43
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=E4upsl2iK9Y",
-        "excerpt": "Dedicated defensive-end containment instruction; public player duration is 43 seconds.",
+        "durationSeconds": 43,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 43
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The role-specific EDGE chapter is bounded by the following cornerback chapter.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -642,26 +1176,38 @@
         "end": null,
         "note": null
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "ivGrYaVD6b8",
         "title": "Mike linebacker responsibilities",
         "channel": "Linebacker Prototype Academy",
         "start": 0,
         "end": 82,
-        "durationSeconds": 82
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=ivGrYaVD6b8",
-        "excerpt": "Publisher title identifies the Mike / middle-linebacker position alone; public player duration is 82 seconds.",
+        "durationSeconds": 82,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 82
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous short was accepted from its Mike-linebacker title alone; its description is empty. Replacement results mix linebacker nicknames, protection identification, and roster discussion, without a verified segment teaching the middle linebacker’s defensive job.",
+      "rejectedCandidates": [
+        {
+          "id": "ivGrYaVD6b8",
+          "url": "https://www.youtube.com/watch?v=ivGrYaVD6b8",
+          "reason": "Re-reviewed prior mapping: The previous short was accepted from its Mike-linebacker title alone; its description is empty. Replacement results mix linebacker nicknames, protection identification, and roster discussion, without a verified segment teaching the middle linebacker’s defensive job."
+        },
+        {
+          "id": "QW1W6J6WDeI",
+          "url": "https://www.youtube.com/watch?v=QW1W6J6WDeI",
+          "reason": "The Lesson chapter covers several linebacker nicknames together; no individual Mike boundaries verified."
+        },
+        {
+          "id": "zSZd2PhwG7Q",
+          "url": "https://www.youtube.com/watch?v=zSZd2PhwG7Q",
+          "reason": "Quarterback protection identification is a different topic from the defensive middle-linebacker role."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -672,26 +1218,38 @@
         "end": null,
         "note": null
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "PoN6M6xFQUw",
         "title": "Will linebacker: weakside range",
         "channel": "Raiders Allegiance",
         "start": 0,
         "end": 24,
-        "durationSeconds": 24
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=PoN6M6xFQUw",
-        "excerpt": "Publisher identifies Devin White as a Will and describes weakside pursuit, range and coverage; public player duration is 24 seconds.",
+        "durationSeconds": 24,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 24
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous Devin White short is a player highlight, with a promotional description rather than an established coaching explanation. Replacement searches returned interviews and broad linebacker overviews without a verified weakside-role segment.",
+      "rejectedCandidates": [
+        {
+          "id": "PoN6M6xFQUw",
+          "url": "https://www.youtube.com/watch?v=PoN6M6xFQUw",
+          "reason": "Re-reviewed prior mapping: The previous Devin White short is a player highlight, with a promotional description rather than an established coaching explanation. Replacement searches returned interviews and broad linebacker overviews without a verified weakside-role segment."
+        },
+        {
+          "id": "QW1W6J6WDeI",
+          "url": "https://www.youtube.com/watch?v=QW1W6J6WDeI",
+          "reason": "Combined linebacker-nickname lesson, not a verified Will-specific segment."
+        },
+        {
+          "id": "q-RtZqMza4c",
+          "url": "https://www.youtube.com/watch?v=q-RtZqMza4c",
+          "reason": "Player interview about changing positions, not a coaching lesson on weakside fits."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -702,26 +1260,38 @@
         "end": null,
         "note": null
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "6e28ha1rrws",
         "title": "Sam linebacker responsibilities",
         "channel": "Munster High School Football",
         "start": 0,
         "end": 57,
-        "durationSeconds": 57
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=6e28ha1rrws",
-        "excerpt": "Dedicated SAM linebacker role clip; public player duration is 57 seconds.",
+        "durationSeconds": 57,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 57
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous short has only a repeated title as its description, so instruction was never established beyond the label. A dedicated strong-side-linebacker explainer was found, but no named chapter or timed transcript establishes its actual lesson boundaries.",
+      "rejectedCandidates": [
+        {
+          "id": "6e28ha1rrws",
+          "url": "https://www.youtube.com/watch?v=6e28ha1rrws",
+          "reason": "Re-reviewed prior mapping: The previous short has only a repeated title as its description, so instruction was never established beyond the label. A dedicated strong-side-linebacker explainer was found, but no named chapter or timed transcript establishes its actual lesson boundaries."
+        },
+        {
+          "id": "QWJfXecy3tU",
+          "url": "https://www.youtube.com/watch?v=QWJfXecy3tU",
+          "reason": "Dedicated 2:02 strong-side-linebacker explainer; no retrieved named chapter or timed transcript."
+        },
+        {
+          "id": "dObGiwEfxiw",
+          "url": "https://www.youtube.com/watch?v=dObGiwEfxiw",
+          "reason": "The timestamped segment mixes Mike, Will and Sam in a roster discussion, rather than isolating a Sam coaching lesson."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -733,25 +1303,48 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "KA_EFlU0CWY",
+        "title": "Cornerback responsibilities",
+        "channel": "Lurks Lessons",
+        "start": 386,
+        "end": 410,
+        "durationSeconds": 643,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+        "excerpt": "6:26 Cornerback; 6:50 begins Safety. The guide explains football positions and their responsibilities.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "KA_EFlU0CWY",
+        "url": "https://www.youtube-nocookie.com/embed/KA_EFlU0CWY?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 643,
+        "title": "SPORTS 101 // Guide to American Football Positions",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "-8j04Kevotg",
         "title": "Cornerback press technique with Darius Slay",
         "channel": "All Eyes DB Camp · Chad Wilson",
         "start": 0,
         "end": 27,
-        "durationSeconds": 27
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=-8j04Kevotg",
-        "excerpt": "Publisher identifies press-man work with Slay and coach Chad Wilson; public player duration is 27 seconds.",
+        "durationSeconds": 27,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 27
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The role-specific cornerback chapter replaces isolated press-drill footage.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -762,26 +1355,38 @@
         "end": null,
         "note": null
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "SALBQ-p647I",
         "title": "Free safety: reading the throw",
         "channel": "The DB Network",
         "start": 0,
         "end": 111,
-        "durationSeconds": 111
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=SALBQ-p647I",
-        "excerpt": "Dedicated free-safety interception instruction; public player duration is 111 seconds.",
+        "durationSeconds": 111,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 111
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous Free Safety 101 video could not be confirmed as a precise instructional segment. Its watch-page metadata returned ERROR while the separate embed preview returned OK; that inconsistency is not proof of working playback. Replacement safety sources lacked verified free-safety chapter boundaries.",
+      "rejectedCandidates": [
+        {
+          "id": "SALBQ-p647I",
+          "url": "https://www.youtube.com/watch?v=SALBQ-p647I",
+          "reason": "Re-reviewed prior mapping: The previous Free Safety 101 video could not be confirmed as a precise instructional segment. Its watch-page metadata returned ERROR while the separate embed preview returned OK; that inconsistency is not proof of working playback. Replacement safety sources lacked verified free-safety chapter boundaries."
+        },
+        {
+          "id": "ps-uA6GBudo",
+          "url": "https://www.youtube.com/watch?v=ps-uA6GBudo",
+          "reason": "Dedicated 2:25 free-safety explainer, but no retrieved named chapter or timed transcript."
+        },
+        {
+          "id": "KA_EFlU0CWY",
+          "url": "https://www.youtube.com/watch?v=KA_EFlU0CWY",
+          "reason": "The 6:50 chapter groups safety roles together; it is not a verified free-safety-only segment."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -793,25 +1398,54 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "h9i5oXwbkrc",
+        "title": "How to play strong safety",
+        "channel": "eHowSports",
+        "start": 0,
+        "end": 75,
+        "durationSeconds": 75,
+        "note": "Complete short coaching lesson."
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=h9i5oXwbkrc",
+        "excerpt": "Publisher describes teaching strong-safety play through drills using dummies. Complete 75-second football instruction clip.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "h9i5oXwbkrc",
+        "url": "https://www.youtube-nocookie.com/embed/h9i5oXwbkrc?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 75,
+        "title": "Football Tips : How to Play Strong Safety in Football",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "oEoIqSWZpLU",
         "title": "Strong safety responsibilities",
         "channel": "Decyfr Sport",
         "start": 0,
         "end": 58,
-        "durationSeconds": 58
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=oEoIqSWZpLU",
-        "excerpt": "Dedicated strong-safety position explanation; public player duration is 58 seconds.",
+        "durationSeconds": 58,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 58
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "publisher description identifies explicit teaching in this complete short",
+        "finding": "The publisher describes an instructional strong-safety demonstration using dummies; the whole short teaches this position.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=%22strong%20safety%22%20%22explained%22",
+        "checkedOn": "2026-10-02",
+        "title": "Football Tips : How to Play Strong Safety in Football",
+        "chapterCards": []
       }
     },
     {
@@ -823,25 +1457,49 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "Q6iuu58jLgU",
+        "title": "Nickel: the fifth defensive back",
+        "channel": "Fourth and Film",
+        "start": 503,
+        "end": 617,
+        "durationSeconds": 726,
+        "note": "This chapter explains nickel personnel and alignment; the animation follows the slot defender."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=Q6iuu58jLgU",
+        "excerpt": "8:23 Nickel; 10:17 begins Dime. Named chapter in the defensive-formations teaching guide.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 726,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/Q6iuu58jLgU?start=348&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "B5JLA-j7QDA",
         "title": "Nickel: hold the seam before the flat",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 0,
         "end": 13,
-        "durationSeconds": 13
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=B5JLA-j7QDA",
-        "excerpt": "Publisher instructs the nickel to protect the seam first against Sail; public player duration is 13 seconds.",
+        "durationSeconds": 13,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 13
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The chapter explains the fifth defensive back and nickel alignment. It is a personnel-role lesson, not the old 13-second Sail cutup.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -853,25 +1511,49 @@
         "note": "Publisher chapter: five-man safety blitz from weak rotation."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "eibqDMAkOrc",
         "title": "Safety down in a weak rotation",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 65,
         "end": 120,
-        "durationSeconds": 498
+        "durationSeconds": 498,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=eibqDMAkOrc",
         "excerpt": "1:05 Variation 1: 5-Man Safety Blitz (Weak Rotation); next chapter 2:00.",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 498
+        "durationSeconds": 498,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/eibqDMAkOrc?start=65&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "eibqDMAkOrc",
+        "title": "Safety down in a weak rotation",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 65,
+        "end": 120,
+        "durationSeconds": 498,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -883,7 +1565,7 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "viD-K_vFcWc",
         "title": "Changing coverage with motion",
@@ -897,14 +1579,38 @@
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=viD-K_vFcWc",
         "excerpt": "01:26 Adjusting Coverage: Man Away, Zone To; next chapter 02:30.",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 668
+        "durationSeconds": 668,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/viD-K_vFcWc?start=86&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
       },
-      "scopeNote": "Both teach defensive adjustment to motion. The publisher chapter shows man-away/zone-to rules; it is explicitly labeled as a variation of the animation’s man-travel example, not identical coverage."
+      "scopeNote": "Both teach defensive adjustment to motion. The publisher chapter shows man-away/zone-to rules; it is explicitly labeled as a variation of the animation’s man-travel example, not identical coverage.",
+      "previousAuditMapping": {
+        "id": "viD-K_vFcWc",
+        "title": "Changing coverage with motion",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 86,
+        "end": 150,
+        "durationSeconds": 668,
+        "note": "This clip shows a man-away/zone-to adjustment; the animation shows a defender following the motion.",
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
+      }
     },
     {
       "conceptId": "coverage-roll",
@@ -915,25 +1621,49 @@
         "note": "Publisher chapter: weak rotation Cover 3 and spinning safeties."
       },
       "status": "verified",
-      "change": "retained-with-explicit-boundaries",
+      "change": "retained-instructional-chapter",
       "currentMapping": {
         "id": "uNHJIwlkPMk",
         "title": "Weak rotation and spinning safeties",
         "channel": "MatchQuarters · Cody Alexander",
         "start": 1500,
         "end": 2180,
-        "durationSeconds": 2420
+        "durationSeconds": 2420,
+        "note": "Starts at the publisher’s named chapter."
       },
       "verification": {
         "kind": "publisher-chapter",
         "sourceUrl": "https://www.youtube.com/watch?v=uNHJIwlkPMk",
         "excerpt": "25:00 Coverage: Weak Rotation Cover 3 & Spinning Safeties; next chapter 36:20.",
-        "checkedOn": "2026-10-01"
+        "checkedOn": "2026-10-02"
       },
       "playerCheck": {
+        "checkedOn": "2026-10-02",
+        "method": "Public watch metadata plus separate embedded-player preview; not clicked playback",
         "status": "OK",
         "playableInEmbed": true,
-        "durationSeconds": 2420
+        "durationSeconds": 2420,
+        "embedPreview": {
+          "status": "OK",
+          "playableInEmbed": true,
+          "url": "https://www.youtube-nocookie.com/embed/uNHJIwlkPMk?start=1130&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0"
+        },
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
+        "id": "uNHJIwlkPMk",
+        "title": "Weak rotation and spinning safeties",
+        "channel": "MatchQuarters · Cody Alexander",
+        "start": 1500,
+        "end": 2180,
+        "durationSeconds": 2420,
+        "checkedOn": "2026-10-01"
+      },
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "Publisher description identifies an explanatory coaching lesson, with this scheme or adjustment isolated by the saved chapter boundaries.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -944,26 +1674,38 @@
         "end": null,
         "note": null
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "k0giC2Xvw2I",
         "title": "One-gap defense cutup",
         "channel": "Charles Fischer",
         "start": 0,
         "end": 20,
-        "durationSeconds": 20
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=k0giC2Xvw2I",
-        "excerpt": "Video title and description identify only one-gap defense; public player duration is 20 seconds.",
+        "durationSeconds": 20,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 20
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous 20-second clip is a raw one-gap cutup. Its title and one-line description identify the play, but do not establish instruction. Researched coaching explanations are longer videos without a verified one-gap chapter or timed transcript.",
+      "rejectedCandidates": [
+        {
+          "id": "k0giC2Xvw2I",
+          "url": "https://www.youtube.com/watch?v=k0giC2Xvw2I",
+          "reason": "Re-reviewed prior mapping: The previous 20-second clip is a raw one-gap cutup. Its title and one-line description identify the play, but do not establish instruction. Researched coaching explanations are longer videos without a verified one-gap chapter or timed transcript."
+        },
+        {
+          "id": "1Sd3VmAm3Xo",
+          "url": "https://www.youtube.com/watch?v=1Sd3VmAm3Xo",
+          "reason": "Instructional comparison of one-gap and two-gap fronts, but no exact one-gap segment boundaries were exposed."
+        },
+        {
+          "id": "Fm62-rYtT-M",
+          "url": "https://www.youtube.com/watch?v=Fm62-rYtT-M",
+          "reason": "USA Football teaches gap assignments, but its 145-second video has no retrieved named chapter or timed transcript."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -975,25 +1717,54 @@
         "note": null
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "d7e7EvKq6DA",
+        "title": "Two-gap stance and technique",
+        "channel": "iCoach App · Chris Rumph",
+        "start": 0,
+        "end": 84,
+        "durationSeconds": 84,
+        "note": "Complete short coaching lesson."
+      },
+      "verification": {
+        "kind": "short-topic",
+        "sourceUrl": "https://www.youtube.com/watch?v=d7e7EvKq6DA",
+        "excerpt": "Publisher describes Florida defensive line coach Chris Rumph illustrating two-gap technique, including the stance. Full 84-second teaching clip.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "d7e7EvKq6DA",
+        "url": "https://www.youtube-nocookie.com/embed/d7e7EvKq6DA?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 84,
+        "title": "Chris Rumph - Two Gap Technique",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "GZPfV9ecnmg",
         "title": "Two-gap defense cutup",
         "channel": "Charles Fischer",
         "start": 0,
         "end": 17,
-        "durationSeconds": 17
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=GZPfV9ecnmg",
-        "excerpt": "Video title and description identify only two-gap defense; public player duration is 17 seconds.",
+        "durationSeconds": 17,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 17
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "publisher description identifies explicit teaching in this complete short",
+        "finding": "The publisher identifies a defensive-line coach demonstrating the two-gap stance and technique, not game footage labeled with a scheme.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=Chris%20Rumph%20Two%20Gap%20Technique",
+        "checkedOn": "2026-10-02",
+        "title": "Chris Rumph - Two Gap Technique",
+        "chapterCards": []
       }
     },
     {
@@ -1012,7 +1783,12 @@
           "url": "https://www.youtube.com/watch?v=GOxHthXYoHU",
           "reason": "Untimed field-goal-block transcript spans multiple techniques; no verified overload offset."
         }
-      ]
+      ],
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
+      }
     },
     {
       "conceptId": "fg-a-gap-push",
@@ -1035,7 +1811,12 @@
           "url": "https://www.youtube.com/watch?v=_NRNXLaVgU8",
           "reason": "Postgame interview, not a timestamped A-gap coaching cutup."
         }
-      ]
+      ],
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
+      }
     },
     {
       "conceptId": "fg-block-safe",
@@ -1053,7 +1834,12 @@
           "url": "https://www.youtube.com/watch?v=wE8EMKRLivA",
           "reason": "Overload clinic does not establish a safe-block segment."
         }
-      ]
+      ],
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
+      }
     },
     {
       "conceptId": "punt-spread",
@@ -1063,26 +1849,38 @@
         "end": null,
         "note": "Dedicated shield-protection clinic; starts at the introduction."
       },
-      "status": "verified",
-      "change": "replaced",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "Zc_KqP5SCZw",
         "title": "Shield punt: protection and coverage",
         "channel": "Championship Productions · Courtney Messingham",
         "start": 0,
         "end": 95,
-        "durationSeconds": 95
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=Zc_KqP5SCZw",
-        "excerpt": "Publisher specifies shield-punt formation, protection and coverage; public player duration is 95 seconds.",
+        "durationSeconds": 95,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 95
+      "reviewedOn": "2026-10-02",
+      "reason": "The old 95-second clip promotes a full shield-punt DVD. Its description establishes what the paid presentation teaches, but not what the short trailer actually explains. Replacement clinics had no exact verified spread-punt formation/protection segment.",
+      "rejectedCandidates": [
+        {
+          "id": "Zc_KqP5SCZw",
+          "url": "https://www.youtube.com/watch?v=Zc_KqP5SCZw",
+          "reason": "Re-reviewed prior mapping: The old 95-second clip promotes a full shield-punt DVD. Its description establishes what the paid presentation teaches, but not what the short trailer actually explains. Replacement clinics had no exact verified spread-punt formation/protection segment."
+        },
+        {
+          "id": "sTV-tXh3zJY",
+          "url": "https://www.youtube.com/watch?v=sTV-tXh3zJY",
+          "reason": "A genuine shield-protection clinic, 10:14, but no exact publisher chapter or timed transcript retrieved."
+        },
+        {
+          "id": "4hVh4-GEQdA",
+          "url": "https://www.youtube.com/watch?v=4hVh4-GEQdA",
+          "reason": "Verified gunner and generic blocking chapters do not establish a complete spread-punt scheme lesson."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     },
     {
@@ -1110,8 +1908,18 @@
           "id": "MxXp1_AxFZw",
           "url": "https://www.youtube.com/watch?v=MxXp1_AxFZw",
           "reason": "585-second pro punt clinic; no publisher chapter offsets."
+        },
+        {
+          "id": "ye3iIUIs43Y",
+          "url": "https://www.youtube.com/watch?v=ye3iIUIs43Y",
+          "reason": "Coached setup chapter exists, but it teaches rugby punt from a pro formation, not this lesson’s conventional pro-style protection."
         }
-      ]
+      ],
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
+      }
     },
     {
       "conceptId": "punt-gunner",
@@ -1122,25 +1930,65 @@
         "note": "Dedicated coaching excerpt on single and double-team releases."
       },
       "status": "verified",
-      "change": "replaced",
+      "change": "replaced-with-instruction",
       "currentMapping": {
+        "id": "4hVh4-GEQdA",
+        "title": "The gunner’s job on punt coverage",
+        "channel": "Isaac Punts",
+        "start": 40,
+        "end": 72,
+        "durationSeconds": 188,
+        "note": "Starts at the named instructional chapter."
+      },
+      "verification": {
+        "kind": "publisher-chapter",
+        "sourceUrl": "https://www.youtube.com/watch?v=4hVh4-GEQdA",
+        "excerpt": "0:40 Gunner Position; 1:12 begins Long Snapper Position. The publisher describes teaching each punt-team responsibility.",
+        "checkedOn": "2026-10-02"
+      },
+      "playerCheck": {
+        "id": "4hVh4-GEQdA",
+        "url": "https://www.youtube-nocookie.com/embed/4hVh4-GEQdA?enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "checkedOn": "2026-10-02",
+        "method": "public embedded_player_response preview; not clicked playback",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 188,
+        "title": "College Punt Scheme Explained",
+        "actualPlaybackTested": false
+      },
+      "previousAuditMapping": {
         "id": "9wAktmBDotQ",
         "title": "Gunner shimmy release drill",
         "channel": "Coach Staff",
         "start": 0,
         "end": 50,
-        "durationSeconds": 50
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=9wAktmBDotQ",
-        "excerpt": "Dedicated punt-gunner shimmy drill; public player duration is 50 seconds.",
+        "durationSeconds": 50,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 50
+      "reviewedOn": "2026-10-02",
+      "instructionalReview": {
+        "basis": "named instructional chapter plus coaching description",
+        "finding": "The publisher teaches individual punt-team jobs; its Gunner Position chapter ends as the long-snapper discussion begins.",
+        "actualPlaybackWatched": false
+      },
+      "searchEvidence": {
+        "url": "https://www.youtube.com/results?search_query=Punt%20gunner%20release%20coaching%20explained",
+        "checkedOn": "2026-10-02",
+        "title": "College Punt Scheme Explained",
+        "chapterCards": [
+          {
+            "title": "Gunner Position",
+            "time": "0:40",
+            "start": 40
+          },
+          {
+            "title": "Long Snapper Position",
+            "time": "1:12",
+            "start": 72
+          }
+        ]
       }
     },
     {
@@ -1151,26 +1999,38 @@
         "end": null,
         "note": "Dedicated 22-second WPI wall-return practice cutup."
       },
-      "status": "verified",
-      "change": "retained-with-explicit-boundaries",
-      "currentMapping": {
+      "status": "withheld",
+      "previousAuditMapping": {
         "id": "NTUSG3aQ04I",
         "title": "WPI wall-return drill",
         "channel": "Mike Kuchar",
         "start": 0,
         "end": 22,
-        "durationSeconds": 22
-      },
-      "verification": {
-        "kind": "short-topic",
-        "sourceUrl": "https://www.youtube.com/watch?v=NTUSG3aQ04I",
-        "excerpt": "Publisher identifies a WPI wall-punt-return practice cutup; public player duration is 22 seconds.",
+        "durationSeconds": 22,
         "checkedOn": "2026-10-01"
       },
-      "playerCheck": {
-        "status": "OK",
-        "playableInEmbed": true,
-        "durationSeconds": 22
+      "reviewedOn": "2026-10-02",
+      "reason": "The previous 22-second video is explicitly a WPI practice cutup, not an explanatory lesson. A broader punt-return clinic was found, but its wall-scheme segment has no verified chapter or timed transcript; kickoff wall clips are a different topic.",
+      "rejectedCandidates": [
+        {
+          "id": "NTUSG3aQ04I",
+          "url": "https://www.youtube.com/watch?v=NTUSG3aQ04I",
+          "reason": "Re-reviewed prior mapping: The previous 22-second video is explicitly a WPI practice cutup, not an explanatory lesson. A broader punt-return clinic was found, but its wall-scheme segment has no verified chapter or timed transcript; kickoff wall clips are a different topic."
+        },
+        {
+          "id": "OzKHvFn2mPM",
+          "url": "https://www.youtube.com/watch?v=OzKHvFn2mPM",
+          "reason": "An 11:31 punt-return coaching clinic without a verified wall-return segment."
+        },
+        {
+          "id": "gKrloxU1RBU",
+          "url": "https://www.youtube.com/watch?v=gKrloxU1RBU",
+          "reason": "Kickoff-return wall example, not punt-return wall instruction."
+        }
+      ],
+      "instructionalReview": {
+        "finding": "No exact instructional replacement met the evidence requirement. The animated lesson remains available.",
+        "actualPlaybackWatched": false
       }
     }
   ]

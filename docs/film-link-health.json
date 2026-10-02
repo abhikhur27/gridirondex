@@ -1,0 +1,1833 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-10-02T19:57:39.900Z",
+  "checkedAt": "2026-10-02T19:58:03.919Z",
+  "origin": "https://gridiron-dex.com",
+  "registryHashes": {
+    "filmAuditOffense.ts": "d1988af88f828631d7d783072a70ccfa2a5b9e66e7ae48779b7229d919efa5fb",
+    "filmAuditDefense.ts": "010376b42bafe3a841615657a1fe0eab6ab4fc5aff0007c3db3426d8bdaf0b72"
+  },
+  "method": "Every unique mapped video was scheduled for official public YouTube watch metadata, oEmbed, and privacy-enhanced embed preview metadata. Further requests to a host after its HTTP 429 are deferred and marked incomplete; the other host may still be checked. Embed requests used the production origin and Referer. Preview status must pass independently of watch-page flags.",
+  "limitations": "A metadata pass is not browser playback verification, topic/timestamp validation, or a guarantee across countries, accounts, devices, or future publisher changes. Browser Play must be checked separately.",
+  "network": {
+    "videoConcurrency": 1,
+    "maxConcurrentRequests": 3,
+    "timeoutMs": 20000,
+    "embedOnly": false,
+    "rateLimited": false,
+    "rateLimitedHosts": []
+  },
+  "summary": {
+    "mappings": 79,
+    "uniqueVideos": 30,
+    "metadataPassed": 30,
+    "embedPreviewPassed": 30,
+    "blocked": 0,
+    "incomplete": 0,
+    "browserPlaybackTested": 0
+  },
+  "videos": [
+    {
+      "id": "2exkTbFboDw",
+      "mappings": [
+        {
+          "conceptId": "flat",
+          "title": "Flat route",
+          "channel": "Fourth and Film",
+          "start": 20,
+          "end": 131,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "slant",
+          "title": "Slant route",
+          "channel": "Fourth and Film",
+          "start": 131,
+          "end": 220,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "comeback",
+          "title": "Comeback route",
+          "channel": "Fourth and Film",
+          "start": 220,
+          "end": 332,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "curl",
+          "title": "Curl route",
+          "channel": "Fourth and Film",
+          "start": 332,
+          "end": 405,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "out",
+          "title": "Out route",
+          "channel": "Fourth and Film",
+          "start": 467,
+          "end": 555,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "dig",
+          "title": "Dig route",
+          "channel": "Fourth and Film",
+          "start": 555,
+          "end": 611,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "corner",
+          "title": "Corner route",
+          "channel": "Fourth and Film",
+          "start": 730,
+          "end": 789,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "post",
+          "title": "Post route",
+          "channel": "Fourth and Film",
+          "start": 789,
+          "end": 871,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "go",
+          "title": "Go route",
+          "channel": "Fourth and Film",
+          "start": 871,
+          "end": 957,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "wheel",
+          "title": "Wheel route",
+          "channel": "Fourth and Film",
+          "start": 957,
+          "end": 982,
+          "durationSeconds": 1152
+        },
+        {
+          "conceptId": "option",
+          "title": "Option route",
+          "channel": "Fourth and Film",
+          "start": 1067,
+          "end": 1096,
+          "durationSeconds": 1152
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=2exkTbFboDw&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "2exkTbFboDw",
+        "title": "Every Passing Route Explained in 19 Minutes",
+        "channel": "Fourth and Film",
+        "durationSeconds": 1152
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D2exkTbFboDw&format=json",
+        "httpStatus": 200,
+        "title": "Every Passing Route Explained in 19 Minutes",
+        "channel": "Fourth and Film",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/2exkTbFboDw?start=20&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "Ebn6c1jNZbo",
+      "mappings": [
+        {
+          "conceptId": "mesh",
+          "title": "Mesh",
+          "channel": "Fourth and Film",
+          "start": 20,
+          "end": 85,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "mesh-crossers",
+          "title": "Mesh crossers",
+          "channel": "Fourth and Film",
+          "start": 20,
+          "end": 85,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "flood",
+          "title": "Flood",
+          "channel": "Fourth and Film",
+          "start": 152,
+          "end": 210,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "smash",
+          "title": "Smash",
+          "channel": "Fourth and Film",
+          "start": 210,
+          "end": 265,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "y-cross",
+          "title": "Y-Cross",
+          "channel": "Fourth and Film",
+          "start": 265,
+          "end": 331,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "four-verticals",
+          "title": "Four Verticals",
+          "channel": "Fourth and Film",
+          "start": 331,
+          "end": 395,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "drive",
+          "title": "Drive",
+          "channel": "Fourth and Film",
+          "start": 459,
+          "end": 522,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "dagger",
+          "title": "Dagger",
+          "channel": "Fourth and Film",
+          "start": 522,
+          "end": 578,
+          "durationSeconds": 771
+        },
+        {
+          "conceptId": "conflict-linebacker",
+          "title": "Levels: an underneath high-low read",
+          "channel": "Fourth and Film",
+          "start": 85,
+          "end": 152,
+          "durationSeconds": 771
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=Ebn6c1jNZbo&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "Ebn6c1jNZbo",
+        "title": "Every Passing Concept Explained in 13 Minutes",
+        "channel": "Fourth and Film",
+        "durationSeconds": 771
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DEbn6c1jNZbo&format=json",
+        "httpStatus": 200,
+        "title": "Every Passing Concept Explained in 13 Minutes",
+        "channel": "Fourth and Film",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/Ebn6c1jNZbo?start=20&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "RWilD1L4EBU",
+      "mappings": [
+        {
+          "conceptId": "hi-lo",
+          "title": "Chiefs high-low: shallow cross and dig",
+          "channel": "RGR Football - Kansas City Chiefs",
+          "start": 0,
+          "end": 60,
+          "durationSeconds": 60
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=RWilD1L4EBU&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "RWilD1L4EBU",
+        "title": "Drive: Exploring Chiefs High-low Concept",
+        "channel": "RGR Football - Kansas City Chiefs",
+        "durationSeconds": 60
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRWilD1L4EBU&format=json",
+        "httpStatus": 200,
+        "title": "Drive: Exploring Chiefs High-low Concept",
+        "channel": "RGR Football - Kansas City Chiefs",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/RWilD1L4EBU?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "fZzsR_7xbpc",
+      "mappings": [
+        {
+          "conceptId": "boot",
+          "title": "Boot pass: diagram breakdown",
+          "channel": "American Football Academy",
+          "start": 19,
+          "end": 105,
+          "durationSeconds": 669
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=fZzsR_7xbpc&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "fZzsR_7xbpc",
+        "title": "How To Run The Play Action Boot Pass",
+        "channel": "American Football Academy",
+        "durationSeconds": 669
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfZzsR_7xbpc&format=json",
+        "httpStatus": 200,
+        "title": "How To Run The Play Action Boot Pass",
+        "channel": "American Football Academy",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/fZzsR_7xbpc?start=19&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "Of_TwCsCETs",
+      "mappings": [
+        {
+          "conceptId": "inside-zone",
+          "title": "Inside zone",
+          "channel": "Fourth and Film",
+          "start": 512,
+          "end": 719,
+          "durationSeconds": 1631
+        },
+        {
+          "conceptId": "outside-zone",
+          "title": "Outside zone",
+          "channel": "Fourth and Film",
+          "start": 809,
+          "end": 950,
+          "durationSeconds": 1631
+        },
+        {
+          "conceptId": "power",
+          "title": "Power O",
+          "channel": "Fourth and Film",
+          "start": 998,
+          "end": 1185,
+          "durationSeconds": 1631
+        },
+        {
+          "conceptId": "counter",
+          "title": "Counter",
+          "channel": "Fourth and Film",
+          "start": 1185,
+          "end": 1222,
+          "durationSeconds": 1631
+        },
+        {
+          "conceptId": "duo",
+          "title": "Duo",
+          "channel": "Fourth and Film",
+          "start": 1222,
+          "end": 1364,
+          "durationSeconds": 1631
+        },
+        {
+          "conceptId": "trap",
+          "title": "Trap",
+          "channel": "Fourth and Film",
+          "start": 1364,
+          "end": 1498,
+          "durationSeconds": 1631
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=Of_TwCsCETs&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "Of_TwCsCETs",
+        "title": "Every Running Concept Explained in 27 Minutes",
+        "channel": "Fourth and Film",
+        "durationSeconds": 1631
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DOf_TwCsCETs&format=json",
+        "httpStatus": 200,
+        "title": "Every Running Concept Explained in 27 Minutes",
+        "channel": "Fourth and Film",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/Of_TwCsCETs?start=512&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "NnRR6K-xt9k",
+      "mappings": [
+        {
+          "conceptId": "slide",
+          "title": "Full slide protection",
+          "channel": "Thinking Football",
+          "start": 224,
+          "end": 276,
+          "durationSeconds": 895
+        },
+        {
+          "conceptId": "man-protection",
+          "title": "5-0 / B.O.B protection",
+          "channel": "Thinking Football",
+          "start": 146,
+          "end": 224,
+          "durationSeconds": 895
+        },
+        {
+          "conceptId": "play-action",
+          "title": "Play-action protection",
+          "channel": "Thinking Football",
+          "start": 680,
+          "end": 762,
+          "durationSeconds": 895
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=NnRR6K-xt9k&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "NnRR6K-xt9k",
+        "title": "How Pass Protection Works",
+        "channel": "Thinking Football",
+        "durationSeconds": 895
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DNnRR6K-xt9k&format=json",
+        "httpStatus": 200,
+        "title": "How Pass Protection Works",
+        "channel": "Thinking Football",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/NnRR6K-xt9k?start=224&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "A-HH3Ws1Nw4",
+      "mappings": [
+        {
+          "conceptId": "personnel-10",
+          "title": "10 personnel",
+          "channel": "Armchair Coach Justin",
+          "start": 82,
+          "end": 121,
+          "durationSeconds": 528
+        },
+        {
+          "conceptId": "personnel-11",
+          "title": "11 personnel",
+          "channel": "Armchair Coach Justin",
+          "start": 121,
+          "end": 223,
+          "durationSeconds": 528
+        },
+        {
+          "conceptId": "personnel-21",
+          "title": "21 personnel",
+          "channel": "Armchair Coach Justin",
+          "start": 223,
+          "end": 285,
+          "durationSeconds": 528
+        },
+        {
+          "conceptId": "personnel-12",
+          "title": "12 personnel",
+          "channel": "Armchair Coach Justin",
+          "start": 285,
+          "end": 369,
+          "durationSeconds": 528
+        },
+        {
+          "conceptId": "personnel-22",
+          "title": "22 personnel",
+          "channel": "Armchair Coach Justin",
+          "start": 369,
+          "end": 441,
+          "durationSeconds": 528
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=A-HH3Ws1Nw4&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "A-HH3Ws1Nw4",
+        "title": "Personnel Packages Explained (How Offenses CREATE Mismatches)",
+        "channel": "Armchair Coach Justin",
+        "durationSeconds": 528
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DA-HH3Ws1Nw4&format=json",
+        "httpStatus": 200,
+        "title": "Personnel Packages Explained (How Offenses CREATE Mismatches)",
+        "channel": "Armchair Coach Justin",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/A-HH3Ws1Nw4?start=82&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "KA_EFlU0CWY",
+      "mappings": [
+        {
+          "conceptId": "quarterback",
+          "title": "Quarterback",
+          "channel": "Lurks Lessons",
+          "start": 35,
+          "end": 60,
+          "durationSeconds": 642
+        },
+        {
+          "conceptId": "running-back",
+          "title": "Running back",
+          "channel": "Lurks Lessons",
+          "start": 60,
+          "end": 81,
+          "durationSeconds": 642
+        },
+        {
+          "conceptId": "fullback",
+          "title": "Fullback",
+          "channel": "Lurks Lessons",
+          "start": 81,
+          "end": 107,
+          "durationSeconds": 642
+        },
+        {
+          "conceptId": "tight-end",
+          "title": "Tight end",
+          "channel": "Lurks Lessons",
+          "start": 223,
+          "end": 259,
+          "durationSeconds": 642
+        },
+        {
+          "conceptId": "edge",
+          "title": "EDGE: rush or contain",
+          "channel": "Lurks Lessons",
+          "start": 362,
+          "end": 386,
+          "durationSeconds": 643
+        },
+        {
+          "conceptId": "cornerback",
+          "title": "Cornerback responsibilities",
+          "channel": "Lurks Lessons",
+          "start": 386,
+          "end": 410,
+          "durationSeconds": 643
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=KA_EFlU0CWY&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "KA_EFlU0CWY",
+        "title": "SPORTS 101 // Guide to American Football Positions",
+        "channel": "Lurks Lessons",
+        "durationSeconds": 642
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKA_EFlU0CWY&format=json",
+        "httpStatus": 200,
+        "title": "SPORTS 101 // Guide to American Football Positions",
+        "channel": "Lurks Lessons",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/KA_EFlU0CWY?start=35&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "6jIUfw0ISUM",
+      "mappings": [
+        {
+          "conceptId": "safety-count",
+          "title": "One-high vs. two-high: Josh Gattis read",
+          "channel": "SpreadOffense",
+          "start": 0,
+          "end": 73,
+          "durationSeconds": 73
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=6jIUfw0ISUM&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "6jIUfw0ISUM",
+        "title": "Read RPO based on Middle of the Field Safety Coverage",
+        "channel": "SpreadOffense com -  Domain Name & X page for sale",
+        "durationSeconds": 73
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6jIUfw0ISUM&format=json",
+        "httpStatus": 200,
+        "title": "Read RPO based on Middle of the Field Safety Coverage",
+        "channel": "SpreadOffense com -  Domain Name & X page for sale",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/6jIUfw0ISUM?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "mLS-BvxIKFM",
+      "mappings": [
+        {
+          "conceptId": "leverage",
+          "title": "Attack the defender’s leverage",
+          "channel": "First Down Training",
+          "start": 0,
+          "end": 114,
+          "durationSeconds": 114
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=mLS-BvxIKFM&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "mLS-BvxIKFM",
+        "title": "How To Attack Leverage",
+        "channel": "First Down Training",
+        "durationSeconds": 114
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DmLS-BvxIKFM&format=json",
+        "httpStatus": 200,
+        "title": "How To Attack Leverage",
+        "channel": "First Down Training",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/mLS-BvxIKFM?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "GyJ5lfIJ34E",
+      "mappings": [
+        {
+          "conceptId": "apex",
+          "title": "Read the apex defender",
+          "channel": "CoachLasker",
+          "start": 0,
+          "end": 119,
+          "durationSeconds": 119
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=GyJ5lfIJ34E&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "GyJ5lfIJ34E",
+        "title": "How Coach Teaches Apex/Conflict Defender Reads on Playrbook's Magic Chalkboard",
+        "channel": "CoachLasker",
+        "durationSeconds": 119
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DGyJ5lfIJ34E&format=json",
+        "httpStatus": 200,
+        "title": "How Coach Teaches Apex/Conflict Defender Reads on Playrbook's Magic Chalkboard",
+        "channel": "CoachLasker",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/GyJ5lfIJ34E?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "CaRErLtTPww",
+      "mappings": [
+        {
+          "conceptId": "press-check",
+          "title": "The defensive answer to a stack check",
+          "channel": "The DB Network",
+          "start": 0,
+          "end": 86,
+          "durationSeconds": 86
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=CaRErLtTPww&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "CaRErLtTPww",
+        "title": "How To Defend Stack Formations",
+        "channel": "The DB Network",
+        "durationSeconds": 86
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DCaRErLtTPww&format=json",
+        "httpStatus": 200,
+        "title": "How To Defend Stack Formations",
+        "channel": "The DB Network",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/CaRErLtTPww?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "sRaIlyv95hs",
+      "mappings": [
+        {
+          "conceptId": "formation-i",
+          "title": "I-formation",
+          "channel": "Fourth and Film",
+          "start": 107,
+          "end": 249,
+          "durationSeconds": 1086
+        },
+        {
+          "conceptId": "formation-singleback",
+          "title": "Single back",
+          "channel": "Fourth and Film",
+          "start": 249,
+          "end": 351,
+          "durationSeconds": 1086
+        },
+        {
+          "conceptId": "formation-pistol",
+          "title": "Pistol",
+          "channel": "Fourth and Film",
+          "start": 564,
+          "end": 669,
+          "durationSeconds": 1086
+        },
+        {
+          "conceptId": "formation-empty",
+          "title": "Empty",
+          "channel": "Fourth and Film",
+          "start": 876,
+          "end": 971,
+          "durationSeconds": 1086
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=sRaIlyv95hs&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "sRaIlyv95hs",
+        "title": "Every Offensive Formation Explained in 18 Minutes",
+        "channel": "Fourth and Film",
+        "durationSeconds": 1086
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsRaIlyv95hs&format=json",
+        "httpStatus": 200,
+        "title": "Every Offensive Formation Explained in 18 Minutes",
+        "channel": "Fourth and Film",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/sRaIlyv95hs?start=107&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "HDv2EcqpDcU",
+      "mappings": [
+        {
+          "conceptId": "formation-flexbone",
+          "title": "Flexbone triple option",
+          "channel": "FirstDown PlayBook",
+          "start": 0,
+          "end": 64,
+          "durationSeconds": 64
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=HDv2EcqpDcU&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "HDv2EcqpDcU",
+        "title": "FlexBone Triple Option",
+        "channel": "FirstDown PlayBook",
+        "durationSeconds": 64
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DHDv2EcqpDcU&format=json",
+        "httpStatus": 200,
+        "title": "FlexBone Triple Option",
+        "channel": "FirstDown PlayBook",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/HDv2EcqpDcU?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "ecilm3P3n2Q",
+      "mappings": [
+        {
+          "conceptId": "gap-b",
+          "title": "B-gap: whiteboard explanation",
+          "channel": "Lineman University",
+          "start": 18,
+          "end": 39,
+          "durationSeconds": 137
+        },
+        {
+          "conceptId": "gap-a",
+          "title": "A-gap: whiteboard explanation",
+          "channel": "Lineman University",
+          "start": 12,
+          "end": 39,
+          "durationSeconds": 137
+        },
+        {
+          "conceptId": "gap-c",
+          "title": "C-gap: whiteboard explanation",
+          "channel": "Lineman University",
+          "start": 23,
+          "end": 39,
+          "durationSeconds": 137
+        },
+        {
+          "conceptId": "gap-d",
+          "title": "D-gap: whiteboard explanation",
+          "channel": "Lineman University",
+          "start": 27,
+          "end": 39,
+          "durationSeconds": 137
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=ecilm3P3n2Q&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "ecilm3P3n2Q",
+        "title": "Understanding Lineman Football: Gaps and Alignments",
+        "channel": "Lineman University",
+        "durationSeconds": 137
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Decilm3P3n2Q&format=json",
+        "httpStatus": 200,
+        "title": "Understanding Lineman Football: Gaps and Alignments",
+        "channel": "Lineman University",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/ecilm3P3n2Q?start=18&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "ROliJ27Br9A",
+      "mappings": [
+        {
+          "conceptId": "cover-0",
+          "title": "Cover 0: no safety help",
+          "channel": "Fourth and Film",
+          "start": 0,
+          "end": 73,
+          "durationSeconds": 906
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=ROliJ27Br9A&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "ROliJ27Br9A",
+        "title": "Every Defensive Coverage Explained in 15 Minutes",
+        "channel": "Fourth and Film",
+        "durationSeconds": 906
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DROliJ27Br9A&format=json",
+        "httpStatus": 200,
+        "title": "Every Defensive Coverage Explained in 15 Minutes",
+        "channel": "Fourth and Film",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/ROliJ27Br9A?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "ywFXMI1X-Ys",
+      "mappings": [
+        {
+          "conceptId": "cover-1",
+          "title": "Cover 1 · Joel Klatt",
+          "channel": "The Joel Klatt Show",
+          "start": 71,
+          "end": 430,
+          "durationSeconds": 1794
+        },
+        {
+          "conceptId": "cover-2",
+          "title": "Cover 2 · Joel Klatt",
+          "channel": "The Joel Klatt Show",
+          "start": 431,
+          "end": 925,
+          "durationSeconds": 1794
+        },
+        {
+          "conceptId": "cover-3",
+          "title": "Cover 3 · Joel Klatt",
+          "channel": "The Joel Klatt Show",
+          "start": 926,
+          "end": 1260,
+          "durationSeconds": 1794
+        },
+        {
+          "conceptId": "cover-4",
+          "title": "Cover 4 · Joel Klatt",
+          "channel": "The Joel Klatt Show",
+          "start": 1261,
+          "end": 1771,
+          "durationSeconds": 1794
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=ywFXMI1X-Ys&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "ywFXMI1X-Ys",
+        "title": "Defensive Coverages Explained: Cover 1, 2, 3, and 4 | Understanding Football with Joel Klatt",
+        "channel": "The Joel Klatt Show: A College Football Podcast",
+        "durationSeconds": 1794
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DywFXMI1X-Ys&format=json",
+        "httpStatus": 200,
+        "title": "Defensive Coverages Explained: Cover 1, 2, 3, and 4 | Understanding Football with Joel Klatt",
+        "channel": "The Joel Klatt Show: A College Football Podcast",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/ywFXMI1X-Ys?start=71&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "3H85mWMTdME",
+      "mappings": [
+        {
+          "conceptId": "cover-6",
+          "title": "Cover 6 whiteboard breakdown",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 129,
+          "end": 214,
+          "durationSeconds": 471
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=3H85mWMTdME&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "3H85mWMTdME",
+        "title": "Why the NFL Loves Cover 6 (The Best of Both Worlds)",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 471
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D3H85mWMTdME&format=json",
+        "httpStatus": 200,
+        "title": "Why the NFL Loves Cover 6 (The Best of Both Worlds)",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/3H85mWMTdME?start=129&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "Q6iuu58jLgU",
+      "mappings": [
+        {
+          "conceptId": "4-3",
+          "title": "4–3 defensive formation",
+          "channel": "Fourth and Film",
+          "start": 348,
+          "end": 421,
+          "durationSeconds": 726
+        },
+        {
+          "conceptId": "3-4",
+          "title": "3–4 defensive formation",
+          "channel": "Fourth and Film",
+          "start": 279,
+          "end": 348,
+          "durationSeconds": 726
+        },
+        {
+          "conceptId": "bear",
+          "title": "46 Bear front",
+          "channel": "Fourth and Film",
+          "start": 421,
+          "end": 503,
+          "durationSeconds": 726
+        },
+        {
+          "conceptId": "nickel",
+          "title": "Nickel: the fifth defensive back",
+          "channel": "Fourth and Film",
+          "start": 503,
+          "end": 617,
+          "durationSeconds": 726
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=Q6iuu58jLgU&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "Q6iuu58jLgU",
+        "title": "Every Defensive Formation Explained in 12 Minutes",
+        "channel": "Fourth and Film",
+        "durationSeconds": 726
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQ6iuu58jLgU&format=json",
+        "httpStatus": 200,
+        "title": "Every Defensive Formation Explained in 12 Minutes",
+        "channel": "Fourth and Film",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/Q6iuu58jLgU?start=348&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "uNHJIwlkPMk",
+      "mappings": [
+        {
+          "conceptId": "penny",
+          "title": "Penny front against wide zone",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 1130,
+          "end": 1245,
+          "durationSeconds": 2420
+        },
+        {
+          "conceptId": "coverage-roll",
+          "title": "Weak rotation and spinning safeties",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 1500,
+          "end": 2180,
+          "durationSeconds": 2420
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=uNHJIwlkPMk&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "uNHJIwlkPMk",
+        "title": "Installing the Rams' 5-1 \"Penny\" Front & Coverage | Fangio System Primer",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 2420
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuNHJIwlkPMk&format=json",
+        "httpStatus": 200,
+        "title": "Installing the Rams' 5-1 \"Penny\" Front & Coverage | Fangio System Primer",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/uNHJIwlkPMk?start=1130&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "6WJaRaY69KY",
+      "mappings": [
+        {
+          "conceptId": "techniques",
+          "title": "Defensive line techniques and alignments",
+          "channel": "Chris Haddad · vIQtory",
+          "start": 18,
+          "end": 223,
+          "durationSeconds": 322
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=6WJaRaY69KY&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "6WJaRaY69KY",
+        "title": "Defensive Line Techniques & Alignments Guide For Coaches",
+        "channel": "Chris Haddad",
+        "durationSeconds": 322
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6WJaRaY69KY&format=json",
+        "httpStatus": 200,
+        "title": "Defensive Line Techniques & Alignments Guide For Coaches",
+        "channel": "Chris Haddad",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/6WJaRaY69KY?start=18&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "5m66Ru_8N5Y",
+      "mappings": [
+        {
+          "conceptId": "stunt-tex",
+          "title": "Tackle first, end loops",
+          "channel": "Chris Haddad · vIQtory",
+          "start": 265,
+          "end": 374,
+          "durationSeconds": 559
+        },
+        {
+          "conceptId": "stunt-ext",
+          "title": "End first, tackle loops",
+          "channel": "Chris Haddad · vIQtory",
+          "start": 198,
+          "end": 265,
+          "durationSeconds": 559
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=5m66Ru_8N5Y&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "5m66Ru_8N5Y",
+        "title": "How To Install Defensive Line Stunts (Coaching Guide)",
+        "channel": "Chris Haddad",
+        "durationSeconds": 558
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D5m66Ru_8N5Y&format=json",
+        "httpStatus": 200,
+        "title": "How To Install Defensive Line Stunts (Coaching Guide)",
+        "channel": "Chris Haddad",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/5m66Ru_8N5Y?start=265&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "5zTXCj_j-LQ",
+      "mappings": [
+        {
+          "conceptId": "stunt-loop",
+          "title": "Looping stunts from a Bear front",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 319,
+          "end": 378,
+          "durationSeconds": 982
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=5zTXCj_j-LQ&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "5zTXCj_j-LQ",
+        "title": "Why the NFL Loves Bear Fronts on 3rd Down (And How to Install It)",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 982
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D5zTXCj_j-LQ&format=json",
+        "httpStatus": 200,
+        "title": "Why the NFL Loves Bear Fronts on 3rd Down (And How to Install It)",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/5zTXCj_j-LQ?start=319&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "6j74uknbvHE",
+      "mappings": [
+        {
+          "conceptId": "blitz-cross-dog",
+          "title": "Cross Dog at the snap",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 148,
+          "end": 251,
+          "durationSeconds": 422
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=6j74uknbvHE&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "6j74uknbvHE",
+        "title": "The \"Unblockable\" Blitz: Attacking the Running Back with Cross Dog | Broncos vs. Cowboys",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 422
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6j74uknbvHE&format=json",
+        "httpStatus": 200,
+        "title": "The \"Unblockable\" Blitz: Attacking the Running Back with Cross Dog | Broncos vs. Cowboys",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/6j74uknbvHE?start=148&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "bgFECnsRvrw",
+      "mappings": [
+        {
+          "conceptId": "blitz-fire-zone",
+          "title": "Fire zone: five rush, three under, three deep",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 63,
+          "end": 164,
+          "durationSeconds": 932
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=bgFECnsRvrw&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "bgFECnsRvrw",
+        "title": "How Fire Zones Overload Modern Protections",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 931
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DbgFECnsRvrw&format=json",
+        "httpStatus": 200,
+        "title": "How Fire Zones Overload Modern Protections",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/bgFECnsRvrw?start=63&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "d7e7EvKq6DA",
+      "mappings": [
+        {
+          "conceptId": "fit-two-gap",
+          "title": "Two-gap stance and technique",
+          "channel": "iCoach App · Chris Rumph",
+          "start": 0,
+          "end": 84,
+          "durationSeconds": 84
+        },
+        {
+          "conceptId": "two-gap",
+          "title": "Two-gap stance and technique",
+          "channel": "iCoach App · Chris Rumph",
+          "start": 0,
+          "end": 84,
+          "durationSeconds": 84
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=d7e7EvKq6DA&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "d7e7EvKq6DA",
+        "title": "Chris Rumph - Two Gap Technique",
+        "channel": "iCoach App",
+        "durationSeconds": 84
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dd7e7EvKq6DA&format=json",
+        "httpStatus": 200,
+        "title": "Chris Rumph - Two Gap Technique",
+        "channel": "iCoach App",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/d7e7EvKq6DA?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "h9i5oXwbkrc",
+      "mappings": [
+        {
+          "conceptId": "strong-safety",
+          "title": "How to play strong safety",
+          "channel": "eHowSports",
+          "start": 0,
+          "end": 75,
+          "durationSeconds": 75
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=h9i5oXwbkrc&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "h9i5oXwbkrc",
+        "title": "Football Tips : How to Play Strong Safety in Football",
+        "channel": "eHowSports",
+        "durationSeconds": 75
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dh9i5oXwbkrc&format=json",
+        "httpStatus": 200,
+        "title": "Football Tips : How to Play Strong Safety in Football",
+        "channel": "eHowSports",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/h9i5oXwbkrc?start=0&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "eibqDMAkOrc",
+      "mappings": [
+        {
+          "conceptId": "creeping-safety",
+          "title": "Safety down in a weak rotation",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 65,
+          "end": 120,
+          "durationSeconds": 498
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=eibqDMAkOrc&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "eibqDMAkOrc",
+        "title": "The \"Weak Rotation\": Spagnuolo's Favorite Disguise Explained",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 498
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DeibqDMAkOrc&format=json",
+        "httpStatus": 200,
+        "title": "The \"Weak Rotation\": Spagnuolo's Favorite Disguise Explained",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/eibqDMAkOrc?start=65&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "viD-K_vFcWc",
+      "mappings": [
+        {
+          "conceptId": "motion-adjustment",
+          "title": "Changing coverage with motion",
+          "channel": "MatchQuarters · Cody Alexander",
+          "start": 86,
+          "end": 150,
+          "durationSeconds": 668
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=viD-K_vFcWc&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "viD-K_vFcWc",
+        "title": "How to Defend Jet Motion with Simple Adjustments | A MatchQuarters Clinic",
+        "channel": "MatchQuarters by Cody Alexander",
+        "durationSeconds": 668
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DviD-K_vFcWc&format=json",
+        "httpStatus": 200,
+        "title": "How to Defend Jet Motion with Simple Adjustments | A MatchQuarters Clinic",
+        "channel": "MatchQuarters by Cody Alexander",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/viD-K_vFcWc?start=86&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    },
+    {
+      "id": "4hVh4-GEQdA",
+      "mappings": [
+        {
+          "conceptId": "punt-gunner",
+          "title": "The gunner’s job on punt coverage",
+          "channel": "Isaac Punts",
+          "start": 40,
+          "end": 72,
+          "durationSeconds": 188
+        }
+      ],
+      "status": "metadata-passed",
+      "blocked": [],
+      "incomplete": [],
+      "watch": {
+        "url": "https://www.youtube.com/watch?v=4hVh4-GEQdA&hl=en",
+        "httpStatus": 200,
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": [],
+        "videoId": "4hVh4-GEQdA",
+        "title": "College Punt Scheme Explained",
+        "channel": "Isaac Punts",
+        "durationSeconds": 187
+      },
+      "oEmbed": {
+        "url": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4hVh4-GEQdA&format=json",
+        "httpStatus": 200,
+        "title": "College Punt Scheme Explained",
+        "channel": "Isaac Punts",
+        "type": "video",
+        "includesExpectedEmbed": true
+      },
+      "embed": {
+        "url": "https://www.youtube-nocookie.com/embed/4hVh4-GEQdA?start=40&enablejsapi=1&origin=https%3A%2F%2Fgridiron-dex.com&hl=en&rel=0",
+        "httpStatus": 200,
+        "metadataKind": "previewPlayabilityStatus",
+        "status": "OK",
+        "playableInEmbed": true,
+        "reasons": []
+      },
+      "browserPlayback": {
+        "status": "not-tested",
+        "reason": "This network audit does not operate the browser player or verify media playback."
+      }
+    }
+  ]
+}

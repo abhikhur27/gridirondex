@@ -9,7 +9,7 @@ import { sceneFor } from '../data/playScenes'
 import { samplePlay } from '../data/playEngine'
 import { useMotionPreference } from '../useMotionPreference'
 import { adjacentKeyframe, DEFAULT_PLAYBACK_RATE, PLAYBACK_RATES, playSteps } from '../data/playback'
-import { youtubeEmbedUrl } from '../data/filmModel'
+import FilmPlayer from './FilmPlayer'
 import SourceCredit from './SourceCredit'
 import '../breakdown.css'
 
@@ -114,8 +114,7 @@ export default function FilmModal({ concept, onClose, onNavigate, onNavigatePosi
           </div>}
         </div>
         {mode === 'film' && film ? <div className="breakdown-film">
-          <div className="video-container"><iframe title={film.title} src={youtubeEmbedUrl(film)}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /></div>
+          <FilmPlayer key={`${film.id}:${film.start}`} film={film} />
           <SourceCredit concept={concept} />
           {film.note && <p className="film-note">{film.note}</p>}
         </div> : <div className="diagram-preview">
