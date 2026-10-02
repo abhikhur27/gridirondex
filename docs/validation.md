@@ -2,7 +2,17 @@
 
 Current interface checked on October 1, 2026. Earlier records below describe superseded interfaces.
 
-## Precision and navigation update
+## Tactical Draft mechanics and The Drive
+
+`npm run check` passes TypeScript and all retained content, blueprint, contextual-play, film and position checks, plus the expanded game suites. Formation validation covers 23 legal alignments and 1,150 preset cases. Mechanics checks cover 138 formation/coverage combinations, four zone shells, moving-quarterback pressure, across-body throwing, four run schemes, reciprocal blocking contact, editable RB paths, visible mesh decisions, goal-line stops and end-zone boundaries. Drive checks cover downs, chains, signed yardage, incompletions, sacks, touchdowns, safeties, terminal state and deterministic looks. Three complete drives use real simulated calls and credit exactly 75 yards, with the ball and credited outcome agreeing.
+
+The gameplay browser suite exercises all 23 formations, mirrored 10-personnel bunches, mouse/keyboard route depth and bend editing, QB presets and freehand movement, four zone shells and both RPO decisions. Real calls cover runs, passes, replay without duplicate history, retained modes and position-page visits, four-down turnover and a full scoring drive. Normal playback pauses all actors on one clock. Native touch route editing passes at 320 and 375 pixels; responsive checks also cover 768 and 1440. Route-edit undo restores the corresponding run settings, and removing a bend during an outside-field drag does not strand the pointer gesture.
+
+The retained precision browser suite passes exact film/source timestamps, half-speed playback, event stepping, player navigation, motion styles and mobile layouts. Visual review retains the paper field, block typography and restrained ink controls. Selected route handles, zone landmarks, rollout shading and the drive strip communicate the game state directly. The geometric teaching-model limits and primary football references are documented in `gameplay-mechanics.md`.
+
+Production build passes. The new game is a lazy-loaded 55 kB JavaScript chunk (20 kB gzip); the existing 612 kB main bundle retains Vite's non-blocking chunk-size warning.
+
+## Precision and navigation update — previous release
 
 The current release passes TypeScript, content, blueprint, contextual-play, game, film and position checks. All 105 lesson mappings are audited: 99 bounded films have publisher chapter or short-topic evidence, and six unverified mappings have no fallback embed. The audit checks actual generated embed/source URLs, start/end bounds, duration, availability metadata, coverage and exclusions. Evidence limits and excluded topics are detailed in `precision-update.md`.
 

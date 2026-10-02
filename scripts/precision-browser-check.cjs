@@ -62,7 +62,7 @@ async page => {
   await page.locator('.draft-field').waitFor();
   check(await page.locator('.draft-position, .draft-receiver').count() === 22, 'All 22 game actors are buttons');
   await page.getByRole('button', { name: 'Slant', exact: true }).click();
-  await page.locator('.draft-position[data-position="quarterback"]').click();
+  await page.locator('.draft-field [data-position="quarterback"]').click();
   await page.locator('.position-detail').waitFor();
   await page.goBack();
   await page.locator('.draft-field').waitFor();

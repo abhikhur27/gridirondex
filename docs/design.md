@@ -24,3 +24,6 @@ Signature: empty off-white blocks become blue/red football toys under the pointe
 ## Contextual play engine — October 1, 2026
 
 ## Precision and navigation — October 1, 2026
+
+## Tactical Draft mechanics and The Drive — October 1
+The field remains the dominant object, with the existing paper #F2F0EC, ink #222722, blue #0070F3, red #D32F2F and amber #E68A00 tokens; Syne display and DM Sans controls. Two plain mode tabs sit above the field. The Drive uses a thin field-position strip with ball and first-down markers, plus down/distance text. Personnel, formation and play type are compact controls; route handles appear only for the selected player. Zone landmarks and rollout restrictions appear on the field, so their meaning stays next to the action. No dashboard/sidebar. Existing 8/16/24 spacing and 8–16px radii continue. Keyboard arrows edit handles, depth has a labelled range alternative, and normal playback remains half speed with reduced-motion/manual stepping. The design signature is the same editable X/O play drawn over a drive's actual field position. 

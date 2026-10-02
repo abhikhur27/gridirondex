@@ -35,6 +35,9 @@ export function positionForNode(node: Pick<BlueprintNode, 'id' | 'label' | 'team
     if (['DTL', 'DTR', 'TL', 'TR'].includes(id)) return 'defensive-tackle'
   }
   if (node.team === 'defense') {
+    if (['CL', 'CR'].includes(id)) return 'cornerback'
+    if (['SL', 'SR'].includes(id)) return 'free-safety'
+    if (['HL', 'HR'].includes(id)) return 'linebacker'
     if (sceneId === 'edge' && id === 'ER') return 'edge'
     if (['NT', '0', '1'].includes(label)) return 'nose'
     if (['DT', 'T', '2', '3', '4'].includes(label)) return 'defensive-tackle'

@@ -43,9 +43,19 @@ function DraftGlyph() {
   </svg>
 }
 
+function DriveGlyph() {
+  return <svg viewBox="0 0 170 80" aria-hidden="true" className="draft-glyph">
+    <path d="M 20 12 V 70 M 65 12 V 70 M 110 12 V 70 M 155 12 V 70" fill="none" stroke="currentColor" strokeWidth="2" opacity=".18" />
+    <path d="M 20 57 H 65 V 40 H 110 V 23 H 149" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
+    <path d="m149 18 10 5-10 5z" fill="currentColor" />
+    <circle cx="20" cy="57" r="7" /><circle cx="65" cy="40" r="7" /><circle cx="110" cy="23" r="7" />
+  </svg>
+}
+
 export default function App() {
   const [page, setPage] = useState<Page>(readPage)
-  const [draftVisited, setDraftVisited] = useState(() => !!readPage().game)
+  const [draftVisited, setDraftVisited] = useState(() => !!readPage().game && !readPage().drive)
+  const [driveVisited, setDriveVisited] = useState(() => !!readPage().drive)
   const [selected, setSelected] = useState<string | null>(null)
   const filmTrigger = useRef<HTMLElement | null>(null)
   const positionReturn = useRef<Page | null>(null)
@@ -59,7 +69,9 @@ export default function App() {
     window.addEventListener('popstate', update); window.addEventListener('hashchange', update)
     return () => { window.removeEventListener('popstate', update); window.removeEventListener('hashchange', update) }
   }, [])
-  useEffect(() => { if (page.game) setDraftVisited(true) }, [page.game])
+  useEffect(() => {
+    if (page.game) page.drive ? setDriveVisited(true) : setDraftVisited(true)
+  }, [page.game, page.drive])
   const navigate = (next: Page) => {
     const base = location.pathname.startsWith('/positions/') ? '/' : location.pathname
     history.pushState(null, '', base + location.search + pageHash(next))
@@ -82,7 +94,8 @@ export default function App() {
     if (!page.position) positionReturn.current = page
     navigate({ ...homePage, position: slug })
   }
-  const draft = () => navigate({ ...homePage, game: true })
+  const openGame = (mode: 'draft' | 'drive') => navigate({ ...homePage, game: true, drive: mode === 'drive' })
+  const draft = () => openGame('draft')
   const back = () => navigate(page.position ? positionReturn.current ?? { side: position?.side ?? 'offense', section: position?.side === 'special' ? 'teams' : 'positions' } : page.game || page.side === 'special' ? homePage : page.section ? { side: page.side, section: null } : homePage)
 
   return <div className="app">
@@ -95,10 +108,11 @@ export default function App() {
       </div>
     </header>
     <main id="main" tabIndex={-1} className={page.position ? 'position-page' : page.game ? 'draft-page' : page.side ? 'blocks-page' : 'home-page'} inert={!!film}>
-      {draftVisited && <div hidden={!page.game}><Suspense fallback={<p className="loading-draft" role="status">Setting the field…</p>}><TacticalDraft onExit={home} onNavigatePosition={openPosition} /></Suspense></div>}
+      {draftVisited && <div hidden={!page.game || page.drive}><Suspense fallback={<p className="loading-draft" role="status">Setting the field…</p>}><TacticalDraft mode="draft" active={!!page.game && !page.drive} onModeChange={openGame} onExit={home} onNavigatePosition={openPosition} /></Suspense></div>}
+      {driveVisited && <div hidden={!page.game || !page.drive}><Suspense fallback={<p className="loading-draft" role="status">Setting the field…</p>}><TacticalDraft mode="drive" active={!!page.game && !!page.drive} onModeChange={openGame} onExit={home} onNavigatePosition={openPosition} /></Suspense></div>}
       <AnimatePresence mode="wait" initial={false}>
         <motion.div key={page.position ? `position-${page.position}` : page.game ? 'draft' : `${page.side}-${page.section}`} initial={{ opacity: 0, y: reduced ? 0 : 7 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .16 }}>
-          {page.position ? position ? <PositionDetail profile={position} onOpenConcept={openConcept} onNavigatePosition={openPosition} onBack={back} backLabel={positionReturn.current?.game ? 'Back to your draft' : positionReturn.current?.concept ? 'Back to the play' : 'Back to the playbook'} /> : <div className="position-missing"><h1>Position not found</h1><button onClick={home}>Back to the playbook</button></div> : page.game ? null : !page.side ? <>
+          {page.position ? position ? <PositionDetail profile={position} onOpenConcept={openConcept} onNavigatePosition={openPosition} onBack={back} backLabel={positionReturn.current?.game ? positionReturn.current.drive ? 'Back to your drive' : 'Back to your draft' : positionReturn.current?.concept ? 'Back to the play' : 'Back to the playbook'} /> : <div className="position-missing"><h1>Position not found</h1><button onClick={home}>Back to the playbook</button></div> : page.game ? null : !page.side ? <>
             <div className="home-blocks">
               {(['offense', 'defense'] as const).map(side => <motion.button key={side} className={`home-block ${side}`} aria-label={side === 'offense' ? 'Offense' : 'Defense'}
                 whileHover={reduced ? {} : { y: -4 }} whileTap={reduced ? {} : { scale: .985 }} onClick={() => navigate({ side, section: null })}>
@@ -110,8 +124,11 @@ export default function App() {
               <button className="draft-entry" onClick={draft}>
                 <DraftGlyph /><span><strong>TACTICAL DRAFT</strong><small>Draw a play. Beat the coverage.</small></span><ArrowUpRight size={24} />
               </button>
-              <button className="teams-entry" onClick={() => navigate({ side: 'special', section: 'teams' })}>SPECIAL TEAMS <ArrowUpRight size={20} /></button>
+              <button className="draft-entry" onClick={() => openGame('drive')}>
+                <DriveGlyph /><span><strong>THE DRIVE</strong><small>Four downs. Keep the chains moving.</small></span><ArrowUpRight size={24} />
+              </button>
             </div>
+            <button className="teams-entry" onClick={() => navigate({ side: 'special', section: 'teams' })}>SPECIAL TEAMS <ArrowUpRight size={20} /></button>
           </> : !section ? <>
             <h1>{page.side.toUpperCase()}</h1>
             <div className="section-blocks">

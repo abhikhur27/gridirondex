@@ -21,7 +21,7 @@ npm run build
 firebase deploy --only hosting
 ```
 
-`npm run check` runs TypeScript, content/link checks, diagram and contextual play checks, the deterministic Tactical Draft checks, the film audit and all player-to-position mappings. `scripts/*browser-check.cjs` are Playwright CLI `run-code` functions for the local application. `npm run deploy` builds and deploys the dedicated `gridirondex` Hosting site in `brickbrickholdingsllc`.
+`npm run check` runs TypeScript, content/link checks, diagram and contextual play checks, deterministic game mechanics, formation and route editing checks, full-drive progression, the film audit and all player-to-position mappings. `scripts/*browser-check.cjs` are Playwright CLI `run-code` functions for the local application. `npm run deploy` builds and deploys the dedicated `gridirondex` Hosting site in `brickbrickholdingsllc`.
 
 ## Playbook
 
@@ -36,15 +36,21 @@ firebase deploy --only hosting
 
 ## Tactical Draft
 
-Choose 11 personnel, 12 personnel or 5-wide against a randomized defensive look. Drag from an eligible O to draw a route. The player picker and route presets provide a keyboard alternative. Choose balanced protection or slide toward an edge threat, then hit SNAP.
+Choose 10, 11 or 12 personnel, or 5-wide, against a randomized defensive look. Twenty-three legal alignments include left/right 10-personnel 3×1 bunch, gun stacks, pistol, inline tight ends and wings. Drag from a player to draw a route, edit its bend/end handles, or change its depth with the slider. Slant, Out, Curl, Post, Flat, Wheel, Go, Drag and Comeback presets stay fully editable. Handles support arrow keys; the player picker and presets provide a keyboard alternative.
 
-Receivers follow the same smoothed paths that are rendered. Defenders follow man, zone or rush rules. The quarterback looks for a catch window before pressure arrives; separation at the catch, throwing-lane clearance, yards, route spacing and protection time determine the result. Keeping a back or tight end in buys protection time. Score enough with a five-yard completion to advance. Higher levels tighten reaction time, speed and the required score. Three failed plays end the run; editing, replay and restart are built in.
+Draw a quarterback rollout or use the left/right presets. Rushers pursue the moving quarterback; throwing back across his movement adds release and flight time. Cover 2, Cover 3 Sky, Cover 4 Quarters and Cover 6 split-field show their zone landmarks. Separation when the ball arrives, throwing-lane clearance, yards, route spacing and protection time determine the result. Outcomes are deterministic for the same call and defensive look. Score enough with at least five yards to advance; three failed plays end the run.
 
-Protection assignments move the blockers into reciprocal contact with rushers; a held-in back or tight end can pick up an extra defender. Contact seals, a read line and a target window explain the live play. Half-speed playback, pause, speed and timeline controls work during playback and result review. Tap a player for their position; drag an eligible player to draw. This is a teaching game with geometric coverage and simplified blocking constraints, not a professional play-prediction model. The score is deterministic for the same routes, personnel, protection and defensive look; only the sequence of looks is randomized.
+Call Zone Read, Power, Draw or Counter and edit the back's path. Blockers engage defenders, pullers lead through the gap, and the first free defender's contact ends the run. RPO pairs the mesh with a quick receiver route; the conflict defender's movement determines give or pull. Contact seals, a read line, the ball and the target window share one clock. Half-speed playback, pause and scrubbing work during execution and result review. Tap a player for their position; drag to draw.
+
+## The Drive
+
+The alternate mode at `#drive` starts first-and-10 at your own 25. Actual gains and losses move the ball; reaching the line to gain resets the downs. Fourth-down failures, touchdowns and safeties end the drive. Each new snap changes the defensive look. The drive strip, field line to gain, down-and-distance, result and play history stay synchronized. Replay never consumes a down, and each mode keeps its call and progress during mode switches and position visits.
+
+Both modes are geometric teaching games with simplified coverage and contact rules. See [gameplay mechanics](docs/gameplay-mechanics.md) for controls, football references and model limits.
 
 ## Structure and content
 
-`src/data/blueprints.ts` owns base alignments. `offensivePlays.ts` and `defensivePlays.ts` author the timed tactical scenarios; `playModel.ts`, `playBuilders.ts`, `playScenes.ts` and `playEngine.ts` define, build and sample them. `PlayCanvas.tsx` is the shared SVG renderer for library thumbnails, breakdowns and Tactical Draft. `vectorGeometry.ts` owns arrow and path geometry. `src/game/engine.ts` owns game rules independently from React. `src/data/expansion.ts` contains concise coaching notes, expansion lessons and related IDs. Source metadata lives in `sources.ts`, with verification records in `docs/film-sources.json`, `docs/expansion-sources.md`, `docs/expansion-film-sources.json` and `docs/contextual-plays.md`.
+`src/data/blueprints.ts` owns base alignments. `offensivePlays.ts` and `defensivePlays.ts` author the timed tactical scenarios; `playModel.ts`, `playBuilders.ts`, `playScenes.ts` and `playEngine.ts` define, build and sample them. `PlayCanvas.tsx` is the shared SVG renderer for library thumbnails, breakdowns and both game modes. `vectorGeometry.ts` owns arrow and path geometry. `src/game/` separates shared types, formations, route editing, simulation and drive progression from React. `src/data/expansion.ts` contains concise coaching notes, expansion lessons and related IDs. Source metadata lives in `sources.ts`, with verification records in `docs/film-sources.json`, `docs/expansion-sources.md`, `docs/expansion-film-sources.json` and `docs/contextual-plays.md`.
 
 Current film registries are `filmAuditOffense.ts` and `filmAuditDefense.ts`; evidence and exclusions are recorded in `docs/film-audit-offense.json` and `docs/film-audit-defense.json`. No category fallback or unverified long-video introduction is allowed. Verification uses public publisher chapters/descriptions and player duration/embed metadata, not a claim of frame-by-frame viewing. Publishers can change availability. Playbook diagrams show teaching examples; terminology and assignments vary by team.
 

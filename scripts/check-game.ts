@@ -20,9 +20,9 @@ assert.ok(pocketTime(man, '11', 'right', good) > pocketTime(man, '11', 'right', 
 assert.notDeepEqual(receiversFor('11'), receiversFor('12'));
 assert.notDeepEqual(receiversFor('11'), receiversFor('empty'));
 assert.equal(receiversFor('empty').filter(r => r.role === 'tight end' || r.role === 'running back').length, 0, 'Five-wide cannot get a tight-end blocking bonus.');
-for (const personnel of ['11', '12', 'empty'] as const) {
+for (const personnel of ['10', '11', '12', 'empty'] as const) {
   assert.equal(receiversFor(personnel).length, 5);
-  assert.equal(receiversFor(personnel).filter(r => r.start.y === 381).length, 2, 'Five linemen plus two uncovered ends make seven on the line.');
+  assert.equal(receiversFor(personnel).filter(r => r.onLine).length, 2, 'Five linemen plus two uncovered ends make seven on the line.');
   for (let level = 1; level < 12; level++) {
     const look = lookForLevel(1000, level);
     assert.equal(defenseFor(look, personnel).length, 11, `Defense has 11 players for ${look.name}.`);
@@ -57,7 +57,7 @@ assert.equal(failed.lives, 0);
 assert.equal(failed.status, 'over');
 assert.deepEqual(advanceRun(failed, { won: true, score: 100 }), failed);
 assert.ok(lookForLevel(123, 10).targetScore > lookForLevel(123, 1).targetScore);
-const lateCall = makeCall('11', ['Out', 'Out', 'Block', 'Post', 'Post']);
+const lateCall = makeCall('11', ['Comeback', 'Out', 'Curl', 'Block', 'Post']);
 assert.equal(simulate({ ...man, level: 15, targetScore: lookForLevel(123, 15).targetScore }, '11', lateCall, 'right').won, true, 'Late-level man coverage still has a reachable winning call.');
 assert.deepEqual(lookForLevel(123, 3), lookForLevel(123, 3));
 assert.ok(new Set(Array.from({ length: 30 }, (_, seed) => lookForLevel(seed, 1).name)).size >= 5);
