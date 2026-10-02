@@ -317,12 +317,18 @@ async page => {
     } else await drag(from, { x: from.x + 24, y: from.y - 30 });
     const edited = await selectedPath().getAttribute('d');
     check(edited !== before && origin(edited).every((v, i) => near(v, origin(before)[i])), `${width}px ${width <= 375 ? 'native touch' : 'mouse'} handle edit preserves frozen origin`);
-    await page.screenshot({ path: `output/playwright/gameplay-editor-${width}.png`, fullPage: true });
+    // Chromium's Windows full-page capture can reflow a narrow page while
+    // clipping the scrollbar width. Keep mobile evidence at its actual viewport.
+    await page.screenshot({ path: `output/playwright/gameplay-editor-${width}.png`, fullPage: width > 375 });
+    if (width <= 375) {
+      await game().locator('.route-depth').scrollIntoViewIfNeeded();
+      await page.screenshot({ path: `output/playwright/gameplay-editor-controls-${width}.png`, fullPage: false });
+    }
     await game().getByRole('button', { name: 'THE DRIVE', exact: true }).click();
     check(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `${width}px Drive has no horizontal overflow`);
     await controlsFit(width);
   }
   await cdp.detach();
   check(errors.length === 0, errors.join('; '));
-  return { formations: formations.length, routeEditing: ['Out', 'Comeback'], quarterback: 'preset + custom path + replay', coverages, rpoDecisions, drive: { actualRunAndPass: true, replayIdempotent: true, modesRetained: true, fourDownTurnover: true, touchdownPlays }, clock: 'pause/resume', viewports, touch: [320, 375], errors };
+  return { formations: formations.length, routeEditing: ['Out', 'Comeback'], runConfigUndo: true, customBackPreserved: true, pointerCapture: 'flatten + outside release', quarterback: 'preset + custom path + replay', coverages, rpoDecisions, drive: { actualRunAndPass: true, replayIdempotent: true, modesRetained: true, fourDownTurnover: true, touchdownPlays, endZoneBounds: true }, clock: 'pause/resume', viewports, unclippedControls: true, touch: [320, 375], errors };
 }

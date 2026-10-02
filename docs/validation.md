@@ -12,6 +12,8 @@ The retained precision browser suite passes exact film/source timestamps, half-s
 
 Production build passes. The new game is a lazy-loaded 55 kB JavaScript chunk (20 kB gzip); the existing 612 kB main bundle retains Vite's non-blocking chunk-size warning.
 
+Firebase Hosting released the build successfully. The live root returns HTTP 200 with `index-C_uPaDJL.js`. Live browser checks pass edited bunch routes, QB rollout shading, RPO reads, replay, retained mode state and mobile control bounds without application errors. Mobile evidence uses viewport screenshots because Chromium's Windows full-page capture can reflow the page while clipping the scrollbar width; actual control and caption bounds are checked separately.
+
 ## Precision and navigation update — previous release
 
 The current release passes TypeScript, content, blueprint, contextual-play, game, film and position checks. All 105 lesson mappings are audited: 99 bounded films have publisher chapter or short-topic evidence, and six unverified mappings have no fallback embed. The audit checks actual generated embed/source URLs, start/end bounds, duration, availability metadata, coverage and exclusions. Evidence limits and excluded topics are detailed in `precision-update.md`.
