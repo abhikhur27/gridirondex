@@ -27,7 +27,7 @@ function route(b: Blueprint, id: string, points: Point[], extra: Partial<Bluepri
 function drop(b: Blueprint, id: string, x: number, y: number) { return route(b, id, [[x, y]]) }
 const zone = (x: number, y: number, width: number, height: number, label?: string): BlueprintArea => ({ x, y, width, height, label })
 
-// Each route has its actual stem, break direction, and landmark. No recycled thumbnails.
+// Route geometry includes the release stem, break direction, and final landmark.
 const routeShapes: Record<string, { origin: Point; points: Point[]; second?: { origin: Point; points: Point[] } }> = {
   flat: { origin: [545, 465], points: [[510, 365], [195, 365]] },
   slant: { origin: [280, 465], points: [[280, 310], [635, 100]] },
@@ -195,7 +195,7 @@ function coverage(id: string): Blueprint {
     b.zones = [zone(55, 40, 190, 155), zone(255, 40, 190, 155), zone(465, 40, 380, 155)]
     drop(b, 'CBL', 150, 90); drop(b, 'FS', 350, 90); drop(b, 'SS', 650, 80); drop(b, 'CBR', 790, 280); drop(b, 'N', 210, 250); drop(b, 'W', 410, 230); drop(b, 'M', 585, 220)
   }
-  // Every shown rusher has an actual post-snap landmark, too.
+  // Include post-snap landmarks for rushers.
   route(b, 'EL', [[300, 365], [350, 435]]); drop(b, 'TL', 425, 385); drop(b, 'TR', 475, 385); route(b, 'ER', [[610, 365], [560, 435]])
   return b
 }
@@ -340,7 +340,7 @@ const defenseRoleIds = ['nose', 'edge', 'mike', 'will', 'sam', 'cornerback', 'fr
 const reactionIds = ['creeping-safety', 'motion-adjustment', 'coverage-roll', 'one-gap', 'two-gap']
 export const blueprintIds = [...Object.keys(routeShapes), ...passingIds, ...runIds, ...['11', '12', '21', '22', '00', '10'].map(p => `personnel-${p}`), ...offenseRoleIds, ...readIds, ...[0, 1, 2, 3, 4, 6].map(n => `cover-${n}`), ...frontIds, ...defenseRoleIds, ...reactionIds, ...['i', 'singleback', 'trips', 'empty', 'pistol', 'wishbone', 'flexbone'].map(n => `formation-${n}`), 'stunt-tex', 'stunt-ext', 'stunt-loop', 'blitz-cross-dog', 'blitz-fire-zone', 'gap-a', 'gap-b', 'gap-c', 'gap-d', 'fit-one-gap', 'fit-two-gap', 'fg-edge-overload', 'fg-a-gap-push', 'fg-block-safe', 'punt-spread', 'punt-pro', 'punt-gunner', 'punt-return-wall']
 
-/** Explicit dispatch deliberately rejects missing concepts instead of recycling a default diagram. */
+/** Reject unknown concepts rather than displaying an unrelated diagram. */
 export function blueprintFor(concept: Pick<Concept, 'id'>): Blueprint {
   const id = concept.id
   if (routeShapes[id]) return routeTree(id)

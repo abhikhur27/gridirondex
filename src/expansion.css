@@ -1,4 +1,3 @@
-/* Paper blocks extend into a compact entry to the drawing game. */
 .topbar-actions{display:flex;align-items:center;gap:12px}
 .quick-draft{display:flex;align-items:center;gap:5px;font:700 12px var(--font-block);color:var(--muted);padding:12px;border-radius:9px}
 .quick-draft:hover{background:var(--block);color:var(--blue)}

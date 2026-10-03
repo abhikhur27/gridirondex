@@ -1,29 +1,39 @@
-# GridironDex: toy blocks and Tactical Draft
+# Design
 
+GridironDex uses an off-white paper field, block typography and solid blue/red ink. Football alignments and movement provide the visual hierarchy. Controls stay compact so the field remains the main object on each screen.
 
-Library diagrams receive individual football blueprints, with consistent line weight and filled arrow caps whose bases meet trimmed shafts. Defensive assignments connect solid pre-snap X markers to translucent post-snap destinations using dashed paths. Faint gap lanes carry A/B/C/D labels where relevant. Diagram uniqueness comes from actual alignments, movements and focused players, never random offsets.
+## Tokens
 
-Breakdowns open with a large, playable vector preview and one or two coaching sentences. Inline terminology pills and a few related-concept pills jump directly to the other diagram. A Film tab is available when a researched clip exists; new vector-first lessons do not receive unrelated placeholder videos. Keyboard play/pause, scrubbing, reset, close and focus return all remain available.
+The shared values live in `src/tokens.css`.
 
-Tactical Draft uses one dominant field, a short defense label, personnel/protection choices and a SNAP button. Route drawing works with mouse or touch, with keyboard route presets as an equal alternative. Scoring comes from simulated separation, route spacing and protection versus the actual look. Failure explains the missed read and permits editing; winning advances to a more difficult randomized look. Game code, content data and library blueprints are separate modules.
+| Token | Value | Use |
+| --- | --- | --- |
+| Paper | `#F2F0EC` | Page and field background |
+| Block | `#E6E4DF` | Hovered and selected surfaces |
+| Card | `#FAF9F6` | Raised surfaces |
+| Ink | `#252824` | Primary text |
+| Muted | `#90928D` | Inactive content |
+| Logo | `#9E9E9E` | Resting wordmark |
+| Blue | `#0070F3` | Offense |
+| Red | `#D32F2F` | Defense |
+| Amber | `#FF8A00` | Secondary emphasis |
 
+Syne supplies headings and block controls; DM Sans supplies body text. The spacing scale is 4, 8, 12, 16, 24, 32 and 48 pixels. A faint SVG grain adds texture to the paper surface.
 
+## Layout and interaction
 
-## Original toy-block foundation
+Home begins with large OFFENSE and DEFENSE alignment choices, alongside entries for special teams and the games. Categories lead to a visual lesson grid. Tiles are muted at rest and gain a darker paper surface and accent ink on hover or keyboard focus. The wordmark follows the same muted-to-color interaction.
 
-One job: pick a visual football pattern and see it move. Home consists of two alignment blocks, OFFENSE and DEFENSE. No persistent navigation rail, editorial explanations, separators, visible default borders or promotional copy.
+Lesson breakdowns place a large playable diagram above a short takeaway, related-topic links and source credits. Film appears only where a suitable clip is mapped. Position profiles place alignment and technique notes below the diagram. Modal controls support Escape, focus containment and focus return.
 
-Tokens: paper `#F2F0EC`; hover block `#E6E4DF`; heading ink `#252824`; muted ink `#90928D`; logo `#9E9E9E`; offense blue `#0070F3`; defense red `#D32F2F`; alternate amber `#FF8A00`. Syne 800 for block labels, Syne 600/700 for controls, DM Sans for the single coaching takeaway. Paper grain is a native SVG texture at 1.8% opacity.
+## Field rendering
 
-Structure: logo → two large alignment choices → side-specific category blocks → visual concept grid. Route glyphs are large, blocky, grey vectors. Hover/focus draws accent strokes; click selects a route; its small play control opens film. Plays/coverages open film directly. Film consists of exactly an embed and a 1–2 sentence takeaway; the close control sits outside the card. Sources stay in the dataset rather than appearing as reading panels.
+`PlayCanvas` renders both teams on a shared timeline. Player tracks, blocking contacts, gap and zone highlights, quarterback reads, ball movement and captions use the same sampled time. Offensive players use O markers; defensive players use X markers. Faded origins and destinations preserve the relationship between alignment and assignment.
 
-Signature: empty off-white blocks become blue/red football toys under the pointer. X/O symbols are the content, not decoration. No ambient motion. Selected paths replay on click, and reduced motion makes the draw immediate. Touch users can select without hover.
+Arrow shafts stop at the base of filled caps. Light dashed paths indicate pre-snap motion; solid paths indicate post-snap assignments. Labels sit near the action they explain. Playback defaults to half speed, with quarter-speed and full-speed options, a scrubber and event stepping. Reduced motion supports immediate results and manual timeline control.
 
+## Games
 
+Tactical Draft combines one large field with personnel, formation, protection and play controls. Selected routes expose bend and endpoint handles; presets and a depth slider provide alternatives to freehand drawing. Handles also respond to keyboard arrows. Player taps open position information, while dragging creates a route.
 
-## Contextual play engine — October 1, 2026
-
-## Precision and navigation — October 1, 2026
-
-## Tactical Draft mechanics and The Drive — October 1
-The field remains the dominant object, with the existing paper #F2F0EC, ink #222722, blue #0070F3, red #D32F2F and amber #E68A00 tokens; Syne display and DM Sans controls. Two plain mode tabs sit above the field. The Drive uses a thin field-position strip with ball and first-down markers, plus down/distance text. Personnel, formation and play type are compact controls; route handles appear only for the selected player. Zone landmarks and rollout restrictions appear on the field, so their meaning stays next to the action. No dashboard/sidebar. Existing 8/16/24 spacing and 8–16px radii continue. Keyboard arrows edit handles, depth has a labelled range alternative, and normal playback remains half speed with reduced-motion/manual stepping. The design signature is the same editable X/O play drawn over a drive's actual field position. 
+Coverage landmarks, rollout restrictions and RPO reads appear on the field. The Drive adds a compact field-position strip, down-and-distance and play history. Mode changes and position visits preserve the current call and progress. At narrow widths, controls wrap below the field and remain reachable without horizontal scrolling.
